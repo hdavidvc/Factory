@@ -1,0 +1,37 @@
+.header {
+    inline-size: 100%;
+    block-size: 77px;
+    background-color: rgba(228, 227, 227, 0.43);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: var(--body);
+}
+
+.hora {
+    margin-inline-start: 180px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    inline-size: 350px;
+    block-size: 100%;
+    justify-content: space-between;
+    margin-inline-end: 11px;
+}
+
+.avatar {
+    inline-size: 65px;
+    block-size: 65px;
+}
+
+.sign-out {
+    background-color: rgba(205, 61, 61, 0.67);
+    font: var(--body);
+    border-radius: 40px;
+    color: white;
+    border: 0px;
+    inline-size: 104px;
+    block-size: 38px;
+}

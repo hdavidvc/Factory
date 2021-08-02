@@ -1,0 +1,9 @@
+.components {
+    display: flex;
+    justify-content: space-between;
+    block-size: 100vh;
+}
+
+#header {
+    inline-size: 100%;
+}

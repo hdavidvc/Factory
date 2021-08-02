@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --fontBase: 'Poppins', sans-serif;
+    --sidebar: 14px/21px var(--fontBase);
+    --headline5: bold 25px/37.5px var(--fontBase);
+    --body: 16px/24px var(--fontBase);
+}
+
+* {
+    margin: 0px;
+}
+
+body,
+html {
+    font: var(--headline5);
+    block-size: 100vh;
+}

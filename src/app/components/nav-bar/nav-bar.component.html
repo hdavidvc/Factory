@@ -1,0 +1,140 @@
+<div class="navbar">
+    <img src="../../../assets/Logo.png" alt="">
+    <div>
+        <ul class="menu">
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <span class="iconify" data-inline="false" data-icon="clarity:dashboard-line" style="color: #ffffff; font-size: 35px;"></span>
+                    <a>Dashboard</a>
+                </div>
+                <div class="animate__animated " [ngClass]="{'open  animate__backInLeft': open=='Dashboard', 'collapse': open!='Dashboard'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <span class="iconify" data-inline="false" data-icon="clarity:avatar-line" style="color: #ffffff; font-size: 35px;"></span>
+                    <a>Clientes</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Clientes', 'collapse': open!='Clientes'}">
+                    <ul class="suboption">
+                        <li><a href="" class="">David</a></li>
+                        <li><a href="" class="">Updates</a></li>
+                        <li><a href="" class="">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <img src="../../../assets/icon-prestamos.svg" alt="">
+                    <a>Prestamos</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open animate__backInLeft': open=='Prestamos', 'collapse': open!='Prestamos'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <img src="../../../assets/icon-estadistica.svg" alt="">
+                    <a>Estadistica</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Estadistica', 'collapse': open!='Estadistica'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">David</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">David</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <span class="iconify" data-inline="false" data-icon="fluent:payment-16-regular" style="color: #ffffff; font-size: 35px;"></span>
+                    <a>Pagos</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Pagos', 'collapse': open!='Pagos'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <img src="../../../assets/icon-prestamos.svg" alt="">
+                    <a>Cobrador</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Cobrador', 'collapse': open!='Cobrador'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">David</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <span class="iconify" data-inline="false" data-icon="fluent:building-bank-28-regular" style="color: #ffffff; font-size: 35px;"></span>
+                    <a>Bancos</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Bancos', 'collapse': open!='Bancos'}">
+                    <ul class="suboption">
+                        <li><a href="" class="link-dark rounded">Overview</a></li>
+                        <li><a href="" class="link-dark rounded">Updates</a></li>
+                        <li><a href="" class="link-dark rounded">Reports</a></li>
+                        <li><a href="" class="link-dark rounded">Updates</a></li>
+                        <li><a href="" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <span class="iconify" data-inline="false" data-icon="la:coins" style="color: #ffffff; font-size: 35px;"></span>
+                    <a>Gastos</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Gastos', 'collapse': open!='Gastos'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">David</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li class="opcions" (click)="abrir($event)">
+                <div class="content">
+                    <span class="iconify" data-inline="false" data-icon="la:user" style="color: #ffffff; font-size: 35px;"></span>
+                    <a>Usuarios</a>
+                </div>
+                <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Usuarios', 'collapse': open!='Usuarios'}">
+                    <ul class="suboption">
+                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                        <li><a href="#" class="link-dark rounded">Updates</a></li>
+                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
