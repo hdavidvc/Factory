@@ -1,0 +1,36 @@
+.badge {
+    inline-size: 180px;
+    block-size: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 8px;
+    padding-block: 13px;
+    border-radius: 10px;
+}
+
+.badge-1 {
+    background-color: #39ACED;
+}
+
+.badge-2 {
+    background-color: #8554EF;
+}
+
+.badge-3 {
+    background-color: #4EA466;
+}
+
+.badge-4 {
+    background-color: #DB5252;
+}
+
+.detalle {
+    font: var(--body);
+    color: white;
+}
+
+img {
+    inline-size: 50px;
+    block-size: 60px;
+}

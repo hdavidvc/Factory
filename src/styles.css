@@ -14,5 +14,5 @@
 body,
 html {
     font: var(--headline5);
-    block-size: 100vh;
+    min-block-size: 100vh;
 }

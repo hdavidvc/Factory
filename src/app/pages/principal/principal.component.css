@@ -1,0 +1,121 @@
+    .badge-container {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    h2 {
+        font: var(--headline5);
+        text-align: center;
+        margin-block: 20px;
+    }
+    
+    .resumen h3 {
+        font: var(--headline5);
+        text-align: center;
+        padding-block: 10px;
+    }
+    
+    .resumen {
+        inline-size: 351px;
+        block-size: 466px;
+        margin-inline-start: 20px;
+        background: #FFF9F9;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .leyenda-container {
+        font: var(--body);
+    }
+    
+    .leyendas .a {
+        color: rgba(14, 156, 29, 1);
+    }
+    
+    .leyendas .p {
+        color: rgba(219, 73, 73, 1);
+    }
+    
+    .leyendas .d {
+        color: rgba(73, 149, 219, 1);
+    }
+    
+    .leyendas span {
+        color: black;
+    }
+    
+    .chart {
+        inline-size: 300px;
+        block-size: 300px;
+    }
+    
+    .body {
+        display: flex;
+        justify-content: space-between;
+        margin-block-start: 27px;
+    }
+    
+    .graficas {
+        inline-size: 467px;
+        block-size: 250px;
+        background: #FFF9F9;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        padding-inline: 14px;
+        padding-block: 12px;
+        margin-inline-end: 27px;
+    }
+    
+    .graficas #cantidad {
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+    }
+    
+    .graficas h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        line-height: 24px;
+        color: rgba(171, 168, 168, 1);
+    }
+    
+    .graficas #flujo-title {
+        text-align: center;
+        font: var(--body);
+    }
+    
+    .barra {
+        margin: 0 auto;
+    }
+    
+    .ganancias {
+        display: flex;
+        flex-direction: column;
+        /* background-color: red; */
+        inline-size: 517px;
+        block-size: 600px;
+    }
+    
+    .ganancias .line {
+        margin-block-start: 20px;
+    }
+    
+    @media screen and (max-width: 1161px) {
+        .body {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+        }
+        .resumen {
+            margin-block-end: 10px;
+        }
+        .badge-container {
+            display: none;
+        }
+    }

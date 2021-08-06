@@ -1,54 +1,69 @@
-<div class="navbar">
-    <img src="../../../assets/Logo.png" alt="">
+<div class="navbar" [ngClass]="{'navbar': menu_open===true, 'menu_hide': menu_open===false}">
+    <img id="logo" src="../../../assets/Logo.png" alt="">
+    <div (click)="open_menu()">
+        <span class="iconify menu-icon" data-inline="false" data-icon="bx:bx-menu" style="color: #ffffff; font-size: 35px;"></span>
+    </div>
     <div>
         <ul class="menu">
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Dashboard')">
                 <div class="content">
-                    <span class="iconify" data-inline="false" data-icon="clarity:dashboard-line" style="color: #ffffff; font-size: 35px;"></span>
-                    <a>Dashboard</a>
+                    <div class='item'>
+                        <span class="iconify" data-inline="false" data-icon="clarity:dashboard-line" style="color: #ffffff; font-size: 35px;"></span>
+                        <a>Dashboard</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
-                <div class="animate__animated " [ngClass]="{'open  animate__backInLeft': open=='Dashboard', 'collapse': open!='Dashboard'}">
+                <div routerLinkActive="selected" class="animate__animated " [ngClass]="{'open  animate__backInLeft': open=='Dashboard', 'collapse': open!='Dashboard'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
+                        <li><a routerLink='/home' class="link-dark rounded">Overview</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Clientes')">
                 <div class="content">
-                    <span class="iconify" data-inline="false" data-icon="clarity:avatar-line" style="color: #ffffff; font-size: 35px;"></span>
-                    <a>Clientes</a>
+                    <div class='item'>
+                        <span class="iconify" data-inline="false" data-icon="clarity:avatar-line" style="color: #ffffff; font-size: 35px;"></span>
+                        <a>Clientes</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Clientes', 'collapse': open!='Clientes'}">
                     <ul class="suboption">
-                        <li><a href="" class="">David</a></li>
-                        <li><a href="" class="">Updates</a></li>
-                        <li><a href="" class="">Reports</a></li>
+                        <li routerLinkActive='selected'><a routerLinks="">Nuevo</a></li>
+                        <li><a class="">Garante</a></li>
+                        <li><a class="">Rechazar</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Prestamos')">
                 <div class="content">
-                    <img src="../../../assets/icon-prestamos.svg" alt="">
-                    <a>Prestamos</a>
+                    <div class='item'>
+                        <img src="../../../assets/icon-prestamos.svg" alt="">
+                        <a>Prestamos</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open animate__backInLeft': open=='Prestamos', 'collapse': open!='Prestamos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Nuevo</a></li>
+                        <li><a href="#" class="link-dark rounded">Ejecutivo</a></li>
+                        <li><a href="#" class="link-dark rounded">Editar</a></li>
+                        <li><a href="#" class="link-dark rounded">Agregar</a></li>
+                        <li><a href="#" class="link-dark rounded">Dias Festivos</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Estadistica')">
                 <div class="content">
-                    <img src="../../../assets/icon-estadistica.svg" alt="">
-                    <a>Estadistica</a>
+                    <div class='item'>
+                        <img src="../../../assets/icon-estadistica.svg" alt="">
+                        <a>Estadistica</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Estadistica', 'collapse': open!='Estadistica'}">
                     <ul class="suboption">
@@ -64,74 +79,90 @@
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Pagos')">
                 <div class="content">
-                    <span class="iconify" data-inline="false" data-icon="fluent:payment-16-regular" style="color: #ffffff; font-size: 35px;"></span>
-                    <a>Pagos</a>
+                    <div class='item'>
+                        <span class="iconify" data-inline="false" data-icon="fluent:payment-16-regular" style="color: #ffffff; font-size: 35px;"></span>
+                        <a>Pagos</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Pagos', 'collapse': open!='Pagos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Cobrar</a></li>
+                        <li><a href="#" class="link-dark rounded">Abono</a></li>
+                        <li><a href="#" class="link-dark rounded">Consultar</a></li>
+                        <li><a href="#" class="link-dark rounded">Otros ingresos</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Cobrador')">
                 <div class="content">
-                    <img src="../../../assets/icon-prestamos.svg" alt="">
-                    <a>Cobrador</a>
+                    <div class='item'>
+                        <img src="../../../assets/icon-prestamos.svg" alt="">
+                        <a>Cobrador</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Cobrador', 'collapse': open!='Cobrador'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">David</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Depositos</a></li>
+                        <li><a href="#" class="link-dark rounded">Monitoreo</a></li>
+                        <li><a href="#" class="link-dark rounded">Celulares</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Bancos')">
                 <div class="content">
-                    <span class="iconify" data-inline="false" data-icon="fluent:building-bank-28-regular" style="color: #ffffff; font-size: 35px;"></span>
-                    <a>Bancos</a>
+                    <div class='item'>
+                        <span class="iconify" data-inline="false" data-icon="fluent:building-bank-28-regular" style="color: #ffffff; font-size: 35px;"></span>
+                        <a>Bancos</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Bancos', 'collapse': open!='Bancos'}">
                     <ul class="suboption">
-                        <li><a href="" class="link-dark rounded">Overview</a></li>
-                        <li><a href="" class="link-dark rounded">Updates</a></li>
-                        <li><a href="" class="link-dark rounded">Reports</a></li>
-                        <li><a href="" class="link-dark rounded">Updates</a></li>
-                        <li><a href="" class="link-dark rounded">Reports</a></li>
+                        <li><a href="" class="link-dark rounded">Registro</a></li>
+                        <li><a href="" class="link-dark rounded">Cuenta</a></li>
+                        <li><a href="" class="link-dark rounded">Transacciones</a></li>
+                        <li><a href="" class="link-dark rounded">Cheque</a></li>
+                        <li><a href="" class="link-dark rounded">Consulta cheque</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Gastos')">
                 <div class="content">
-                    <span class="iconify" data-inline="false" data-icon="la:coins" style="color: #ffffff; font-size: 35px;"></span>
-                    <a>Gastos</a>
+                    <div class='item'>
+                        <span class="iconify" data-inline="false" data-icon="la:coins" style="color: #ffffff; font-size: 35px;"></span>
+                        <a>Gastos</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Gastos', 'collapse': open!='Gastos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">David</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Registrar</a></li>
+                        <li><a href="#" class="link-dark rounded">Consultar</a></li>
+                        <li><a href="#" class="link-dark rounded">Tipo gasto</a></li>
                     </ul>
                 </div>
             </li>
 
-            <li class="opcions" (click)="abrir($event)">
+            <li class="opcions" (click)="abrir('Usuarios')">
                 <div class="content">
-                    <span class="iconify" data-inline="false" data-icon="la:user" style="color: #ffffff; font-size: 35px;"></span>
-                    <a>Usuarios</a>
+                    <div class='item'>
+                        <span class="iconify" data-inline="false" data-icon="la:user" style="color: #ffffff; font-size: 35px;"></span>
+                        <a>Usuarios</a>
+                    </div>
+                    <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Usuarios', 'collapse': open!='Usuarios'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Overview</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="link-dark rounded">Nuevo</a></li>
+                        <li><a href="#" class="link-dark rounded">Password</a></li>
+                        <li><a href="#" class="link-dark rounded">Imagen</a></li>
                     </ul>
                 </div>
             </li>

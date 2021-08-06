@@ -9,7 +9,7 @@
 }
 
 .hora {
-    margin-inline-start: 180px;
+    margin-inline-start: 10px;
 }
 
 .user {
@@ -34,4 +34,13 @@
     border: 0px;
     inline-size: 104px;
     block-size: 38px;
+}
+
+@media screen and (max-width: 600px) {
+    /* .navbar {
+        inline-size: 75px;
+    } */
+    .hora {
+        display: none;
+    }
 }

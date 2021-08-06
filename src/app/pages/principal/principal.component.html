@@ -1,0 +1,99 @@
+<h2>DASHBOARD</h2>
+<div class="badge-container">
+    <div class="badge badge-1" (click)="enviar()">
+        <div class="detalle">
+            <span>50</span>
+            <p>Prestamos</p>
+        </div>
+        <img src="../../../assets/icon-prestamos.svg" alt="">
+    </div>
+    <div class="badge badge-2">
+        <div class="detalle">
+            <span>30</span>
+            <p>Saldados</p>
+        </div>
+        <span class="iconify" data-inline="false" data-icon="ic:baseline-price-check" style="color: #ffffff; font-size: 35px;"></span>
+    </div>
+    <div class="badge badge-3">
+        <div class="detalle">
+            <span>50</span>
+            <p>Realizados</p>
+        </div>
+        <span class="iconify" data-inline="false" data-icon="fa-regular:money-bill-alt" style="color: #ffffff; font-size: 35px;"></span>
+    </div>
+    <div class="badge badge-4">
+        <div class="detalle">
+            <span>50</span>
+            <p>Sin saldar</p>
+        </div>
+        <span class="iconify" data-inline="false" data-icon="bx:bx-trending-down" style="color: #ffffff; font-size: 35px;"></span>
+    </div>
+</div>
+
+<section class="body">
+    <section class="resumen">
+        <h3>RESUMEN PRESTAMOS</h3>
+        <!-- Grafico -->
+        <div>
+            <div>
+                <div>
+                    <div class="chart">
+                        <canvas height="50px" width="52px" baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                    </canvas>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <!-- <button mat-button mat-raised-button color="primary" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</button> -->
+            </div>
+        </div>
+        <div class="leyenda-container">
+            <ul class="leyendas">
+                <li class="a"><span>Aprobados</span></li>
+                <li class="p"><span>Pendientes</span></li>
+                <li class="d"><span>Denegados</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="ganancias">
+        <div class="graficas">
+            <h3 id="cantidad">RD$ 580</h3>
+            <h4>PROMEDIO DIARIO DE GANANCIAS</h4>
+            <div>
+                <div>
+                    <div>
+                        <div class="chart barra" style="position: relative; height:35%; width:93%">
+                            <canvas baseChart [data]="barraChartData" [labels]="barraChartLabels" [chartType]="barraChartType" [options]="barraChartOptions" [plugins]="barraChartPlugins" [colors]="barraChartColors" [legend]="barraChartLegend">
+                        </canvas>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- <button mat-button mat-raised-button color="primary" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</button> -->
+                </div>
+            </div>
+        </div>
+        <div class="graficas line">
+            <h3 id="flujo-title">Flujo mensual de ganancias</h3>
+            <div class="flex">
+                <div class="flex-item">
+                    <div style="display: block;">
+                        <canvas baseChart style="position: relative; height:50%; width:100%" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="lineHovered($event)"></canvas>
+                    </div>
+                </div>
+                <!-- <div class="flex-item">
+                    <table class="table table-responsive table-condensed">
+                        <tr>
+                            <th *ngFor="let label of lineChartLabels">{{label}}</th>
+                        </tr>
+                        <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
+                            <td *ngFor="let label of lineChartLabels; let j=index">{{d }}</td>
+                        </tr>
+                    </table>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+</section>

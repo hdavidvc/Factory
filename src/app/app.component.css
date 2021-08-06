@@ -1,9 +1,20 @@
 .components {
     display: flex;
     justify-content: space-between;
-    block-size: 100vh;
+    block-size: 100%;
 }
 
 #header {
     inline-size: 100%;
 }
+
+
+/* @media screen and (max-width: 768px) {
+    #nav {
+        display: none; 
+
+inline-size: 100px;
+
+}
+
+}*/
