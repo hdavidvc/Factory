@@ -1,0 +1,14 @@
+h4 {
+    font: var(--sidebar);
+    color: rgba(165, 178, 210, 1);
+}
+
+hr {
+    color: rgba(228, 227, 227, 43);
+}
+
+.container {
+    margin-block-end: 10px;
+    display: flex;
+    flex-direction: column;
+}

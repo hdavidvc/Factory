@@ -12,13 +12,21 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { ChartsModule } from 'ng2-charts';
+import { NuevoComponent } from './pages/clientes/nuevo/nuevo.component';
+import { DividerComponent } from './components/divider/divider.component';
+import { GaranteComponent } from './pages/clientes/garante/garante.component';
+import { RechazarComponent } from './pages/clientes/rechazar/rechazar.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     NavBarComponent,
     PrincipalComponent,
-    BadgeComponent
+    BadgeComponent,
+    NuevoComponent,
+    DividerComponent,
+    GaranteComponent,
+    RechazarComponent,
   ],
   imports: [
     BrowserModule,

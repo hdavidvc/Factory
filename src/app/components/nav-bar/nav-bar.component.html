@@ -31,9 +31,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Clientes', 'collapse': open!='Clientes'}">
                     <ul class="suboption">
-                        <li routerLinkActive='selected'><a routerLinks="">Nuevo</a></li>
-                        <li><a class="">Garante</a></li>
-                        <li><a class="">Rechazar</a></li>
+                        <li routerLinkActive='selected'><a routerLink="/cliente/nuevo">Nuevo</a></li>
+                        <li routerLinkActive='selected'><a routerLink="/cliente/garante" class="">Garante</a></li>
+                        <li routerLinkActive='selected'><a routerLink="/cliente/rechazar" class="">Rechazar</a></li>
                     </ul>
                 </div>
             </li>

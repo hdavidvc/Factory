@@ -1,0 +1,27 @@
+.divider {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+}
+
+button {
+    margin: 33px auto;
+}
+
+.text-area {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.text-area textarea {
+    border-radius: 15px;
+    border: 1px solid #CCC1C1;
+    padding-inline: 10px;
+    padding-block: 10px;
+    outline: none;
+}
+
+#fecha {
+    text-align: center;
+}

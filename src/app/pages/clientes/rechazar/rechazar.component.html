@@ -1,0 +1,52 @@
+<main>
+    <h2>Rechazar solicitud de cliente</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="fecha">Fecha</label>
+                <input id="fecha" type="date" name="fecha">
+            </div>
+        </div>
+        <form action="" class="form">
+
+            <div class="divider">
+            </div>
+            <div class="Secction">
+                <div class="content_p">
+                    <app-divider [title]="'Datos personales'"></app-divider>
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div>
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
+                    </div>
+                    <div>
+                        <label for="cedula">Cedula</label>
+                        <input type="text" name="cedula" id="cedula">
+                    </div>
+                    <button>Guardar</button>
+
+                </div>
+                <div class="content_s">
+                    <app-divider [title]="'Datos del prestamo'"></app-divider>
+                    <div>
+                        <label for="apellido">Monto</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </div>
+                    <div>
+                        <label for="telefono">Evaluador</label>
+                        <input type="text" name="telefono" id="telefono">
+                    </div>
+                    <div class="text-area">
+                        <label for="nota">Nota</label>
+                        <textarea name="nota" id="nota" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </section>
+</main>

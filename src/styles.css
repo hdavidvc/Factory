@@ -14,5 +14,98 @@
 body,
 html {
     font: var(--headline5);
-    min-block-size: 100vh;
+    block-size: 100%;
+}
+
+
+/* Formularios, etc */
+
+h2 {
+    text-align: center;
+    font: var(--headline5);
+}
+
+main {
+    margin-block-start: 30px;
+}
+
+label {
+    font: var(--body);
+}
+
+input,
+select {
+    border-radius: 15px;
+    border: 1px solid #CCC1C1;
+    padding-inline-start: 10px;
+    inline-size: 250px;
+}
+
+select {
+    inline-size: 183px;
+}
+
+input,
+select:focus {
+    outline: none;
+    /* text-decoration: none; */
+}
+
+label {
+    padding-inline-end: 10px;
+}
+
+.body {
+    margin-inline: 30px;
+    margin-block-start: 30px;
+}
+
+.buscar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.body button {
+    background-color: #365EC2;
+    border-radius: 50px;
+    border: none;
+    inline-size: 208px;
+    block-size: 48px;
+    color: white;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form .Secction {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+}
+
+.form .Secction .content_p,
+.form .Secction .content_s {
+    block-size: auto;
+    padding-block-end: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form .Secction .content_s {
+    block-size: 141px;
+}
+
+.form .Secction .content_s div,
+.form .Secction .content_p div {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 11px;
+}
+
+.form #divider {
+    inline-size: 904px;
 }
