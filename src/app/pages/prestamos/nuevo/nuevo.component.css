@@ -1,0 +1,93 @@
+select {
+    inline-size: 163px;
+}
+
+.form {
+    margin-block-start: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    inline-size: 150px;
+}
+
+.form .datos {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 600px;
+}
+
+.form .confi {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 290px;
+    flex-direction: column;
+}
+
+.content_p,
+.content_s {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+
+.content_p div,
+.content_s div {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    padding-block-end: 11px;
+}
+
+hr {
+    color: rgba(228, 227, 227, 43);
+    block-size: 200px;
+}
+
+#datoD {
+    inline-size: 170px;
+}
+
+
+/* table,
+tr {
+    border: 1px solid black;
+    font: var(--body);
+} */
+
+.Secction .confi #divider {
+    inline-size: 904px;
+}
+
+.example-container {
+    height: 400px;
+    overflow: auto;
+    margin-block-start: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+#consultar {
+    background-color: rgb(61, 172, 105);
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+#numero {
+    inline-size: 90px;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+.title {
+    text-align: center;
+}

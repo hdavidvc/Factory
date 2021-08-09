@@ -60,25 +60,25 @@ export class PrincipalComponent implements OnInit {
       backgroundColor: 'rgba(54,94,194,1)',
     },
   ];
-  direccion = {
-    "ciudad": "Espaillat", 
-    "municipio": "La vega", 
-    "barrio": "El hermitaño", 
-    "calle": "Olivo",
-    "numero": 20  
+  persona = {
+    "apellido": "Cabrera", 
+    "cedula": "03115319034", 
+    "estado_civil": "soltero", 
+    "nombre": "David",
+    "telefono": 8097808081  
   }
   constructor( private service: PrestamosService) { 
         
-    // this.service.getDireccion().subscribe( direc => {
-    //   console.log(direc);
-    // })
+    this.service.getPersona().subscribe( per => {
+      console.log(per);
+    })
     
           console.log(window.innerHeight, window.innerWidth);
    }
 
    enviar() {
-    this.service.updateDireccion(this.direccion).subscribe( direc => {
-      console.log(direc);
+    this.service.newPersona(this.persona).subscribe( per => {
+      console.log(per);
     })
    }
 

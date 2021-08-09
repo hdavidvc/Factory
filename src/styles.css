@@ -75,37 +75,13 @@ label {
     cursor: pointer;
 }
 
-.form {
+
+/* .form {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
+} */
 
-.form .Secction {
-    display: flex;
-    justify-content: space-between;
-    inline-size: 100%;
-}
 
-.form .Secction .content_p,
-.form .Secction .content_s {
-    block-size: auto;
-    padding-block-end: 40px;
-    display: flex;
-    flex-direction: column;
-}
-
-.form .Secction .content_s {
-    block-size: 141px;
-}
-
-.form .Secction .content_s div,
-.form .Secction .content_p div {
-    display: flex;
-    justify-content: space-between;
-    padding-block-start: 11px;
-}
-
-.form #divider {
-    inline-size: 904px;
-}
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

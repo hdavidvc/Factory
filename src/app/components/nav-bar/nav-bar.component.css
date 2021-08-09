@@ -2,7 +2,7 @@
     inline-size: 273px;
     block-size: 100%;
     background-color: rgba(54, 94, 194, 1);
-    overflow: hidden;
+    overflow: auto;
 }
 
 .menu-icon {

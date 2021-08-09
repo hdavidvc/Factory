@@ -16,7 +16,7 @@
                 </div>
                 <div routerLinkActive="selected" class="animate__animated " [ngClass]="{'open  animate__backInLeft': open=='Dashboard', 'collapse': open!='Dashboard'}">
                     <ul class="suboption">
-                        <li><a routerLink='/home' class="link-dark rounded">Overview</a></li>
+                        <li><a routerLink='/home' class="">Overview</a></li>
                     </ul>
                 </div>
             </li>
@@ -48,11 +48,11 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open animate__backInLeft': open=='Prestamos', 'collapse': open!='Prestamos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Nuevo</a></li>
-                        <li><a href="#" class="link-dark rounded">Ejecutivo</a></li>
-                        <li><a href="#" class="link-dark rounded">Editar</a></li>
-                        <li><a href="#" class="link-dark rounded">Agregar</a></li>
-                        <li><a href="#" class="link-dark rounded">Dias Festivos</a></li>
+                        <li routerLinkActive="selected"><a routerLink="prestamos/nuevo">Nuevo</a></li>
+                        <li routerLinkActive="selected"><a routerLink="prestamos/ejcutivo">Ejecutivo</a></li>
+                        <li routerLinkActive="selected"><a routerLink="prestamos/editar">Editar</a></li>
+                        <li routerLinkActive="selected"><a routerLink="prestamos/agregar">Agregar</a></li>
+                        <li routerLinkActive="selected"><a routerLink="prestamos/feriados">Dias Festivos</a></li>
                     </ul>
                 </div>
             </li>
@@ -67,14 +67,14 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Estadistica', 'collapse': open!='Estadistica'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">David</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
-                        <li><a href="#" class="link-dark rounded">David</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
-                        <li><a href="#" class="link-dark rounded">Updates</a></li>
-                        <li><a href="#" class="link-dark rounded">Reports</a></li>
+                        <li><a href="#" class="">David</a></li>
+                        <li><a href="#" class="">Updates</a></li>
+                        <li><a href="#" class="">Reports</a></li>
+                        <li><a href="#" class="">David</a></li>
+                        <li><a href="#" class="">Updates</a></li>
+                        <li><a href="#" class="">Reports</a></li>
+                        <li><a href="#" class="">Updates</a></li>
+                        <li><a href="#" class="">Reports</a></li>
                     </ul>
                 </div>
             </li>
@@ -89,10 +89,10 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Pagos', 'collapse': open!='Pagos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Cobrar</a></li>
-                        <li><a href="#" class="link-dark rounded">Abono</a></li>
-                        <li><a href="#" class="link-dark rounded">Consultar</a></li>
-                        <li><a href="#" class="link-dark rounded">Otros ingresos</a></li>
+                        <li><a href="#" class="">Cobrar</a></li>
+                        <li><a href="#" class="">Abono</a></li>
+                        <li><a href="#" class="">Consultar</a></li>
+                        <li><a href="#" class="">Otros ingresos</a></li>
                     </ul>
                 </div>
             </li>
@@ -107,9 +107,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Cobrador', 'collapse': open!='Cobrador'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Depositos</a></li>
-                        <li><a href="#" class="link-dark rounded">Monitoreo</a></li>
-                        <li><a href="#" class="link-dark rounded">Celulares</a></li>
+                        <li><a href="#" class="">Depositos</a></li>
+                        <li><a href="#" class="">Monitoreo</a></li>
+                        <li><a href="#" class="">Celulares</a></li>
                     </ul>
                 </div>
             </li>
@@ -124,11 +124,11 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Bancos', 'collapse': open!='Bancos'}">
                     <ul class="suboption">
-                        <li><a href="" class="link-dark rounded">Registro</a></li>
-                        <li><a href="" class="link-dark rounded">Cuenta</a></li>
-                        <li><a href="" class="link-dark rounded">Transacciones</a></li>
-                        <li><a href="" class="link-dark rounded">Cheque</a></li>
-                        <li><a href="" class="link-dark rounded">Consulta cheque</a></li>
+                        <li><a href="" class="">Registro</a></li>
+                        <li><a href="" class="">Cuenta</a></li>
+                        <li><a href="" class="">Transacciones</a></li>
+                        <li><a href="" class="">Cheque</a></li>
+                        <li><a href="" class="">Consulta cheque</a></li>
                     </ul>
                 </div>
             </li>
@@ -143,9 +143,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Gastos', 'collapse': open!='Gastos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Registrar</a></li>
-                        <li><a href="#" class="link-dark rounded">Consultar</a></li>
-                        <li><a href="#" class="link-dark rounded">Tipo gasto</a></li>
+                        <li><a href="#" class="">Registrar</a></li>
+                        <li><a href="#" class="">Consultar</a></li>
+                        <li><a href="#" class="">Tipo gasto</a></li>
                     </ul>
                 </div>
             </li>

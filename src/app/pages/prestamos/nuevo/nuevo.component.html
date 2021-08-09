@@ -1,0 +1,282 @@
+<main>
+    <h2>Nuevo prestamo</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar</label>
+                <input type="text" name="buscar">
+            </div>
+            <button id="consultar">Consultar</button>
+            <button>Guardar</button>
+        </div>
+        <form action="" class="form">
+
+            <div>
+                <app-divider id="datoD" [title]="'Datos del prestamo'"></app-divider>
+                <div class="Secction datos">
+                    <div class="content_p">
+                        <div>
+                            <label for="cliente">Cliente</label>
+                            <input type="text" name="cliente" id="cliente">
+                        </div>
+                        <div>
+                            <label for="cuotas">Cant. cuotas</label>
+                            <input type="text" name="cuotas" id="cuotas">
+                        </div>
+                        <div>
+                            <label for="fechaInicio">Fecha inicio</label>
+                            <input type="date" name="fechaInicio" id="fechaInicio">
+                        </div>
+                        <div>
+                            <label for="ruta">Ruta</label>
+                            <select name="ruta" id="ruta">
+                                <option value="Soltero">Soltero</option>
+                                <option value="Casado">Casado</option>
+                                <option value="Viudo">Viudo</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fechaVence">Fecha vence</label>
+                            <input type="date" name="fechaVence" id="fechaVence">
+                        </div>
+                    </div>
+                    <div class="content_s">
+                        <div>
+                            <label for="monto">Monto</label>
+                            <input type="text" name="monto" id="monto">
+                        </div>
+                        <div>
+                            <label for="montoCuota">Monto cuotas</label>
+                            <input type="text" name="montoCuota" id="montoCuota">
+                        </div>
+                        <div>
+                            <label for="tasa">Tasa</label>
+                            <input type="text" name="tasa" id="tasa">
+                        </div>
+                        <div>
+                            <label for="diaGracia">Dias Gracia</label>
+                            <input type="text" name="diaGracia" id="diaGracia">
+                        </div>
+                        <div>
+                            <label for="tasaMora">Tasa Mora</label>
+                            <input type="text" name="tasaMora" id="tasaMora">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="Secction confi">
+                <app-divider id="divider" [title]="'Configuracion del prestamo'"></app-divider>
+
+                <div class="content_p">
+                    <div>
+                        <label for="tipoSaldo">Tipo saldo</label>
+                        <input type="text" name="tipoSaldo" id="tipoSaldo-trabajo">
+                    </div>
+                    <div>
+                        <label for="periodo">Perido</label>
+                        <input type="text" name="periodo" id="periodo">
+                    </div>
+                    <div>
+                        <label for="tipo">Tipo</label>
+                        <input type="text" name="tipo" id="tipo">
+                    </div>
+                    <div>
+                        <label for="garante">Garante</label>
+                        <input type="text" name="garante" id="garante">
+                    </div>
+                    <div>
+                        <label for="ejecutivo">Ejecutivo</label>
+                        <input type="text" name="ejecutivo" id="ejecutivo">
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <!-- <table>
+            <tr>
+                <th>Numero</th>
+                <th>Cuota</th>
+                <th>Capital</th>
+                <th>Interes</th>
+                <th>Seguro</th>
+                <th>Balance</th>
+                <th>Vence</th>
+            </tr>
+            <tr>
+                <td>david</td>
+                <td>david</td>
+                <td>david</td>
+                <td>david</td>
+                <td>david</td>
+                <td>david</td>
+                <td>david</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table> -->
+
+
+        <!-- <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table> -->
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="Numero">
+                    <th id="numero" mat-header-cell *matHeaderCellDef> Numero </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Numero}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Cuota">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Cuota </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Cuota}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Capital">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Capital </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Capital}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Interes">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Interes </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Interes}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Seguro">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Seguro </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Seguro}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Balance">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Balance </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Balance}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Vence">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Vence </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Vence}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
+
+    </section>
+</main>
