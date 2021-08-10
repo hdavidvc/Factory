@@ -1,0 +1,86 @@
+<main>
+    <h2>Agregar tasa o dia de gracia</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar</label>
+                <input type="text" name="buscar">
+            </div>
+        </div>
+        <app-divider id="divider" [title]="'Datos prestamo particular'"></app-divider>
+        <form action="" class="form">
+
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="cliente">Cliente</label>
+                        <input type="text" name="cliente" id="cliente">
+                    </div>
+                    <div>
+                        <label for="valorActual">Valor Actual</label>
+                        <input type="text" name="valorActual" id="valorActual">
+                    </div>
+
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="Parametro">Parametro a cambiar</label>
+                        <select name="estado" id="Parametro">
+                            <option value="Interes">Interes</option>
+                            <option value="Dia de gracia">Dia de gracia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="valorNuevo">Valor Nuevo</label>
+                        <input type="text" name="valorNuevo" id="valorNuevo">
+                    </div>
+                </div>
+                <div class="content_t">
+
+                    <div>
+                        <label for="idPrestamo">ID Prestamo</label>
+                        <input type="text" name="idPrestamo" id="idPrestamo">
+                    </div>
+                </div>
+            </div>
+            <div class="content_t">
+                <button>Actualizar</button>
+            </div>
+            <app-divider id="divider" [title]="'Datos prestamos colectivo'"></app-divider>
+
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="periodo">Periodo de pago</label>
+                        <select name="estado" id="periodo">
+                            <option value="Semanal">Semanal</option>
+                            <option value="Quincenal">Quincenal</option>
+                            <option value="Mensual">Mensual</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="valorActual">Valor Actual</label>
+                        <input type="text" name="valorActual" id="valorActual">
+                    </div>
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="Parametro">Parametro a cambiar</label>
+                        <select name="estado" id="Parametro">
+                            <option value="Interes">Interes</option>
+                            <option value="Dia de gracia">Dia de gracia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="valorNuevo">Valor Nuevo</label>
+                        <input type="text" name="valorNuevo" id="valorNuevo">
+                    </div>
+                </div>
+
+            </div>
+            <div class="content_t">
+                <button>Actualizar</button>
+            </div>
+        </form>
+    </section>
+</main>

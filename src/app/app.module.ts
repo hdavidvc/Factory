@@ -23,6 +23,11 @@ import { RechazarComponent } from './pages/clientes/rechazar/rechazar.component'
 // Prestamos
 import { PrestamoNuevoComponent } from './pages/prestamos/nuevo/nuevo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConsultaComponent } from './pages/prestamos/consulta/consulta.component';
+import { EjecutivoComponent } from './pages/prestamos/ejecutivo/ejecutivo.component';
+import { EditarComponent } from './pages/prestamos/editar/editar.component';
+import { AgregarComponent } from './pages/prestamos/agregar/agregar.component';
+import { FestivosComponent } from './pages/prestamos/festivos/festivos.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DividerComponent,
     GaranteComponent,
     RechazarComponent,
-    PrestamoNuevoComponent
+    PrestamoNuevoComponent,
+    ConsultaComponent,
+    EjecutivoComponent,
+    EditarComponent,
+    AgregarComponent,
+    FestivosComponent
   ],
   imports: [
     BrowserModule,

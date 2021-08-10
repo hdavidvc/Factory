@@ -20,7 +20,7 @@ input {
 
 .form .confi {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-around; */
     inline-size: 290px;
     flex-direction: column;
 }
@@ -71,7 +71,7 @@ table {
 }
 
 #consultar {
-    background-color: rgb(61, 172, 105);
+    background-color: rgb(230, 59, 59);
 }
 
 th {
@@ -91,4 +91,12 @@ td {
 
 .title {
     text-align: center;
+}
+
+tr.mat-footer-row {
+    font-weight: bold;
+}
+
+.footer {
+    font-weight: bold;
 }

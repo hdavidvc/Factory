@@ -1,0 +1,51 @@
+<main>
+    <h2>Nuevo ejecutivo</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar ejecutivo</label>
+                <input type="text" name="buscar">
+            </div>
+        </div>
+        <app-divider [title]="'Datos del ejecutivo'"></app-divider>
+        <form action="" class="form">
+
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre">
+                    </div>
+                    <div>
+                        <label for="cedula">Cedula</label>
+                        <input type="text" name="cedula" id="cedula">
+                    </div>
+                    <div>
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
+                    </div>
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido">
+                    </div>
+                    <div>
+                        <label for="telefono">Telefono</label>
+                        <input type="text" name="telefono" id="telefono">
+                    </div>
+                    <div>
+                        <label for="estado">Estado civil</label>
+                        <select name="estado" id="estado">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <button>Guardar</button>
+
+    </section>
+</main>
