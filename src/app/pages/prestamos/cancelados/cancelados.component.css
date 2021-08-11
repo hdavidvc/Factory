@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+td {
+    text-align: center;
+    font: var(--sidebar);
+}
+
+.title {
+    text-align: center;
+}
+
+.example-container {
+    margin-block-start: 30px;
+    height: 400px;
+    overflow: auto;
+}
+
+.btnAnular {
+    display: flex;
+    justify-content: center;
+    padding-block: 5px;
+}
+
+.anular {
+    background-color: red;
+    color: white;
+    display: block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+#imprimir {
+    background-color: #DE6E1D;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-evenly;
+    margin-block-start: 20px;
+}

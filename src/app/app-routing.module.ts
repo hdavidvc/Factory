@@ -10,6 +10,8 @@ import { EjecutivoComponent } from './pages/prestamos/ejecutivo/ejecutivo.compon
 import { EditarComponent } from './pages/prestamos/editar/editar.component';
 import { AgregarComponent } from './pages/prestamos/agregar/agregar.component';
 import { FestivosComponent } from './pages/prestamos/festivos/festivos.component';
+import { EstadoComponent } from './pages/prestamos/estado/estado.component';
+import { CanceladosComponent } from './pages/prestamos/cancelados/cancelados.component';
 
 const routes: Routes = [
   {path: 'home', component: PrincipalComponent},
@@ -22,6 +24,8 @@ const routes: Routes = [
   {path: 'prestamos/editar', component: EditarComponent},
   {path: 'prestamos/agregar', component: AgregarComponent},
   {path: 'prestamos/festivo', component: FestivosComponent},
+  {path: 'prestamos/estado', component: EstadoComponent},
+  {path: 'prestamos/cancelado', component: CanceladosComponent},
   {path: '**', pathMatch:'full',  redirectTo: 'home' }
 ];
 

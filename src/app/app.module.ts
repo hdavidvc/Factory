@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 // Angular Material
 import {MatTableModule} from '@angular/material/table';
@@ -28,6 +29,8 @@ import { EjecutivoComponent } from './pages/prestamos/ejecutivo/ejecutivo.compon
 import { EditarComponent } from './pages/prestamos/editar/editar.component';
 import { AgregarComponent } from './pages/prestamos/agregar/agregar.component';
 import { FestivosComponent } from './pages/prestamos/festivos/festivos.component';
+import { EstadoComponent } from './pages/prestamos/estado/estado.component';
+import { CanceladosComponent } from './pages/prestamos/cancelados/cancelados.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,9 @@ import { FestivosComponent } from './pages/prestamos/festivos/festivos.component
     EjecutivoComponent,
     EditarComponent,
     AgregarComponent,
-    FestivosComponent
+    FestivosComponent,
+    EstadoComponent,
+    CanceladosComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,9 @@ import { FestivosComponent } from './pages/prestamos/festivos/festivos.component
     ChartsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
