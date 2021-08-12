@@ -1,0 +1,31 @@
+<main>
+    <h2>Ingresos & Gastos</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="inicio">Desde</label>
+                <input type="date" name="inicio">
+                <!-- <input type="number" [(ngModel)]="lado.numero" > -->
+            </div>
+            <div class="campo">
+                <label for="fin">Hasta</label>
+                <input type="date" name="fin">
+            </div>
+            <button>Consultar</button>
+        </div>
+
+        <section class="resumen">
+
+            <div class="chart">
+                <canvas height="50px" width="52px" baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+                        </canvas>
+            </div>
+
+            <ul class="leyendas">
+                <li class="a"><span>Ingresos</span></li>
+                <li class="p"><span>Gastos</span></li>
+            </ul>
+
+        </section>
+    </section>
+</main>

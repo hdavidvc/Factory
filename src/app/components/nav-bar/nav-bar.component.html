@@ -69,14 +69,7 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Estadistica', 'collapse': open!='Estadistica'}">
                     <ul class="suboption">
-                        <li><a href="#" class="">David</a></li>
-                        <li><a href="#" class="">Updates</a></li>
-                        <li><a href="#" class="">Reports</a></li>
-                        <li><a href="#" class="">David</a></li>
-                        <li><a href="#" class="">Updates</a></li>
-                        <li><a href="#" class="">Reports</a></li>
-                        <li><a href="#" class="">Updates</a></li>
-                        <li><a href="#" class="">Reports</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/estadistica/ingreso-gasto' class="">Estado ingresos y gastos</a></li>
                     </ul>
                 </div>
             </li>
@@ -91,10 +84,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Pagos', 'collapse': open!='Pagos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="">Cobrar</a></li>
-                        <li><a href="#" class="">Abono</a></li>
-                        <li><a href="#" class="">Consultar</a></li>
-                        <li><a href="#" class="">Otros ingresos</a></li>
+                        <li><a routerLink='/pagos/cobrar' class="">Cobrar</a></li>
+                        <li><a routerLink='/pagos/consultar' class="">Consultar</a></li>
+                        <li><a routerLink='/pagos/otros' class="">Otros ingresos</a></li>
                     </ul>
                 </div>
             </li>

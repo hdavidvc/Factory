@@ -12,6 +12,10 @@ import { AgregarComponent } from './pages/prestamos/agregar/agregar.component';
 import { FestivosComponent } from './pages/prestamos/festivos/festivos.component';
 import { EstadoComponent } from './pages/prestamos/estado/estado.component';
 import { CanceladosComponent } from './pages/prestamos/cancelados/cancelados.component';
+import { IngresoGastoComponent } from './pages/estadistica/ingreso-gasto/ingreso-gasto.component';
+import { CobrarComponent } from './pages/pagos/cobrar/cobrar.component';
+import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.component';
+import { OtrosComponent } from './pages/pagos/otros/otros.component';
 
 const routes: Routes = [
   {path: 'home', component: PrincipalComponent},
@@ -26,6 +30,10 @@ const routes: Routes = [
   {path: 'prestamos/festivo', component: FestivosComponent},
   {path: 'prestamos/estado', component: EstadoComponent},
   {path: 'prestamos/cancelado', component: CanceladosComponent},
+  {path: 'estadistica/ingreso-gasto', component: IngresoGastoComponent},
+  {path: 'pagos/cobrar', component: CobrarComponent},
+  {path: 'pagos/consultar', component: ConsultaCobroComponent},
+  {path: 'pagos/otros', component: OtrosComponent},
   {path: '**', pathMatch:'full',  redirectTo: 'home' }
 ];
 

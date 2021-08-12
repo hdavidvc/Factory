@@ -31,6 +31,10 @@ import { AgregarComponent } from './pages/prestamos/agregar/agregar.component';
 import { FestivosComponent } from './pages/prestamos/festivos/festivos.component';
 import { EstadoComponent } from './pages/prestamos/estado/estado.component';
 import { CanceladosComponent } from './pages/prestamos/cancelados/cancelados.component';
+import { IngresoGastoComponent } from './pages/estadistica/ingreso-gasto/ingreso-gasto.component';
+import { CobrarComponent } from './pages/pagos/cobrar/cobrar.component';
+import { OtrosComponent } from './pages/pagos/otros/otros.component';
+import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { CanceladosComponent } from './pages/prestamos/cancelados/cancelados.com
     AgregarComponent,
     FestivosComponent,
     EstadoComponent,
-    CanceladosComponent
+    CanceladosComponent,
+    IngresoGastoComponent,
+    CobrarComponent,
+    OtrosComponent,
+    ConsultaCobroComponent
   ],
   imports: [
     BrowserModule,

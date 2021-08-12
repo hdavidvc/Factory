@@ -31,9 +31,6 @@ const ELEMENT_DATA: TablaElement[] = [
 })
 export class CanceladosComponent implements OnInit {
   public inicio: any;
-  lado = {
-    numero: 0,
-  };
   displayedColumns = ['ID', 'Monto', 'Fecha', 'Hora','Cliente', 'Usuario', 'Motivo'];
   dataSource = ELEMENT_DATA;
 
@@ -43,8 +40,5 @@ export class CanceladosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  cambiar(event: any) {
-    console.log(this.inicio);
-  }
-
+  
 }

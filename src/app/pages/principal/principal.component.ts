@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
-import { SingleDataSet, Label, monkeyPatchChartJsLegend, monkeyPatchChartJsTooltip, BaseChartDirective, Color } from 'ng2-charts';
+import {Label, BaseChartDirective, Color } from 'ng2-charts';
 import { PrestamosService } from '../../services/prestamos.service';
 @Component({
   selector: 'app-principal',
