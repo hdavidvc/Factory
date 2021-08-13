@@ -35,6 +35,9 @@ import { IngresoGastoComponent } from './pages/estadistica/ingreso-gasto/ingreso
 import { CobrarComponent } from './pages/pagos/cobrar/cobrar.component';
 import { OtrosComponent } from './pages/pagos/otros/otros.component';
 import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.component';
+import { DepositoComponent } from './pages/cobrador/deposito/deposito.component';
+import { MonitoreoComponent } from './pages/cobrador/monitoreo/monitoreo.component';
+import { CelularesComponent } from './pages/cobrador/celulares/celulares.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.componen
     IngresoGastoComponent,
     CobrarComponent,
     OtrosComponent,
-    ConsultaCobroComponent
+    ConsultaCobroComponent,
+    DepositoComponent,
+    MonitoreoComponent,
+    CelularesComponent
   ],
   imports: [
     BrowserModule,

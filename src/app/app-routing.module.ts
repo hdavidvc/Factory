@@ -16,6 +16,9 @@ import { IngresoGastoComponent } from './pages/estadistica/ingreso-gasto/ingreso
 import { CobrarComponent } from './pages/pagos/cobrar/cobrar.component';
 import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.component';
 import { OtrosComponent } from './pages/pagos/otros/otros.component';
+import { DepositoComponent } from './pages/cobrador/deposito/deposito.component';
+import { MonitoreoComponent } from './pages/cobrador/monitoreo/monitoreo.component';
+import { CelularesComponent } from './pages/cobrador/celulares/celulares.component';
 
 const routes: Routes = [
   {path: 'home', component: PrincipalComponent},
@@ -34,6 +37,9 @@ const routes: Routes = [
   {path: 'pagos/cobrar', component: CobrarComponent},
   {path: 'pagos/consultar', component: ConsultaCobroComponent},
   {path: 'pagos/otros', component: OtrosComponent},
+  {path: 'cobradores/deposito', component: DepositoComponent},
+  {path: 'cobradores/monitoreo', component: MonitoreoComponent},
+  {path: 'cobradores/celulares', component: CelularesComponent},
   {path: '**', pathMatch:'full',  redirectTo: 'home' }
 ];
 

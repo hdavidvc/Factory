@@ -19,6 +19,12 @@ export class PrestamosService {
     return this.http.post('http://localhost:8081/api/persona',per);
 
   }
+  newCliente(cli:any) {
+    console.log(cli);
+    // return this.http.post('http://localhost:8080/api/direccion',dir);
+    return this.http.post('http://localhost:8081/api/cliente',cli);
+
+  }
   updateDireccion(dir:any) {
     return this.http.put('http://localhost:8080/api/direccion/610be907528cd6350c822d5e',dir);
   }

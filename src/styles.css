@@ -75,6 +75,11 @@ label {
     cursor: pointer;
 }
 
+td {
+    text-align: center;
+    font: var(--sidebar);
+}
+
 
 /* .form {
     display: flex;

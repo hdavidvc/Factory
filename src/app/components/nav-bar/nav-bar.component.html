@@ -84,9 +84,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Pagos', 'collapse': open!='Pagos'}">
                     <ul class="suboption">
-                        <li><a routerLink='/pagos/cobrar' class="">Cobrar</a></li>
-                        <li><a routerLink='/pagos/consultar' class="">Consultar</a></li>
-                        <li><a routerLink='/pagos/otros' class="">Otros ingresos</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/pagos/cobrar' class="">Cobrar</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/pagos/consultar' class="">Consultar</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/pagos/otros' class="">Otros ingresos</a></li>
                     </ul>
                 </div>
             </li>
@@ -101,9 +101,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Cobrador', 'collapse': open!='Cobrador'}">
                     <ul class="suboption">
-                        <li><a href="#" class="">Depositos</a></li>
-                        <li><a href="#" class="">Monitoreo</a></li>
-                        <li><a href="#" class="">Celulares</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/cobradores/deposito' class="">Depositos</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/cobradores/monitoreo' class="">Monitoreo</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/cobradores/celulares' class="">Celulares</a></li>
                     </ul>
                 </div>
             </li>
