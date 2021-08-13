@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { map } from 'rxjs/operators';
+import { Cliente } from '../interfaces/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,10 @@ export class PrestamosService {
   }
   updateDireccion(dir:any) {
     return this.http.put('http://localhost:8080/api/direccion/610be907528cd6350c822d5e',dir);
+  }
+  getCliente(nombre:string) {
+    return this.http.get<Cliente>(`http://localhost:8081/api/buscar/cliente/${nombre}`).pipe(
+      map( resp => resp.clientes[0])
+    );
   }
 }

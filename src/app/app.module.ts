@@ -38,6 +38,11 @@ import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.componen
 import { DepositoComponent } from './pages/cobrador/deposito/deposito.component';
 import { MonitoreoComponent } from './pages/cobrador/monitoreo/monitoreo.component';
 import { CelularesComponent } from './pages/cobrador/celulares/celulares.component';
+import { RegistroComponent } from './pages/bancos/registro/registro.component';
+import { CuentaComponent } from './pages/bancos/cuenta/cuenta.component';
+import { TransaccionesComponent } from './pages/bancos/transacciones/transacciones.component';
+import { ChequeComponent } from './pages/bancos/cheque/cheque.component';
+import { ConsultaChequeComponent } from './pages/bancos/consulta-cheque/consulta-cheque.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +69,12 @@ import { CelularesComponent } from './pages/cobrador/celulares/celulares.compone
     ConsultaCobroComponent,
     DepositoComponent,
     MonitoreoComponent,
-    CelularesComponent
+    CelularesComponent,
+    RegistroComponent,
+    CuentaComponent,
+    TransaccionesComponent,
+    ChequeComponent,
+    ConsultaChequeComponent
   ],
   imports: [
     BrowserModule,

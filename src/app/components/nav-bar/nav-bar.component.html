@@ -118,11 +118,11 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Bancos', 'collapse': open!='Bancos'}">
                     <ul class="suboption">
-                        <li><a href="" class="">Registro</a></li>
-                        <li><a href="" class="">Cuenta</a></li>
-                        <li><a href="" class="">Transacciones</a></li>
-                        <li><a href="" class="">Cheque</a></li>
-                        <li><a href="" class="">Consulta cheque</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/bancos/registro' class="">Registro</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/bancos/cuenta' class="">Cuenta</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/bancos/transacciones' class="">Transacciones</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/bancos/cheque' class="">Cheque</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/bancos/consulta' class="">Consulta cheque</a></li>
                     </ul>
                 </div>
             </li>

@@ -1,0 +1,62 @@
+.divider {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+}
+
+.content_d {
+    display: flex;
+    justify-content: center;
+}
+
+.buscar {
+    margin-block-end: 20px;
+}
+
+
+/* button {
+    margin: 33px auto;
+} */
+
+.text-area {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.text-area textarea {
+    border-radius: 15px;
+    border: 1px solid #CCC1C1;
+    padding-inline: 10px;
+    padding-block: 10px;
+    outline: none;
+}
+
+#fecha {
+    text-align: center;
+}
+
+.form .Secction {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+}
+
+.form .Secction .content_p,
+.form .Secction .content_s {
+    block-size: auto;
+    /* padding-block-end: 40px; */
+    display: flex;
+    flex-direction: column;
+}
+
+.form .Secction .content_s {
+    block-size: 141px;
+}
+
+.form .Secction .content_s div,
+.form .Secction .content_p div {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 11px;
+}

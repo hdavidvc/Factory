@@ -1,0 +1,32 @@
+<main>
+    <h2>Consulta de cheques</h2>
+    <section class="body">
+        <app-divider [title]="'Buscar por cliente'"></app-divider>
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar cliente</label>
+                <input type="text" name="buscar">
+            </div>
+        </div>
+        <app-divider id="divider" [title]="'Buscar por fecha'"></app-divider>
+        <form action="" class="form">
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="desde">Desde</label>
+                        <input type="date" name="desde" id="desde">
+                    </div>
+
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="hasta">Hasta</label>
+                        <input type="date" name="hasta" id="hasta">
+                    </div>
+                </div>
+            </div>
+            <div class="content_d"><button>Consultar</button></div>
+
+        </form>
+    </section>
+</main>

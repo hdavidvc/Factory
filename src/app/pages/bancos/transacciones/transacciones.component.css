@@ -1,0 +1,45 @@
+select {
+    inline-size: 163px;
+}
+
+input {
+    inline-size: 150px;
+}
+
+.form .Secction {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+}
+
+.form .Secction .content_p,
+.form .Secction .content_s,
+.form .Secction .content_t {
+    block-size: auto;
+    padding-block-end: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    block-size: 105px;
+}
+
+.form .Secction .content_s div,
+.form .Secction .content_p div,
+.form .Secction .content_t div {
+    display: flex;
+    justify-content: space-between;
+    padding-block-start: 11px;
+}
+
+.content_d {
+    display: flex;
+    justify-content: center;
+}
+
+app-divider {
+    padding-block-start: 20px;
+}
+
+.body {
+    block-size: 500px;
+}
