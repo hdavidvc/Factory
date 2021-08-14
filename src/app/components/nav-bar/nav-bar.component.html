@@ -137,9 +137,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Gastos', 'collapse': open!='Gastos'}">
                     <ul class="suboption">
-                        <li><a href="#" class="">Registrar</a></li>
-                        <li><a href="#" class="">Consultar</a></li>
-                        <li><a href="#" class="">Tipo gasto</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/gastos/registro' class="">Registrar</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/gastos/consulta' class="">Consultar</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/gastos/tipo_gasto' class="">Tipo gasto</a></li>
                     </ul>
                 </div>
             </li>
@@ -154,9 +154,9 @@
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Usuarios', 'collapse': open!='Usuarios'}">
                     <ul class="suboption">
-                        <li><a href="#" class="link-dark rounded">Nuevo</a></li>
-                        <li><a href="#" class="link-dark rounded">Password</a></li>
-                        <li><a href="#" class="link-dark rounded">Imagen</a></li>
+                        <li routerLinkActive='selected'> <a routerLink='/usuario/nuevo' class="link-dark rounded">Nuevo</a></li>
+                        <li routerLinkActive='selected'> <a routerLink='/usuario/password' class="link-dark rounded">Password</a></li>
+                        <li routerLinkActive='selected'> <a routerLink='/usuario/imagen' class="link-dark rounded">Imagen</a></li>
                     </ul>
                 </div>
             </li>

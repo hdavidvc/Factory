@@ -1,0 +1,67 @@
+<main>
+    <h2>Consulta de gastos</h2>
+    <section class="body">
+        <app-divider [title]="'Buscar por nombre'"></app-divider>
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar por nombre</label>
+                <input type="text" name="buscar">
+            </div>
+        </div>
+        <app-divider id="divider" [title]="'Buscar por fecha'"></app-divider>
+        <form action="" class="form">
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="desde">Desde</label>
+                        <input type="date" name="desde" id="desde">
+                    </div>
+
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="hasta">Hasta</label>
+                        <input type="date" name="hasta" id="hasta">
+                    </div>
+                </div>
+            </div>
+
+        </form>
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="ID">
+                    <th class="title" id="ID" mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Monto">
+                    <th class="title" mat-header-cell *matHeaderCellDef>Monto</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Monto | currency}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Nota">
+                    <th class="title" mat-header-cell *matHeaderCellDef>Nota</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Nota}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha">
+                    <th class="title" mat-header-cell *matHeaderCellDef>Fecha</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Gasto">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Gasto</th>
+                    <td mat-cell *matCellDef="let element"> {{element.Gasto}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <div class="content_d"><button>Consultar</button></div>
+    </section>
+</main>

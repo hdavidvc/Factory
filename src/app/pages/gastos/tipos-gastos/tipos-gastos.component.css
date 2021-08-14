@@ -8,11 +8,6 @@ table {
     width: 100%;
 }
 
-#numero {
-    inline-size: 90px;
-    text-align: center;
-}
-
 td {
     text-align: center;
 }
@@ -31,7 +26,6 @@ select {
     margin-block-start: 20px;
     display: flex;
     /* justify-content: space-between; */
-    flex-direction: column;
 }
 
 input {
@@ -59,13 +53,18 @@ input {
     padding-block-end: 11px;
 }
 
-.acctions {
-    margin-block-start: 10%;
-    /* margin-inline-start: 35%; */
-    display: flex;
-    justify-content: space-around;
+.eliminar {
+    background-color: red;
 }
 
-#consultar {
-    background-color: rgb(61, 172, 105);
+.eliminar,
+.editar {
+    background-color: red;
+    inline-size: 150px;
+    margin-block: 10px;
+    margin-inline-end: 10px;
+}
+
+.editar {
+    background-color: green;
 }

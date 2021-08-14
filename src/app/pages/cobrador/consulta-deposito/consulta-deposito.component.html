@@ -1,0 +1,65 @@
+<main>
+    <h2>Monitoreo de cobradores</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="filtro">Filtro</label>
+                <select name="ruta" id="filtro">
+                    <option value="Fecha">Fecha</option>
+                    <option value="ID">ID</option>
+                    <option value="Ruta">Ruta</option>
+                    <option value="Nombre">Nombre</option>
+                </select>
+            </div>
+            <div class="fecha ocultar">
+                <label for="criterio">Criterio</label>
+                <input type="date" name="criterio" id="criterio">
+            </div>
+            <div class="id ocultar">
+                <label for="criterio">Criterio</label>
+                <input type="text" name="criterio" id="criterio">
+            </div>
+
+            <button>Consultar</button>
+        </div>
+
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="Monto_cobrar">
+                    <th class="title" id="Monto_cobrar" mat-header-cell *matHeaderCellDef> Monto a cobrar </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Monto_cobrar | currency}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Monto_cobrado">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Monto cobrado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Monto_cobrado | currency}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Monto_depositado">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Monto depositado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Monto_depositado | currency}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Cliente_visitar">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Cliente a visitar </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Cliente_visitar}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Cliente_visitados">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Cliente visitados </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Cliente_visitados}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
+
+    </section>
+</main>

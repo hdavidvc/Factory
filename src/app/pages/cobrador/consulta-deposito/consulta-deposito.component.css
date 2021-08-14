@@ -31,7 +31,6 @@ select {
     margin-block-start: 20px;
     display: flex;
     /* justify-content: space-between; */
-    flex-direction: column;
 }
 
 input {
@@ -60,12 +59,15 @@ input {
 }
 
 .acctions {
-    margin-block-start: 10%;
-    /* margin-inline-start: 35%; */
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#consultar {
-    background-color: rgb(61, 172, 105);
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
 }

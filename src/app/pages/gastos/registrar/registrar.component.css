@@ -40,7 +40,7 @@ input {
 
 .form .datos {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     inline-size: 100%;
 }
 
@@ -61,11 +61,5 @@ input {
 
 .acctions {
     margin-block-start: 10%;
-    /* margin-inline-start: 35%; */
-    display: flex;
-    justify-content: space-around;
-}
-
-#consultar {
-    background-color: rgb(61, 172, 105);
+    margin-inline-start: 35%;
 }

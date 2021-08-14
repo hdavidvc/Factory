@@ -24,6 +24,13 @@ import { CuentaComponent } from './pages/bancos/cuenta/cuenta.component';
 import { TransaccionesComponent } from './pages/bancos/transacciones/transacciones.component';
 import { ChequeComponent } from './pages/bancos/cheque/cheque.component';
 import { ConsultaChequeComponent } from './pages/bancos/consulta-cheque/consulta-cheque.component';
+import { RegistrarComponent } from './pages/gastos/registrar/registrar.component';
+import { ConsultarGastosComponent } from './pages/gastos/consultar-gastos/consultar-gastos.component';
+import { TiposGastosComponent } from './pages/gastos/tipos-gastos/tipos-gastos.component';
+import { NuevoUsuarioComponent } from './pages/usuario/nuevo-usuario/nuevo-usuario.component';
+import { PasswordComponent } from './pages/usuario/password/password.component';
+import { ImagenComponent } from './pages/usuario/imagen/imagen.component';
+import { ConsultaDepositoComponent } from './pages/cobrador/consulta-deposito/consulta-deposito.component';
 
 const routes: Routes = [
   {path: 'home', component: PrincipalComponent},
@@ -48,6 +55,7 @@ const routes: Routes = [
   {path: 'pagos/otros', component: OtrosComponent},
   // COBRADORES
   {path: 'cobradores/deposito', component: DepositoComponent},
+  {path: 'cobradores/consulta_deposito', component: ConsultaDepositoComponent},
   {path: 'cobradores/monitoreo', component: MonitoreoComponent},
   {path: 'cobradores/celulares', component: CelularesComponent},
   // BANCOS
@@ -56,7 +64,17 @@ const routes: Routes = [
   {path: 'bancos/transacciones', component: TransaccionesComponent},
   {path: 'bancos/cheque', component: ChequeComponent},
   {path: 'bancos/consulta', component: ConsultaChequeComponent},
-  {path: '**', pathMatch:'full',  redirectTo: 'home' }
+  // GASTOS
+  {path: 'gastos/registro', component: RegistrarComponent},
+  {path: 'gastos/consulta', component: ConsultarGastosComponent},
+  {path: 'gastos/tipo_gasto', component: TiposGastosComponent},
+  // USUARIO
+  {path: 'usuario/nuevo', component: NuevoUsuarioComponent},
+  {path: 'usuario/password', component: PasswordComponent},
+  {path: 'usuario/imagen', component: ImagenComponent},
+  
+  {path: '**', pathMatch:'full',  redirectTo: 'home' },
+  
 ];
 
 @NgModule({

@@ -38,6 +38,11 @@ input {
     inline-size: 150px;
 }
 
+.buscar {
+    display: flex;
+    justify-content: space-around;
+}
+
 .form .datos {
     display: flex;
     justify-content: space-between;
@@ -61,11 +66,5 @@ input {
 
 .acctions {
     margin-block-start: 10%;
-    /* margin-inline-start: 35%; */
-    display: flex;
-    justify-content: space-around;
-}
-
-#consultar {
-    background-color: rgb(61, 172, 105);
+    margin-inline-start: 35%;
 }

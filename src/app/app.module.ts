@@ -43,6 +43,13 @@ import { CuentaComponent } from './pages/bancos/cuenta/cuenta.component';
 import { TransaccionesComponent } from './pages/bancos/transacciones/transacciones.component';
 import { ChequeComponent } from './pages/bancos/cheque/cheque.component';
 import { ConsultaChequeComponent } from './pages/bancos/consulta-cheque/consulta-cheque.component';
+import { RegistrarComponent } from './pages/gastos/registrar/registrar.component';
+import { ConsultarGastosComponent } from './pages/gastos/consultar-gastos/consultar-gastos.component';
+import { TiposGastosComponent } from './pages/gastos/tipos-gastos/tipos-gastos.component';
+import { NuevoUsuarioComponent } from './pages/usuario/nuevo-usuario/nuevo-usuario.component';
+import { PasswordComponent } from './pages/usuario/password/password.component';
+import { ImagenComponent } from './pages/usuario/imagen/imagen.component';
+import { ConsultaDepositoComponent } from './pages/cobrador/consulta-deposito/consulta-deposito.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +81,14 @@ import { ConsultaChequeComponent } from './pages/bancos/consulta-cheque/consulta
     CuentaComponent,
     TransaccionesComponent,
     ChequeComponent,
-    ConsultaChequeComponent
+    ConsultaChequeComponent,
+    RegistrarComponent,
+    ConsultarGastosComponent,
+    TiposGastosComponent,
+    NuevoUsuarioComponent,
+    PasswordComponent,
+    ImagenComponent,
+    ConsultaDepositoComponent
   ],
   imports: [
     BrowserModule,
