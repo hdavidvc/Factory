@@ -4,7 +4,11 @@
         <div class="buscar">
             <div class="campo">
                 <label for="buscar">Buscar</label>
-                <input type="text" name="buscar">
+                <!-- <input type="text" name="buscar"> -->
+                <select type="text" name="Tipo" id="Tipo" [(ngModel)]='use' (ngModelChange)="cargar($event)">                           
+                    <!-- <option [value]="c" *ngFor="let c of personas | appFilter: searchText"> {{c.nombre}}</option> -->
+                    <option [value]="u.usuario" *ngFor="let u of users"> {{u.usuario}}</option>
+                </select>
             </div>
             <div class="campo">
                 <label for="ID">ID</label>
@@ -16,17 +20,24 @@
                 <div class="content_p">
                     <div>
                         <label for="Nombre">Nombre</label>
-                        <input type="text" name="Nombre" id="Nombre">
+                        <!-- <input type="text" name="Nombre" id="Nombre" [(ngModel)]="searchText"> -->
+                        <select type="text" name="Tipo" id="Tipo" [(ngModel)]='name' (ngModelChange)="nameChange($event)">                           
+                            <!-- <option [value]="c" *ngFor="let c of personas | appFilter: searchText"> {{c.nombre}}</option> -->
+                            <option [value]="c.nombre" *ngFor="let c of personas"> {{c.nombre}}</option>
+                        </select>
                     </div>
+
                     <div>
                         <label for="Password">Password</label>
-                        <input type="text" name="Password" id="Password">
+                        <input type="password" name="Password" id="Password" [(ngModel)]='user.contrasena'>
                     </div>
                     <div>
                         <label for="Tipo">Tipo</label>
-                        <select type="text" name="Tipo" id="Tipo">
+                        <select type="text" name="Tipo" id="Tipo" [(ngModel)]='user.tipo_usuario'>
                             <option value="cobrador">Cobrador</option>
                             <option value="admin">Admin</option>
+                            <option value="ejecutivo">Ejecutivo</option>
+                            <option value="cliente">Cliente</option>
                         </select>
                     </div>
 
@@ -34,7 +45,7 @@
                 <div class="content_s">
                     <div>
                         <label for="Usuario">Usuario</label>
-                        <input type="text" name="Usuario" id="Usuario">
+                        <input type="text" name="Usuario" id="Usuario" [(ngModel)]='user.usuario'>
                     </div>
                     <div>
                         <label for="Repetir_password">Repetir password</label>
@@ -43,7 +54,7 @@
                 </div>
             </div>
             <div class="acctions">
-                <button>Guardar</button>
+                <button (click)="guardar()">Guardar</button>
             </div>
         </form>
 

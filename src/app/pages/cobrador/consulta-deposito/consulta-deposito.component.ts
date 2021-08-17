@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 
 export interface TablaElement {
-  Monto_cobrar: number;
-  Monto_cobrado: number;
-  Monto_depositado: number;
-  Cliente_visitar: number;
-  Cliente_visitados: number;
+  ID: number;
+  Monto: number;
+  Fecha: string;
+  Hora: string;
+  Usuario: string;
+  Banco: string;
+  No: number;
+  
 }
 
 const ELEMENT_DATA: TablaElement[] = [
-  {Monto_cobrar: 1000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 2000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 3000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 4000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 5000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 6000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 7000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 8000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
-  {Monto_cobrar: 9000, Monto_cobrado: 500, Monto_depositado: 500, Cliente_visitar: 5, Cliente_visitados: 4},
+  {ID: 1000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 2000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 3000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 4000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 5000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 6000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 7000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 8000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
+  {ID: 9000, Monto: 500, Fecha: '6/4/2021', Hora: '04:37:20', Usuario: 'hdavidvc', Banco: 'Banco popular', No : 42345678},
 ];
 
 @Component({
@@ -27,7 +30,7 @@ const ELEMENT_DATA: TablaElement[] = [
 })
 export class ConsultaDepositoComponent implements OnInit {
 
-  displayedColumns = ['Monto_cobrar', 'Monto_cobrado', 'Monto_depositado', 'Cliente_visitar', 'Cliente_visitados'];
+  displayedColumns = ['ID', 'Monto', 'Fecha', 'Usuario', 'Banco'];
   dataSource = ELEMENT_DATA;
 
   constructor() { }

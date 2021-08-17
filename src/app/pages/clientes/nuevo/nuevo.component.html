@@ -15,16 +15,21 @@
                 <div class="content_p">
                     <div>
                         <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" [(ngModel)]='cliente.id_persona.nombre'>
+                        <input type="text" name="nombre" id="nombre" [(ngModel)]='persona.nombre'>
                     </div>
                     <div>
                         <label for="cedula">Cedula</label>
-                        <input type="text" name="cedula" id="cedula" [(ngModel)]='cliente.id_persona.cedula'>
+                        <input type="text" name="cedula" id="cedula" [(ngModel)]='persona.cedula'>
                     </div>
                     <div>
                         <label for="direccion">Direccion</label>
-                        <input type="text" name="direccion" id="direccion">
+                        <input type="text" name="direccion" id="direccion" disabled [(ngModel)]='direccionFull'>
+                        <button class="dirBtn" mat-raised-button (click)="openDialog()">Crear</button>
                     </div>
+                    <!-- <div>
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
+                    </div> -->
                     <div>
                         <label for="correo">Correo</label>
                         <input [(ngModel)]='cliente.correo' type="email" name="correo" id="correo">
@@ -33,15 +38,15 @@
                 <div class="content_s">
                     <div>
                         <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" id="apellido" [(ngModel)]='cliente.id_persona.apellido'>
+                        <input type="text" name="apellido" id="apellido" [(ngModel)]='persona.apellido'>
                     </div>
                     <div>
                         <label for="telefono">Telefono</label>
-                        <input type="text" name="telefono" id="telefono" [(ngModel)]='cliente.id_persona.telefono'>
+                        <input type="text" name="telefono" id="telefono" [(ngModel)]='persona.telefono'>
                     </div>
                     <div>
                         <label for="estado">Estado civil</label>
-                        <select name="estado" id="estado" [(ngModel)]='cliente.id_persona.estado_civil'>
+                        <select name="estado" id="estado" [(ngModel)]='persona.estado_civil'>
                             <option value="soltero">Soltero</option>
                             <option value="casado">Casado</option>
                             <option value="viudo">Viudo</option>
@@ -78,7 +83,7 @@
                     </div>
                     <div>
                         <label for="ingresos">Otros ingresos</label>
-                        <input [(ngModel)]='cliente.otros_cargos' type="text" name="ingresos" id="otros">
+                        <input [(ngModel)]='cliente.otros_ingresos' type="text" name="ingresos" id="otros">
                     </div>
                 </div>
             </div>

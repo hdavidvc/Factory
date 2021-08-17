@@ -27,6 +27,7 @@ td {
 .content_d {
     display: flex;
     justify-content: center;
+    margin-block-start: 20px;
 }
 
 .buscar {
@@ -70,9 +71,10 @@ td {
     flex-direction: column;
 }
 
-.form .Secction .content_s {
-    block-size: 141px;
-}
+
+/* .form .Secction .content_s {
+    /* block-size: 141px; 
+} */
 
 .form .Secction .content_s div,
 .form .Secction .content_p div {

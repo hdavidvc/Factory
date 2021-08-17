@@ -6,8 +6,8 @@
                 <label for="buscar">Buscar</label>
                 <input type="text" name="buscar">
             </div>
-            <button id="consultar" routerLink='/prestamos/consultar'>Consultar</button>
-            <button>Guardar</button>
+            <button id="consultar" routerLink='/prestamo/consultar'>Consultar</button>
+            <button (click)="guardar()">Guardar</button>
         </div>
         <form action="" class="form">
 
@@ -17,49 +17,51 @@
                     <div class="content_p">
                         <div>
                             <label for="cliente">Cliente</label>
-                            <input type="text" name="cliente" id="cliente">
+                            <!-- <input type="text" name="cliente" id="cliente"> -->
+                            <select name="cliente" id="cliente" [(ngModel)]='prestamo.cliente'>
+                                <option *ngFor="let cliente of clientes" value={{cliente.id}}>{{cliente.nombre}}</option>
+                            </select>
                         </div>
                         <div>
                             <label for="cuotas">Cant. cuotas</label>
-                            <input type="text" name="cuotas" id="cuotas">
+                            <input type="text" name="cuotas" id="cuotas" [(ngModel)]='prestamo.cantidad_cuotas'>
                         </div>
                         <div>
                             <label for="fechaInicio">Fecha inicio</label>
-                            <input type="date" name="fechaInicio" id="fechaInicio">
+                            <input type="date" name="fechaInicio" id="fechaInicio" [(ngModel)]='prestamo.fecha_inicio'>
                         </div>
                         <div>
                             <label for="ruta">Ruta</label>
-                            <select name="ruta" id="ruta">
-                                <option value="Soltero">Soltero</option>
-                                <option value="Casado">Casado</option>
-                                <option value="Viudo">Viudo</option>
+                            <select name="ruta" id="ruta" [(ngModel)]='prestamo.id_ruta'>
+                                <option *ngFor="let ruta of rutas" value={{ruta.id}}>{{ruta.descripcion}}</option>
+                               
                             </select>
                         </div>
                         <div>
                             <label for="fechaVence">Fecha vence</label>
-                            <input type="date" name="fechaVence" id="fechaVence">
+                            <input type="date" name="fechaVence" id="fechaVence" [(ngModel)]='prestamo.fecha_fin'>
                         </div>
                     </div>
                     <div class="content_s">
                         <div>
                             <label for="monto">Monto</label>
-                            <input type="text" name="monto" id="monto">
+                            <input type="text" name="monto" id="monto" [(ngModel)]='prestamo.monto'>
                         </div>
                         <div>
                             <label for="montoCuota">Monto cuotas</label>
-                            <input type="text" name="montoCuota" id="montoCuota">
+                            <input type="text" name="montoCuota" id="montoCuota" [(ngModel)]='prestamo.monto_cuotas' disabled>
                         </div>
                         <div>
                             <label for="tasa">Tasa</label>
-                            <input type="text" name="tasa" id="tasa">
+                            <input type="text" name="tasa" id="tasa" [(ngModel)]='prestamo.tasa' (ngModelChange)='calcularMontoCuota($event)'>
                         </div>
                         <div>
                             <label for="diaGracia">Dias Gracia</label>
-                            <input type="text" name="diaGracia" id="diaGracia">
+                            <input type="text" name="diaGracia" id="diaGracia" [(ngModel)]='prestamo.dia_gracias'>
                         </div>
                         <div>
                             <label for="tasaMora">Tasa Mora</label>
-                            <input type="text" name="tasaMora" id="tasaMora">
+                            <input type="text" name="tasaMora" id="tasaMora" [(ngModel)]='prestamo.tasa_mora'>
                         </div>
 
                     </div>
@@ -73,34 +75,40 @@
                 <div class="content_p">
                     <div>
                         <label for="tipoSaldo">Tipo saldo</label>
-                        <select name="ruta" id="tipoSaldo">
-                            <option value="Soltero">Capital</option>
-                            <option value="Casado">Capital+Interes</option>
+                        <select name="ruta" id="tipoSaldo" [(ngModel)]='prestamo.tipo_saldo'>
+                            <option value="capital">Capital</option>
+                            <option value="capital_interes">Capital+Interes</option>
                         </select>
                     </div>
                     <div>
                         <label for="periodo">Perido</label>
-                        <select name="ruta" id="periodo">
-                            <option value="Soltero">Semanal</option>
-                            <option value="Casado">Quincenal</option>
-                            <option value="Viudo">Mensual</option>
+                        <select name="ruta" id="periodo" [(ngModel)]='prestamo.periodo_pago'>
+                            <option value="semanal">Semanal</option>
+                            <option value="quincenal">Quincenal</option>
+                            <option value="mensual">Mensual</option>
                         </select>
                     </div>
                     <div>
                         <label for="tipo">Tipo</label>
-                        <select name="ruta" id="tipo">
-                            <option value="Soltero">Consumo</option>
-                            <option value="Casado">Hipotecario</option>
-                            <option value="Viudo">Comercial</option>
+                        <select name="tipo" id="tipo" [(ngModel)]='prestamo.tipo_prestamo'>
+                            <!-- <option value="consumo">Consumo</option> -->
+                            <option value="personal">Personal</option>
+                            <option value="comercial">Comercial</option>
                         </select>
                     </div>
                     <div>
                         <label for="garante">Garante</label>
-                        <input type="text" name="garante" id="garante">
+                        <!-- <input type="text" name="garante" id="garante">garantes -->
+                        <select name="garante" id="garante" [(ngModel)]='prestamo.id_garante'>
+                            <option *ngFor="let garante of garantes" value={{garante.id}}>{{garante.nombre}}</option>                            
+                        </select>
                     </div>
                     <div>
                         <label for="ejecutivo">Ejecutivo</label>
-                        <input type="text" name="ejecutivo" id="ejecutivo">
+                        <!-- <input type="text" name="ejecutivo" id="ejecutivo"> -->
+                        <select name="ejecutivo" id="ejecutivo" [(ngModel)]='prestamo.id_usuario'>
+                            <option *ngFor="let ejecu of ejecutivo" value={{ejecu.id}}>{{ejecu.nombre}}</option>                            
+                        </select>
                     </div>
                 </div>
 

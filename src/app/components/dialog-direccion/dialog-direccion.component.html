@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Nueva direccion</h1>
+<div mat-dialog-content>
+    <!-- <p>What's your favorite animal?</p> -->
+    <mat-form-field>
+        <mat-label>Ciudad</mat-label>
+        <input matInput [(ngModel)]="data.ciudad">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Municipio</mat-label>
+        <input matInput [(ngModel)]="data.municipio">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Barrio</mat-label>
+        <input matInput [(ngModel)]="data.barrio">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Calle</mat-label>
+        <input matInput [(ngModel)]="data.calle">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Casa</mat-label>
+        <input matInput [(ngModel)]="data.casa">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+</div>

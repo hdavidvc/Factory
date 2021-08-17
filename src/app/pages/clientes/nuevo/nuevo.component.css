@@ -23,6 +23,13 @@ select {
 .form .Secction .content_s div,
 .form .Secction .content_p div {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     padding-block-start: 11px;
+    align-items: center;
+}
+
+.dirBtn {
+    margin-inline-start: 10px;
+    inline-size: 104px;
+    block-size: 24px;
 }

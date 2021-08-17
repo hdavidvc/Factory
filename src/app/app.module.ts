@@ -5,9 +5,12 @@ import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 // Angular Material
 import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 import { PrincipalComponent } from './pages/principal/principal.component';
 // Compoenentes
@@ -50,6 +53,7 @@ import { NuevoUsuarioComponent } from './pages/usuario/nuevo-usuario/nuevo-usuar
 import { PasswordComponent } from './pages/usuario/password/password.component';
 import { ImagenComponent } from './pages/usuario/imagen/imagen.component';
 import { ConsultaDepositoComponent } from './pages/cobrador/consulta-deposito/consulta-deposito.component';
+import { DialogDireccionComponent } from './components/dialog-direccion/dialog-direccion.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +92,10 @@ import { ConsultaDepositoComponent } from './pages/cobrador/consulta-deposito/co
     NuevoUsuarioComponent,
     PasswordComponent,
     ImagenComponent,
-    ConsultaDepositoComponent
+    ConsultaDepositoComponent,
+    FilterPipe,
+    DialogDireccionComponent
+
   ],
   imports: [
     BrowserModule,
@@ -97,8 +104,9 @@ import { ConsultaDepositoComponent } from './pages/cobrador/consulta-deposito/co
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    FormsModule
-
+    FormsModule,
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
