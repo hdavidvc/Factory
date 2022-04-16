@@ -1,0 +1,73 @@
+<main>
+    <h2>Registro de estanteria</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar</label>
+                <input type="text" name="buscar">
+            </div>
+            <button (click)="guardar()">Guardar</button>
+
+        </div>
+        <app-divider [title]="'Datos del ejecutivo'"></app-divider>
+        <form action="" class="form">
+
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="nombre">Descripcion</label>
+                        <input type="text" name="nombre" id="nombre" [(ngModel)]='persona.nombre'>
+                    </div>
+                    <div>
+                        <label for="estado">Estado</label>
+                        <select name="estado" id="estado" [(ngModel)]='persona.estado_civil'>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                        </select>
+                    </div>
+                    <!-- <div>
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion" disabled [(ngModel)]='direccionFull'>
+                        <button class="dirBtn" mat-raised-button (click)="openDialog()">Crear</button>
+                    </div> -->
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="estado">Almacen</label>
+                        <select name="estado" id="estado" [(ngModel)]='persona.estado_civil'>
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="Descripcion">
+                    <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Estado">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Estado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Almacen">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Almacen </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Almacen}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </section>
+</main>

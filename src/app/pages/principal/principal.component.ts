@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import {Label, BaseChartDirective, Color } from 'ng2-charts';
-import { PrestamosService } from '../../services/prestamos.service';
+import { FactoryService } from '../../services/factory.service';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -67,7 +67,7 @@ export class PrincipalComponent implements OnInit {
     "nombre": "David",
     "telefono": 8097808081  
   }
-  constructor( private service: PrestamosService) { 
+  constructor( private service: FactoryService) { 
         
     this.service.getPersona().subscribe( per => {
       console.log(per);

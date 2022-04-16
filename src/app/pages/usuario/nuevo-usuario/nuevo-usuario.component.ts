@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuario';
-import { PrestamosService } from 'src/app/services/prestamos.service';
+import { FactoryService } from 'src/app/services/factory.service';
 import { Respuesta } from '../../../interfaces/usuario';
 
 @Component({
@@ -22,7 +22,7 @@ export class NuevoUsuarioComponent implements OnInit {
     }
   users:any = [];
    
-  constructor( private service:PrestamosService) { 
+  constructor( private service:FactoryService) { 
     this.service.getPersona().subscribe(pers => {
       this.personas = pers.respuesta;
       console.log(pers.respuesta[0].nombre);

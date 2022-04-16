@@ -1,0 +1,187 @@
+<main>
+    <h2>Registro de almacenes</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar</label>
+                <input type="text" name="buscar">
+            </div>
+            <!-- <button id="consultar" routerLink='/almaceness/consultar'>Consultar</button> -->
+            <button (click)="guardar()">Guardar</button>
+        </div>
+        <app-divider id="datoD" [title]="'Datos principales'"></app-divider>
+        <form action="" class="form">
+
+
+            <div class="Secction datos">
+                <div class="content_s">
+                    <div>
+                        <label for="monto">Descripcion</label>
+                        <input type="text" name="monto" id="monto" [(ngModel)]='almacenes.monto'>
+                    </div>
+                    <!-- <div>
+                            <label for="montoCuota">Monto cuotas</label>
+                            <input type="text" name="montoCuota" id="montoCuota" [(ngModel)]='almacenes.monto_cuotas' disabled>
+                        </div>
+                        <div>
+                            <label for="tasa">Tasa</label>
+                            <input type="text" name="tasa" id="tasa" [(ngModel)]='almacenes.tasa' (ngModelChange)='calcularMontoCuota($event)'>
+                        </div>
+                        <div>
+                            <label for="diaGracia">Dias Gracia</label>
+                            <input type="text" name="diaGracia" id="diaGracia" [(ngModel)]='almacenes.dia_gracias'>
+                        </div>
+                        <div>
+                            <label for="tasaMora">Tasa Mora</label>
+                            <input type="text" name="tasaMora" id="tasaMora" [(ngModel)]='almacenes.tasa_mora'>
+                        </div> -->
+
+                </div>
+                <div class="content_p">
+                    <div>
+                        <label for="cliente">Estado</label>
+                        <!-- <input type="text" name="cliente" id="cliente"> -->
+                        <select name="cliente" id="cliente">
+                                <option value=Disponible>Disponible</option>
+                                <option value=Ocupado>Ocupado</option>
+                            </select>
+                    </div>
+                    <!-- <div>
+                            <label for="cuotas">Cant. cuotas</label>
+                            <input type="text" name="cuotas" id="cuotas" [(ngModel)]='almacenes.cantidad_cuotas'>
+                        </div>
+                        <div>
+                            <label for="fechaInicio">Fecha inicio</label>
+                            <input type="date" name="fechaInicio" id="fechaInicio" [(ngModel)]='almacenes.fecha_inicio'>
+                        </div>
+                        <div>
+                            <label for="ruta">Ruta</label>
+                            <select name="ruta" id="ruta" [(ngModel)]='almacenes.id_ruta'>
+                                <option *ngFor="let ruta of rutas" value={{ruta.id}}>{{ruta.descripcion}}</option>
+                               
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fechaVence">Fecha vence</label>
+                            <input type="date" name="fechaVence" id="fechaVence" [(ngModel)]='almacenes.fecha_fin'>
+                        </div> -->
+                </div>
+
+            </div>
+
+            <!-- <hr> -->
+
+            <!-- <div class="Secction confi">
+                <app-divider id="divider" [title]="'Configuracion del almacenes'"></app-divider>
+
+                <div class="content_p">
+                    <div>
+                        <label for="tipoSaldo">Tipo saldo</label>
+                        <select name="ruta" id="tipoSaldo" [(ngModel)]='almacenes.tipo_saldo'>
+                            <option value="capital">Capital</option>
+                            <option value="capital_interes">Capital+Interes</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="periodo">Perido</label>
+                        <select name="ruta" id="periodo" [(ngModel)]='almacenes.periodo_pago'>
+                            <option value="semanal">Semanal</option>
+                            <option value="quincenal">Quincenal</option>
+                            <option value="mensual">Mensual</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="tipo">Tipo</label>
+                        <select name="tipo" id="tipo" [(ngModel)]='almacenes.tipo_almacenes'>
+                            <option value="personal">Personal</option>
+                            <option value="comercial">Comercial</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="proveedores">Proveedores</label>
+                        <select name="proveedores" id="proveedores" [(ngModel)]='almacenes.id_proveedores'>
+                            <option *ngFor="let proveedores of proveedoress" value={{proveedores.id}}>{{proveedores.nombre}}</option>                            
+                        </select>
+                    </div>
+                    <div>
+                        <label for="ejecutivo">Ejecutivo</label>
+                        <select name="ejecutivo" id="ejecutivo" [(ngModel)]='almacenes.id_usuario'>
+                            <option *ngFor="let ejecu of ejecutivo" value={{ejecu.id}}>{{ejecu.nombre}}</option>                            
+                        </select>
+                    </div>
+                </div>
+
+            </div> -->
+        </form>
+
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="Descripcion">
+                    <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Estado">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Estado </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <!-- <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="Numero">
+                    <th id="numero" mat-header-cell *matHeaderCellDef> Numero </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Numero}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Cuota">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Cuota </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Cuota}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Capital">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Capital </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Capital}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Interes">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Interes </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Interes}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Seguro">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Seguro </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Seguro}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Balance">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Balance </th>
+                    <td mat-cell *matCellDef="let element"> ${{element.Balance}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Vence">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Vence </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Vence}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div> -->
+
+
+    </section>
+</main>

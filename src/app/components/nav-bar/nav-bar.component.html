@@ -25,15 +25,15 @@
                 <div class="content">
                     <div class='item'>
                         <span class="iconify" data-inline="false" data-icon="clarity:avatar-line" style="color: #ffffff; font-size: 35px;"></span>
-                        <a>Clientes</a>
+                        <a>Personas</a>
                     </div>
                     <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Clientes', 'collapse': open!='Clientes'}">
                     <ul class="suboption">
-                        <li routerLinkActive='selected'><a routerLink="/cliente/nuevo">Nuevo</a></li>
-                        <li routerLinkActive='selected'><a routerLink="/cliente/garante" class="">Garante</a></li>
-                        <li routerLinkActive='selected'><a routerLink="/cliente/rechazar" class="">Rechazar</a></li>
+                        <li routerLinkActive='selected'><a routerLink="/personas/empleado">Empleados</a></li>
+                        <li routerLinkActive='selected'><a routerLink="/personas/proveedores" class="">Proveedores</a></li>
+                        <!-- <li routerLinkActive='selected'><a routerLink="/cliente/rechazar" class="">Rechazar</a></li> -->
                     </ul>
                 </div>
             </li>
@@ -41,20 +41,16 @@
             <li class="opcions" (click)="abrir('Prestamos')">
                 <div class="content">
                     <div class='item'>
-                        <img src="../../../assets/icon-prestamos.svg" alt="">
-                        <a>Prestamos</a>
+                        <img src="../../../assets/almacen.png" alt="">
+                        <a>Almacenamiento</a>
                     </div>
                     <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open animate__backInLeft': open=='Prestamos', 'collapse': open!='Prestamos'}">
                     <ul class="suboption">
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/nuevo">Nuevo</a></li>
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/ejecutivo">Ejecutivo</a></li>
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/editar">Editar</a></li>
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/agregar">Agregar</a></li>
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/festivo">Dias Festivos</a></li>
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/estado">Estado</a></li>
-                        <li routerLinkActive="selected"><a routerLink="/prestamos/cancelado">Cancelados</a></li>
+                        <li routerLinkActive="selected"><a routerLink="/almacenamiento/almacen">Almacenes</a></li>
+                        <li routerLinkActive="selected"><a routerLink="/almacenamiento/estanteria">Estanteria</a></li>
+
                     </ul>
                 </div>
             </li>
@@ -62,14 +58,16 @@
             <li class="opcions" (click)="abrir('Estadistica')">
                 <div class="content">
                     <div class='item'>
-                        <img src="../../../assets/icon-estadistica.svg" alt="">
-                        <a>Estadistica</a>
+                        <img src="../../../assets/ordenes.png" alt="">
+                        <a>Ordenes</a>
                     </div>
                     <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Estadistica', 'collapse': open!='Estadistica'}">
                     <ul class="suboption">
-                        <li routerLinkActive='selected'><a routerLink='/estadistica/ingreso-gasto' class="">Estado ingresos y gastos</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/ordenes/crear' class="">Crear orden</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/ordenes/recibir' class="">Recibir orden</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/ordenes/almacenar' class="">Almacenar orden</a></li>
                     </ul>
                 </div>
             </li>
@@ -77,16 +75,16 @@
             <li class="opcions" (click)="abrir('Pagos')">
                 <div class="content">
                     <div class='item'>
-                        <span class="iconify" data-inline="false" data-icon="fluent:payment-16-regular" style="color: #ffffff; font-size: 35px;"></span>
-                        <a>Pagos</a>
+                        <img src="../../../assets/productos.png" alt="">
+                        <a>Productos</a>
                     </div>
                     <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Pagos', 'collapse': open!='Pagos'}">
                     <ul class="suboption">
-                        <li routerLinkActive='selected'><a routerLink='/pagos/cobrar' class="">Cobrar</a></li>
-                        <li routerLinkActive='selected'><a routerLink='/pagos/consultar' class="">Consultar</a></li>
-                        <li routerLinkActive='selected'><a routerLink='/pagos/otros' class="">Otros ingresos</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/productos/producto' class="">Producto</a></li>
+                        <!-- <li routerLinkActive='selected'><a routerLink='/pagos/consultar' class="">Consultar</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/pagos/otros' class="">Otros ingresos</a></li> -->
                     </ul>
                 </div>
             </li>
@@ -94,16 +92,17 @@
             <li class="opcions" (click)="abrir('Cobrador')">
                 <div class="content">
                     <div class='item'>
-                        <img src="../../../assets/icon-prestamos.svg" alt="">
-                        <a>Cobrador</a>
+                        <!-- <img src="../../../assets/icon-prestamos.svg" alt=""> -->
+                        <span class="iconify" data-icon="emojione-monotone:sheaf-of-rice" style="color: white; font-size: 35px;"></span>
+                        <a>Materia prima</a>
                     </div>
                     <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Cobrador', 'collapse': open!='Cobrador'}">
                     <ul class="suboption">
-                        <li routerLinkActive='selected'><a routerLink='/cobradores/deposito' class="">Depositos</a></li>
-                        <li routerLinkActive='selected'><a routerLink='/cobradores/monitoreo' class="">Monitoreo</a></li>
-                        <li routerLinkActive='selected'><a routerLink='/cobradores/celulares' class="">Celulares</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/materiaPrima/materia' class="">Materia</a></li>
+                        <!-- <li routerLinkActive='selected'><a routerLink='/cobradores/monitoreo' class="">Monitoreo</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/cobradores/celulares' class="">Celulares</a></li> -->
                     </ul>
                 </div>
             </li>
@@ -112,17 +111,17 @@
                 <div class="content">
                     <div class='item'>
                         <span class="iconify" data-inline="false" data-icon="fluent:building-bank-28-regular" style="color: #ffffff; font-size: 35px;"></span>
-                        <a>Bancos</a>
+                        <a>Produccion</a>
                     </div>
                     <span class="iconify arrow" data-inline="false" data-icon="dashicons:arrow-down-alt2" style="color: #ffffff; font-size: 20px;"></span>
                 </div>
                 <div class="animate__animated" [ngClass]="{'open  animate__backInLeft': open=='Bancos', 'collapse': open!='Bancos'}">
                     <ul class="suboption">
-                        <li routerLinkActive='selected'><a routerLink='/bancos/registro' class="">Registro</a></li>
-                        <li routerLinkActive='selected'><a routerLink='/bancos/cuenta' class="">Cuenta</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/produccion/producir' class="">Producir</a></li>
+                        <!-- <li routerLinkActive='selected'><a routerLink='/bancos/cuenta' class="">Cuenta</a></li>
                         <li routerLinkActive='selected'><a routerLink='/bancos/transacciones' class="">Transacciones</a></li>
                         <li routerLinkActive='selected'><a routerLink='/bancos/cheque' class="">Cheque</a></li>
-                        <li routerLinkActive='selected'><a routerLink='/bancos/consulta' class="">Consulta cheque</a></li>
+                        <li routerLinkActive='selected'><a routerLink='/bancos/consulta' class="">Consulta cheque</a></li> -->
                     </ul>
                 </div>
             </li>

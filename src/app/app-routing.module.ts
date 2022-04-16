@@ -1,69 +1,42 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NuevoComponent } from './pages/clientes/nuevo/nuevo.component';
+import { EmpleadoComponent } from './pages/personas/empleado/empleado.component';
 import { PrincipalComponent } from './pages/principal/principal.component';
-import { GaranteComponent } from './pages/clientes/garante/garante.component';
-import { RechazarComponent } from './pages/clientes/rechazar/rechazar.component';
-import { PrestamoNuevoComponent } from './pages/prestamos/nuevo/nuevo.component';
-import { ConsultaComponent } from './pages/prestamos/consulta/consulta.component';
-import { EjecutivoComponent } from './pages/prestamos/ejecutivo/ejecutivo.component';
-import { EditarComponent } from './pages/prestamos/editar/editar.component';
-import { AgregarComponent } from './pages/prestamos/agregar/agregar.component';
-import { FestivosComponent } from './pages/prestamos/festivos/festivos.component';
-import { EstadoComponent } from './pages/prestamos/estado/estado.component';
-import { CanceladosComponent } from './pages/prestamos/cancelados/cancelados.component';
-import { IngresoGastoComponent } from './pages/estadistica/ingreso-gasto/ingreso-gasto.component';
-import { CobrarComponent } from './pages/pagos/cobrar/cobrar.component';
-import { ConsultaCobroComponent } from './pages/pagos/consulta/consulta.component';
-import { OtrosComponent } from './pages/pagos/otros/otros.component';
-import { DepositoComponent } from './pages/cobrador/deposito/deposito.component';
-import { MonitoreoComponent } from './pages/cobrador/monitoreo/monitoreo.component';
-import { CelularesComponent } from './pages/cobrador/celulares/celulares.component';
-import { RegistroComponent } from './pages/bancos/registro/registro.component';
-import { CuentaComponent } from './pages/bancos/cuenta/cuenta.component';
-import { TransaccionesComponent } from './pages/bancos/transacciones/transacciones.component';
-import { ChequeComponent } from './pages/bancos/cheque/cheque.component';
-import { ConsultaChequeComponent } from './pages/bancos/consulta-cheque/consulta-cheque.component';
 import { RegistrarComponent } from './pages/gastos/registrar/registrar.component';
 import { ConsultarGastosComponent } from './pages/gastos/consultar-gastos/consultar-gastos.component';
 import { TiposGastosComponent } from './pages/gastos/tipos-gastos/tipos-gastos.component';
 import { NuevoUsuarioComponent } from './pages/usuario/nuevo-usuario/nuevo-usuario.component';
 import { PasswordComponent } from './pages/usuario/password/password.component';
 import { ImagenComponent } from './pages/usuario/imagen/imagen.component';
-import { ConsultaDepositoComponent } from './pages/cobrador/consulta-deposito/consulta-deposito.component';
+import { ProveedoresComponent } from './pages/personas/proveedores/proveedores.component';
+import { AlmacenesComponent } from './pages/almacenamiento/almacenes/almacenes.component';
+import { EstanteriaComponent } from './pages/almacenamiento/estanteria/estanteria.component';
+import { AlmacenarComponent } from './pages/ordenes/almacenar/almacenar.component';
+import { CrearComponent } from './pages/ordenes/crear/crear.component';
+import { RecibirComponent } from './pages/ordenes/recibir/recibir.component';
+import { ProductoComponent } from './pages/productos/producto/producto.component';
+import { MateriaComponent } from './pages/materiaPrima/materia/materia.component';
+import { ProducirComponent } from './pages/produccion/producir/producir.component';
 
 const routes: Routes = [
   {path: 'home', component: PrincipalComponent},
-  // CLIENTE
-  {path: 'cliente/nuevo', component: NuevoComponent},
-  {path: 'cliente/garante', component: GaranteComponent},
-  {path: 'cliente/rechazar', component: RechazarComponent},
-  // PRESTAMOS
-  {path: 'prestamos/nuevo', component: PrestamoNuevoComponent},
-  {path: 'prestamos/consultar', component: ConsultaComponent},
-  {path: 'prestamos/ejecutivo', component: EjecutivoComponent},
-  {path: 'prestamos/editar', component: EditarComponent},
-  {path: 'prestamos/agregar', component: AgregarComponent},
-  {path: 'prestamos/festivo', component: FestivosComponent},
-  {path: 'prestamos/estado', component: EstadoComponent},
-  {path: 'prestamos/cancelado', component: CanceladosComponent},
-  // ESTADISTICA
-  {path: 'estadistica/ingreso-gasto', component: IngresoGastoComponent},
-  // PAGOS
-  {path: 'pagos/cobrar', component: CobrarComponent},
-  {path: 'pagos/consultar', component: ConsultaCobroComponent},
-  {path: 'pagos/otros', component: OtrosComponent},
-  // COBRADORES
-  {path: 'cobradores/deposito', component: DepositoComponent},
-  {path: 'cobradores/consulta_deposito', component: ConsultaDepositoComponent},
-  {path: 'cobradores/monitoreo', component: MonitoreoComponent},
-  {path: 'cobradores/celulares', component: CelularesComponent},
-  // BANCOS
-  {path: 'bancos/registro', component: RegistroComponent},
-  {path: 'bancos/cuenta', component: CuentaComponent},
-  {path: 'bancos/transacciones', component: TransaccionesComponent},
-  {path: 'bancos/cheque', component: ChequeComponent},
-  {path: 'bancos/consulta', component: ConsultaChequeComponent},
+  // PERSONAS
+  {path: 'personas/empleado', component: EmpleadoComponent},
+  {path: 'personas/proveedores', component: ProveedoresComponent},
+  // ALMACENAMIENTO
+  {path: 'almacenamiento/almacen', component: AlmacenesComponent},
+  {path: 'almacenamiento/estanteria', component: EstanteriaComponent},
+
+  // ORDENES
+  {path: 'ordenes/almacenar', component: AlmacenarComponent},
+  {path: 'ordenes/crear', component: CrearComponent},
+  {path: 'ordenes/recibir', component: RecibirComponent},
+  // PRODUCTOS
+  {path: 'productos/producto', component: ProductoComponent},
+  // MATERIA PRIMA
+  {path: 'materiaPrima/materia', component: MateriaComponent},
+  // PRODUCCION
+  {path: 'produccion/producir', component: ProducirComponent},
   // GASTOS
   {path: 'gastos/registro', component: RegistrarComponent},
   {path: 'gastos/consulta', component: ConsultarGastosComponent},

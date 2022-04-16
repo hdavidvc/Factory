@@ -31,18 +31,22 @@ main {
 
 label {
     font: var(--body);
+    color: #706565;
 }
 
 input,
 select {
-    border-radius: 15px;
-    border: 1px solid #CCC1C1;
+    margin-block-start: 8px;
+    border-radius: 10px;
+    border: 2px solid #CCC1C1;
     padding-inline-start: 10px;
     inline-size: 250px;
+    block-size: 30px;
 }
 
 select {
     inline-size: 183px;
+    block-size: 36px;
 }
 
 input,
@@ -58,11 +62,13 @@ label {
 .body {
     margin-inline: 30px;
     margin-block-start: 30px;
+    block-size: 570px;
 }
 
 .buscar {
     display: flex;
     justify-content: space-between;
+    margin-block-end: 10px;
 }
 
 .body button {
@@ -78,6 +84,30 @@ label {
 td {
     text-align: center;
     font: var(--sidebar);
+}
+
+.example-container {
+    block-size: 60%;
+    overflow: auto;
+    margin-block-start: 20px;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+td {
+    text-align: center;
+    font: var(--sidebar);
+}
+
+table {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
 }
 
 

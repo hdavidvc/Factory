@@ -2,29 +2,29 @@
 <div class="badge-container">
     <div class="badge badge-1" (click)="enviar()">
         <div class="detalle">
-            <span>50</span>
-            <p>Prestamos</p>
+            <span>10</span>
+            <p>Ordenes realizadas</p>
         </div>
-        <img src="../../../assets/icon-prestamos.svg" alt="">
+        <img src="../../../assets/ordenes.png" alt="">
     </div>
     <div class="badge badge-2">
         <div class="detalle">
-            <span>30</span>
-            <p>Saldados</p>
+            <span>3</span>
+            <p>Ordenes por procesar</p>
         </div>
         <span class="iconify" data-inline="false" data-icon="ic:baseline-price-check" style="color: #ffffff; font-size: 35px;"></span>
     </div>
     <div class="badge badge-3">
         <div class="detalle">
-            <span>50</span>
-            <p>Realizados</p>
+            <span>30</span>
+            <p>Ordenes procesadas</p>
         </div>
         <span class="iconify" data-inline="false" data-icon="fa-regular:money-bill-alt" style="color: #ffffff; font-size: 35px;"></span>
     </div>
     <div class="badge badge-4">
         <div class="detalle">
-            <span>50</span>
-            <p>Sin saldar</p>
+            <span>7</span>
+            <p>Ordenes canceladas</p>
         </div>
         <span class="iconify" data-inline="false" data-icon="bx:bx-trending-down" style="color: #ffffff; font-size: 35px;"></span>
     </div>
@@ -49,9 +49,9 @@
         </div>
         <div class="leyenda-container">
             <ul class="leyendas">
-                <li class="a"><span>Aprobados</span></li>
-                <li class="p"><span>Pendientes</span></li>
-                <li class="d"><span>Denegados</span></li>
+                <li class="a"><span>PROCESADAS</span></li>
+                <li class="p"><span>CANCELADAS</span></li>
+                <li class="d"><span>PENDIENTES</span></li>
             </ul>
         </div>
     </section>
@@ -59,7 +59,7 @@
     <section class="ganancias">
         <div class="graficas">
             <h3 id="cantidad">RD$ 580</h3>
-            <h4>PROMEDIO DIARIO DE GANANCIAS</h4>
+            <h4>PROMEDIO DIARIO DE ORDENES</h4>
             <div>
                 <div>
                     <div>
@@ -74,7 +74,7 @@
                 </div>
             </div>
         </div>
-        <div class="graficas line">
+        <!-- <div class="graficas line">
             <h3 id="flujo-title">Flujo mensual de ganancias</h3>
             <div class="flex">
                 <div class="flex-item">
@@ -82,18 +82,9 @@
                         <canvas baseChart style="position: relative; height:50%; width:100%" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" (chartHover)="lineHovered($event)"></canvas>
                     </div>
                 </div>
-                <!-- <div class="flex-item">
-                    <table class="table table-responsive table-condensed">
-                        <tr>
-                            <th *ngFor="let label of lineChartLabels">{{label}}</th>
-                        </tr>
-                        <tr *ngFor="let d of lineChartData; let i=index" [class]="'line-'+i">
-                            <td *ngFor="let label of lineChartLabels; let j=index">{{d }}</td>
-                        </tr>
-                    </table>
-                </div> -->
+         
             </div>
-        </div>
+        </div> -->
     </section>
 
 </section>

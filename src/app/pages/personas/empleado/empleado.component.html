@@ -1,0 +1,63 @@
+<main>
+    <h2>Registro de empleados</h2>
+    <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar</label>
+                <input #name type="text" name="buscar" id="buscar" (keyup.enter)='consultar(name.value)'>
+            </div>
+            <button (click)="guardar()">Guardar</button>
+        </div>
+        <app-divider [title]="'Datos personales'"></app-divider>
+        <form action="" class="form">
+
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" [(ngModel)]='persona.nombre'>
+                    </div>
+                    <div>
+                        <label for="cedula">Cedula</label>
+                        <input type="text" name="cedula" id="cedula" [(ngModel)]='persona.cedula'>
+                    </div>
+                    <div>
+                        <label for="direccion">Direccion</label>
+                        <section style="display: flex; flex-direction: row; align-items: center;">
+                            <input type="text" name="direccion" id="direccion" disabled [(ngModel)]='direccionFull'>
+                            <button class="dirBtn" mat-raised-button (click)="openDialog()">Crear</button>
+                        </section>
+                    </div>
+                    <!-- <div>
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion">
+                    </div> -->
+                    <div>
+                        <label for="correo">Correo</label>
+                        <input [(ngModel)]='cliente.correo' type="email" name="correo" id="correo">
+                    </div>
+                </div>
+                <hr>
+                <div class="content_s">
+                    <div>
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" [(ngModel)]='persona.apellido'>
+                    </div>
+                    <div>
+                        <label for="telefono">Telefono</label>
+                        <input type="text" name="telefono" id="telefono" [(ngModel)]='persona.telefono'>
+                    </div>
+                    <div>
+                        <label for="estado">Cargo</label>
+                        <select name="estado" id="estado" [(ngModel)]='persona.estado_civil'>
+                            <option value="soltero">Administrativo</option>
+                            <option value="casado">Almacenista</option>
+                            <option value="viudo">Operario</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </section>
+</main>

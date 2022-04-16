@@ -1,7 +1,8 @@
 .navbar {
     inline-size: 273px;
     block-size: 100%;
-    background-color: rgba(54, 94, 194, 1);
+    /* background-color: rgba(54, 94, 194, 1); */
+    background: rgba(14, 156, 113, 0.88);
     overflow: auto;
 }
 
@@ -19,7 +20,8 @@
 }
 
 .selected {
-    background-color: #0A2464;
+    /* background-color: #0A2464; */
+    background: rgba(10, 35, 100, 0.674);
     border-left: 2px solid #fff;
 }
 

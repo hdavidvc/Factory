@@ -1,0 +1,86 @@
+select {
+    inline-size: 262px;
+}
+
+.form .Secction {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+    block-size: 90px;
+}
+
+.form .Secction .content_p,
+.form .Secction .content_s {
+    block-size: auto;
+    /* padding-block-end: 40px; */
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.form .Secction .content_s {
+    block-size: 141px;
+    inline-size: 30%;
+    justify-content: center;
+}
+
+.form .Secction .content_p {
+    inline-size: 60%;
+    /* padding-inline-end: 200px; */
+    justify-content: space-between;
+}
+
+.form .Secction .content_s div,
+.form .Secction .content_p div {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    padding-block-start: 11px;
+}
+
+#cargar {
+    background-color: #BB2222;
+    margin-block-start: 25px;
+}
+
+button {
+    /* margin-inline-start: 38.6%; */
+}
+
+#btncarga {
+    display: flex;
+    justify-content: center;
+}
+
+app-divider {
+    padding-inline-start: 20px;
+}
+
+.dirBtn {
+    margin-inline-start: 10px;
+    inline-size: 104px;
+    block-size: 24px;
+}
+
+.example-container {
+    block-size: 45%;
+    overflow: auto;
+    margin-block-start: 20px;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+td {
+    text-align: center;
+    font: var(--sidebar);
+}
+
+table {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
