@@ -1,40 +1,68 @@
 <main>
-    <h2>Realizar deposito</h2>
+    <h2>Registro de Materia prima</h2>
     <section class="body">
+        <div class="buscar">
+            <div class="campo">
+                <label for="buscar">Buscar materia prima</label>
+                <input type="text" name="buscar">
+            </div>
 
+            <button (click)="guardar()">Guardar</button>
+        </div>
+        <div class="campoD">
+            <label for="buscar">Descripcion</label>
+            <input type="text" name="buscar" [(ngModel)]="materia.descripcion">
+        </div>
+        <app-divider [title]="'Caracteristica materia prima'"></app-divider>
         <form action="" class="form">
+
+
             <div class="Secction datos">
                 <div class="content_p">
-                    <div>
-                        <label for="idDeposito">ID deposito</label>
-                        <input type="text" name="idDeposito" id="idDeposito">
+                    <div class="campoD">
+                        <label for="buscar">Costo</label>
+                        <input type="text" name="buscar" [(ngModel)]="materia.costo">
                     </div>
                     <div>
-                        <label for="Monto">Monto</label>
-                        <input type="text" name="Monto" id="Monto">
+                        <label for="formaPago">Proveedor</label>
+                        <select name="formaPago" id="formaPago" [(ngModel)]="materia.proveedor">
+                                <option *ngFor="let item of proveedores" value="{{item.id}}">{{item.nombre}}</option>
+
+                            </select>
                     </div>
-                    <div>
-                        <label for="Usuario">Usuario</label>
-                        <input type="text" name="Usuario" id="Usuario">
-                    </div>
+                    <button class="dirBtn" (click)="openDialog()" mat-raised-button>Ubicacion</button>
 
                 </div>
-                <div class="content_s">
-                    <div>
-                        <label for="Banco">Banco</label>
-                        <input type="text" name="Banco" id="Banco">
-                    </div>
-                    <div>
-                        <label for="noDeposito">No. deposito</label>
-                        <input type="text" name="noDeposito" id="noDeposito">
-                    </div>
-                </div>
+
             </div>
-            <div class="acctions">
-                <button>Guardar</button>
-                <button id="consultar" routerLink='/cobradores/consulta_deposito'>Consultar</button>
-            </div>
+
         </form>
+
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="ID">
+                    <th class="title" id="ID" mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Materia prima">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Materia prima </th>
+                    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Proveedor">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Proveedor </th>
+                    <td mat-cell *matCellDef="let element"> {{element.proveedor}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+
 
     </section>
 </main>

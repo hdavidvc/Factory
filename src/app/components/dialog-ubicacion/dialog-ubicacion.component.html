@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Nueva ubicacion</h1>
+<div mat-dialog-content>
+    <!-- <p>What's your favorite animal?</p> -->
+    <mat-form-field appearance="fill">
+        <mat-label>Almacen</mat-label>
+        <mat-select [(ngModel)]="data.id_almacen" (valueChange)="Bestante($event)">
+            <mat-option *ngFor="let item of almacenes" value="{{item.id}}">{{item.descripcion}}</mat-option>
+        </mat-select>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Estanteria</mat-label>
+        <mat-select [(ngModel)]="data.estanteria">
+            <mat-option *ngFor="let item of estanterias" value="{{item.id}}">{{item.descripcion}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Nivel</mat-label>
+        <input matInput [(ngModel)]="data.nivel">
+    </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Guardar</button>
+</div>

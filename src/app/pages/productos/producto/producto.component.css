@@ -14,8 +14,8 @@ input {
 
 .form .datos {
     display: flex;
-    justify-content: space-between;
-    inline-size: 906px;
+    justify-content: center;
+    inline-size: 91%;
 }
 
 .form .confi {
@@ -28,16 +28,23 @@ input {
 .content_p,
 .content_s {
     display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
+    /* flex-direction: column; */
+    justify-content: space-between;
+    inline-size: 91%;
+    align-items: center;
 }
 
 .content_p div,
 .content_s div {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     justify-content: space-between;
     padding-block-end: 11px;
+    inline-size: 40%;
+}
+
+select {
+    inline-size: 100%;
 }
 
 hr {
@@ -53,6 +60,10 @@ hr {
     height: 400px;
     overflow: auto;
     margin-block-start: 20px;
+    block-size: 55%;
+    inline-size: 50%;
+    margin: 10px auto;
+    border-radius: 10px;
 }
 
 table {
@@ -66,6 +77,7 @@ table {
 th {
     background-color: #343a40;
     color: white;
+    padding-right: 0px !important;
 }
 
 #numero {
@@ -76,6 +88,7 @@ th {
 td {
     text-align: center;
     font: var(--sidebar);
+    padding-right: 0px !important;
 }
 
 .title {
@@ -85,4 +98,29 @@ td {
 .elegir {
     inline-size: 40px !important;
     padding: 0;
+}
+
+#cargarM {
+    background-color: #BB2222;
+}
+
+.campoD {
+    margin-block-end: 10px;
+}
+
+.buscar {
+    inline-size: 87%;
+}
+
+.campo,
+.campoD {
+    inline-size: 75%;
+}
+
+.campo input {
+    inline-size: 40.5%;
+}
+
+.campoD input {
+    inline-size: 39.5%;
 }

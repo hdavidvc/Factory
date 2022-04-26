@@ -6,19 +6,20 @@ export interface TablaElement {
   ID: number;
   Proveedor: string;
   Fecha: string;
+  Accion: string;
 
 }
 
 const ELEMENT_DATA: TablaElement[] = [
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 1"},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 2"},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 3"},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 4"},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 5"},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 6"},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 7"},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 8"},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 9"},
+  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 1",Accion: ""},
+  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 2",Accion: ""},
+  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 3",Accion: ""},
+  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 4",Accion: ""},
+  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 5",Accion: ""},
+  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 6",Accion: ""},
+  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 7",Accion: ""},
+  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 8",Accion: ""},
+  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 9",Accion: ""},
 ];
 
 
@@ -29,7 +30,7 @@ const ELEMENT_DATA: TablaElement[] = [
 })
 export class RecibirComponent implements OnInit {
 
-  displayedColumns = ['ID', 'Proveedor', 'Fecha'];
+  displayedColumns = ['ID', 'Proveedor', 'Fecha', 'Accion'];
   dataSource = ELEMENT_DATA;
   public pieChartOptions: ChartOptions = {
     responsive: true,

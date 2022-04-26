@@ -1,120 +1,54 @@
 <main>
-    <h2>Cobros de cuotas</h2>
+    <h2>Registro de producto</h2>
     <section class="body">
         <div class="buscar">
             <div class="campo">
-                <label for="buscar">Buscar cliente</label>
+                <label for="buscar">Buscar producto</label>
                 <input type="text" name="buscar">
             </div>
+
             <button>Guardar</button>
         </div>
+        <div class="campoD">
+            <label for="buscar">Descripcion</label>
+            <input type="text" name="buscar">
+        </div>
+        <app-divider [title]="'Asignar materia prima'"></app-divider>
         <form action="" class="form">
 
-            <div>
-                <div class="Secction datos">
-                    <div class="content_p">
-                        <div>
-                            <label for="monto">Monto</label>
-                            <input type="text" name="monto" id="monto">
-                        </div>
-                        <div>
-                            <label for="interes">Interes</label>
-                            <input type="text" name="interes" id="interes">
-                        </div>
-                        <div>
-                            <label for="fecha">Fecha</label>
-                            <input type="date" name="fecha" id="fecha">
-                        </div>
-                        <div>
-                            <label for="formaPago">Forma de pago</label>
-                            <select name="formaPago" id="formaPago">
+
+            <div class="Secction datos">
+                <div class="content_p">
+
+                    <div>
+                        <label for="formaPago">Materia prima</label>
+                        <select name="formaPago" id="formaPago">
                                 <option value="Soltero">Efectivo</option>
                                 <option value="Casado">Tarjeta</option>
                                 <option value="Viudo">Cheque</option>
                             </select>
-                        </div>
-
                     </div>
-                    <div class="content_s">
-                        <div>
-                            <label for="idPrestamo">ID prestamo</label>
-                            <input type="text" name="idPrestamo" id="idPrestamo">
-                        </div>
-                        <div>
-                            <label for="capital">Capital</label>
-                            <input type="text" name="capital" id="capital">
-                        </div>
-                        <div>
-                            <label for="mora">Mora</label>
-                            <input type="text" name="mora" id="mora">
-                        </div>
-                        <div>
-                            <label for="nota">Nota</label>
-                            <input type="text" name="nota" id="nota">
-                        </div>
+                    <button id="cargarM">Cargar materia</button>
 
-                    </div>
                 </div>
+
             </div>
+
         </form>
 
         <div class="example-container mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
 
 
-                <ng-container matColumnDef="No">
-                    <th id="No" mat-header-cell *matHeaderCellDef> No. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.No}} </td>
+                <ng-container matColumnDef="ID">
+                    <th class="title" id="ID" mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
                 </ng-container>
 
 
-                <ng-container matColumnDef="Cuota">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Cuota </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Cuota | currency}} </td>
-                </ng-container>
-
-
-                <ng-container matColumnDef="Saldo">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Saldo </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Saldo | currency}} </td>
-                </ng-container>
-
-
-                <ng-container matColumnDef="Saldo_Int">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Saldo Interes </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Saldo_Int | currency}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Saldo_Cap">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Saldo Capital </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Saldo_Cap | currency}} </td>
-                </ng-container>
-
-
-                <ng-container matColumnDef="Mora">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Mora </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Mora | currency}} </td>
-                </ng-container>
-
-
-                <ng-container matColumnDef="Vence">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Vence </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Vence}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Total">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Total </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Total | currency}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Estatus">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Estatus </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Estatus}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Elegir">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Elegir </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Elegir}} <input class="elegir" type="checkbox" name="" id=""> </td>
+                <ng-container matColumnDef="Materia prima">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Materia prima </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Materia_prima | currency}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

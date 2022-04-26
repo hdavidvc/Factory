@@ -2,31 +2,47 @@ import { Component, OnInit } from '@angular/core';
 
 export interface TablaElement {
   ID: number;
-  Descripcion: string;
-  Acciones: string;
+  Materia_prima: string;
+  Cantidad: number;
+  // Saldo_Int: number;
+  // Saldo_Cap: number;
+  // Mora: number;
+  // Vence: string;
+  // Total: number;
+  // Estatus: string;
+  // Elegir: string
 }
 
-const ELEMENT_DATA: TablaElement[] = [
-  {ID: 1, Descripcion: 'Banco popular', Acciones: ''},
-  {ID: 2, Descripcion: 'Banco reservas', Acciones: ''},
-  {ID: 3, Descripcion: 'Banco scotiabank', Acciones: ''},
-  {ID: 4, Descripcion: 'Banco ademi', Acciones: ''},
 
-];
 
+let ELEMENT_DATA: TablaElement[] =  [];
 @Component({
   selector: 'app-producir',
   templateUrl: './producir.component.html',
   styleUrls: ['./producir.component.css']
 })
+
 export class ProducirComponent implements OnInit {
+  
+   displayedColumns = ['ID', 'Materia prima', 'Cantidad'];
+   dataSource:TablaElement[] = [];
 
-  displayedColumns = ['ID', 'Descripcion', 'Acciones'];
-  dataSource = ELEMENT_DATA;
-
-  constructor() { }
+  constructor() { 
+    
+    console.log(localStorage.getItem('materia'));
+    this.dataSource = JSON.parse(localStorage.getItem('materia') || " [{}]");
+  }
 
   ngOnInit(): void {
   }
+  cargar() {
+   
+    let carga = {ID:6,Materia_prima: "david", Cantidad: 50}    
+    this.dataSource.push(carga);
+    localStorage.setItem('materia',JSON.stringify(this.dataSource))
+    this.dataSource = JSON.parse(localStorage.getItem('materia') || " [{}]");
+    console.log(this.dataSource);
 
+  }
 }
+ 

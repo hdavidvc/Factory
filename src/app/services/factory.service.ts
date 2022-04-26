@@ -57,9 +57,7 @@ return this.http.post<any>('/api/usuario',ejecutivo);
   newproveedores(proveedores: any) {
     return this.http.post<any>('/api/proveedores',proveedores);
   }
-  getProveedores() {
-    return this.http.get<any>('/api/proveedores');
-  }
+ 
 getEjecutivo(tipo: any) {
   console.log(tipo);
   return this.http.get<any>(`/api/usuario?tipo_usuario=${tipo}`);
@@ -74,4 +72,67 @@ newPrestamos(prestamo: any) {
 getRuta() {
   return this.http.get<any>('/api/ruta');
 }
+//Empleado
+setEmpleado(empleado: any) {
+  return this.http.post<any>('http://localhost:8050/api/empleado/',empleado);
+
+}
+getEmpleados() {
+  return this.http.get<any>('http://localhost:8050/api/empleado/');
+}
+
+getEmpleado(id:number) {
+  console.log(`http://localhost:8050/api/usuarios/${{id}}`);
+  return this.http.get<any>(`http://localhost:8050/api/usuarios/${id}`);
+}
+
+//Proveedor
+setProveedor(provedor: any) {
+  console.log(provedor);
+  return this.http.post<any>('http://localhost:8050/api/proveedor/',provedor)
+}
+getProveedores() {
+  return this.http.get<any>('http://localhost:8050/api/proveedor/');
+}
+getProveedor() {
+  return this.http.get('http://localhost:8050/api/proveedor/');
+}
+
+//Almacen
+setAlmacen(almacen: any) {
+  console.log(almacen);
+  return this.http.post<any>('http://localhost:8050/api/almacen/',almacen)
+}
+
+getAlmacenes() {
+  return this.http.get<any>(`http://localhost:8050/api/almacen`);
+}
+//Estanteria
+setEstanteria(estante: any) {
+  console.log(estante);
+  return this.http.post<any>('http://localhost:8050/api/estanteria/',estante)
+}
+
+getEstanteria() {
+  return this.http.get<any>(`http://localhost:8050/api/estanteria`);
+}
+getEstanteriaBy(id:number) {
+  return this.http.get<any>(`http://localhost:8050/api/estanteria/${id}`);
+}
+
+  //Ubicacion
+  setUbicacion(ubicacion: any) {
+    return this.http.post<any>('http://localhost:8050/api/ubicacion/',ubicacion)
+  }
+
+  //Materia
+  setMateria(materia: any) {
+    return this.http.post<any>('http://localhost:8050/api/materiaprima/',materia)
+  }
+  getMaterias() {
+    return this.http.get<any>(`http://localhost:8050/api/materiaprima/`);
+  }
+  getMateria(id: any) {
+    return this.http.get<any>(`http://localhost:8050/api/materiaprima/${id}`);
+  }
 }

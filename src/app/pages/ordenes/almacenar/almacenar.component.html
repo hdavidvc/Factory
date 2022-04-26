@@ -1,5 +1,5 @@
 <main>
-    <h2>Ingresos & Gastos</h2>
+    <h2>Almacenar Orden</h2>
     <section class="body">
         <div class="buscar">
             <div class="campo">
@@ -11,10 +11,79 @@
                 <label for="fin">Hasta</label>
                 <input type="date" name="fin">
             </div>
-            <button>Consultar</button>
+            <button>Buscar</button>
         </div>
+        <app-divider [title]="'Detalle de la orden'"></app-divider>
+        <!-- <form action="" class="form">
 
-        <section class="resumen">
+            <div class="Secction">
+                <div class="content_p">
+                    <div>
+                        <label for="estado">Proveedor</label>
+                        <select name="estado" id="estado">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="estado">Empleado</label>
+                        <select name="estado" id="estado">
+                            <option value="Soltero">Soltero</option>
+                            <option value="Casado">Casado</option>
+                            <option value="Viudo">Viudo</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="direccion">Direccion</label>
+                        <input type="text" name="direccion" id="direccion" disabled [(ngModel)]='direccionFull'>
+                        <button class="dirBtn" mat-raised-button (click)="openDialog()">Crear</button>
+                    </div>
+                </div>
+                <div class="content_s">
+                    <div>
+                        <label for="inicio">Fecha</label>
+                        <input type="date" name="inicio">
+                        <input type="number" [(ngModel)]="lado.numero" >
+                    </div>
+                </div>
+
+            </div>
+            <div id="btncarga">
+                <button id="cargar">Cargar materia</button>
+            </div>
+        </form> -->
+
+        <div class="example-container mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource">
+
+
+                <ng-container matColumnDef="ID">
+                    <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> ID </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ID}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Proveedor">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Proveedor </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Proveedor}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Fecha">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Fecha </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Fecha}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Accion">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Accion </th>
+                    <td mat-cell *matCellDef="let element"><button class="editar">Almacenar</button> </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <!-- <section class="resumen">
 
             <div class="chart">
                 <canvas height="50px" width="52px" baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
@@ -26,6 +95,17 @@
                 <li class="p"><span>Gastos</span></li>
             </ul>
 
-        </section>
+        </section> -->
+        <div>
+            <!-- <label for="estado">Cambiar estado</label>
+            <select name="estado" id="estado">
+              <option value="Soltero">Recibida</option>
+                <option value="Casado">Incompleto</option>
+                <option value="Viudo">Almacenada</option>
+                <option value="Viudo">Pendiente</option>
+            </select> -->
+            <h1>HACER MODAL PARA VER DETALLE Y CAMBIAR ESTADO Y ESTABLECER ALMACEN</h1>
+        </div>
     </section>
+
 </main>

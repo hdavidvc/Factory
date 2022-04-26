@@ -1,24 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { ChartOptions, ChartType } from 'chart.js';
-import { Label } from 'ng2-charts';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogMateriaComponent } from 'src/app/components/dialog-materia/dialog-materia.component';
+import { FactoryService } from 'src/app/services/factory.service';
 
 export interface TablaElement {
-  ID: number;
-  Materia_prima: string;
-  Cantidad: number;
+  id_materia: number;
+  materia: string;
+  cantidad: number;
 
 }
 
 const ELEMENT_DATA: TablaElement[] = [
-  {ID: 1, Materia_prima: "Disponible",Cantidad: 1},
-  {ID: 1, Materia_prima: "Ocupado",Cantidad: 1},
-  {ID: 1, Materia_prima: "Disponible",Cantidad: 1},
-  {ID: 1, Materia_prima: "Ocupado",Cantidad: 1},
-  {ID: 1, Materia_prima: "Disponible",Cantidad: 1},
-  {ID: 1, Materia_prima: "Ocupado",Cantidad: 1},
-  {ID: 1, Materia_prima: "Disponible",Cantidad: 1},
-  {ID: 1, Materia_prima: "Ocupado",Cantidad: 1},
-  {ID: 1, Materia_prima: "Disponible",Cantidad: 1},
+
 ];
 
 @Component({
@@ -29,45 +22,47 @@ const ELEMENT_DATA: TablaElement[] = [
 export class CrearComponent implements OnInit {
 
   displayedColumns = ['ID', 'Materia prima', 'Cantidad'];
-  dataSource = ELEMENT_DATA;
+  dataSource:TablaElement[] = [];
+  empleado:any = [];
+  proveedor:any = [];
   
-  public pieChartOptions: ChartOptions = {
-    responsive: true,
-    legend: {
-      position: 'top',
-    },
-    plugins: {
-      datalabels: {
-        formatter: (value: any, ctx: any) => {
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label;
-        },
-      },
-    },
-    
-  };
-  public pieChartLabels: Label[] = ['Aprobados', 'Pendientes'];
-  public pieChartData: number[] = [300, 500];
-  public pieChartType: ChartType = 'pie';
-  public pieChartLegend = false;
-  public pieChartPlugins: any = [];
-  public pieChartColors = [
-    {
-      backgroundColor: ['rgba(14,156,29,1)', 'rgba(219,73,73,1)'],
-    },
-  ];
+  constructor(public dialog: MatDialog, private service: FactoryService) { 
 
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
+    // this.dataSource = JSON.parse(localStorage.getItem('materias') || " [{}]");
+    // this.dataSource.shift();
 
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
+    this.service.getEmpleados().subscribe(emp => {
+      this.empleado = emp;
+      console.log(this.empleado);
+    });
+
+    this.service.getProveedores().subscribe(emp => {
+      this.proveedor = emp;
+    });
+
   }
-  
-  constructor() { }
 
   ngOnInit(): void {
   }
+  
+  id_materia:number = 0;
+  materia:string = '';
+  cantidad: number = 0
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogMateriaComponent, {
+      width: '250px',
+      data: {id_materia: this.id_materia, materia: this.materia, cantidad: this.cantidad}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {     
+      
+      if(result) {
+        this.dataSource.push( result);
+        localStorage.setItem('materias',JSON.stringify(this.dataSource))
+        this.dataSource = JSON.parse(localStorage.getItem('materias') || " [{}]");
+        console.log(this.dataSource);
+      }
+      
+    });
+  }
 }

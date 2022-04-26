@@ -11,6 +11,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+// import { MatSelectModule } from '@angular/material/select';
+
 
 import { PrincipalComponent } from './pages/principal/principal.component';
 // Compoenentes
@@ -41,6 +43,10 @@ import { RecibirComponent } from './pages/ordenes/recibir/recibir.component';
 import { ProducirComponent } from './pages/produccion/producir/producir.component';
 import { ProductoComponent } from './pages/productos/producto/producto.component';
 import { ProveedoresComponent } from './pages/personas/proveedores/proveedores.component';
+import { DialogUbicacionComponent } from './components/dialog-ubicacion/dialog-ubicacion.component';
+import { MatSelectModule } from '@angular/material/select';
+import { DialogMateriaComponent } from './components/dialog-materia/dialog-materia.component';
+
 
 @NgModule({
   declarations: [
@@ -67,7 +73,9 @@ import { ProveedoresComponent } from './pages/personas/proveedores/proveedores.c
     ImagenComponent,
     FilterPipe,
     DialogDireccionComponent,
-    ProveedoresComponent
+    ProveedoresComponent,
+    DialogUbicacionComponent,
+    DialogMateriaComponent,  
 
   ],
   imports: [
@@ -79,7 +87,9 @@ import { ProveedoresComponent } from './pages/personas/proveedores/proveedores.c
     MatTableModule,
     FormsModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

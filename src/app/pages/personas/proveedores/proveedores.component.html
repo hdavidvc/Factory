@@ -15,16 +15,16 @@
                 <div class="content_p">
                     <div>
                         <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" [(ngModel)]='persona.nombre'>
+                        <input type="text" name="nombre" id="nombre" [(ngModel)]='proveedores.nombre'>
                     </div>
                     <div>
                         <label for="cedula">Cedula</label>
-                        <input type="text" name="cedula" id="cedula" [(ngModel)]='persona.cedula'>
+                        <input type="text" name="cedula" id="cedula" [(ngModel)]='proveedores.documento'>
                     </div>
                     <div>
                         <label for="direccion">Direccion</label>
                         <section>
-                            <input type="text" name="direccion" id="direccion" disabled [(ngModel)]='direccionFull'>
+                            <input type="text" name="direccion" id="direccion" disabled [(ngModel)]='proveedores.direccion'>
                             <button class="dirBtn" mat-raised-button (click)="openDialog()">Crear</button>
                         </section>
                     </div>
@@ -34,11 +34,11 @@
                 <div class="content_s">
                     <div>
                         <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido" id="apellido" [(ngModel)]='persona.apellido'>
+                        <input type="text" name="apellido" id="apellido" [(ngModel)]='proveedores.apellido'>
                     </div>
                     <div>
                         <label for="telefono">Telefono</label>
-                        <input type="text" name="telefono" id="telefono" [(ngModel)]='persona.telefono'>
+                        <input type="text" name="telefono" id="telefono" [(ngModel)]='proveedores.telefono'>
                     </div>
                     <div>
                         <label for="correo">Correo</label>

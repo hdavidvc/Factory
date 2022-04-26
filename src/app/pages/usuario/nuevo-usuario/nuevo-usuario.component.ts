@@ -23,13 +23,13 @@ export class NuevoUsuarioComponent implements OnInit {
   users:any = [];
    
   constructor( private service:FactoryService) { 
-    this.service.getPersona().subscribe(pers => {
-      this.personas = pers.respuesta;
-      console.log(pers.respuesta[0].nombre);
-    })
-    this.service.getUser().subscribe(pers => {
-      this.users = pers.respuesta;
-    })
+    // this.service.getPersona().subscribe(pers => {
+    //   this.personas = pers.respuesta;
+    //   console.log(pers.respuesta[0].nombre);
+    // })
+    // this.service.getUser().subscribe(pers => {
+    //   this.users = pers.respuesta;
+    // })
   }
 
   ngOnInit(): void {
@@ -39,7 +39,7 @@ export class NuevoUsuarioComponent implements OnInit {
   }
   guardar() {
     console.log('estoy dentro');
-    this.service.newUser(this.user).subscribe( resp => console.log(resp))
+    // this.service.newUser(this.user).subscribe( resp => console.log(resp))
   }
   cargar(event: any) {
     // this.user.id_persona = this.personas.find((element:any) => element.nombre == event).id;

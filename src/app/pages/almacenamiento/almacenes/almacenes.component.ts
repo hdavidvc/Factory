@@ -3,21 +3,13 @@ import { FactoryService } from 'src/app/services/factory.service';
 import { Respuesta } from '../../../interfaces/usuario';
 
 export interface TablaElement {
-  Descripcion: string;
-  Estado: string;
+  descripcion: string;
+  estado: string;
 
 }
 
-const ELEMENT_DATA: TablaElement[] = [
-  {Descripcion: "almacen 1", Estado: "Disponible"},
-  {Descripcion: "almacen 2", Estado: "Ocupado"},
-  {Descripcion: "almacen 3", Estado: "Disponible"},
-  {Descripcion: "almacen 4", Estado: "Ocupado"},
-  {Descripcion: "almacen 5", Estado: "Disponible"},
-  {Descripcion: "almacen 6", Estado: "Ocupado"},
-  {Descripcion: "almacen 7", Estado: "Disponible"},
-  {Descripcion: "almacen 8", Estado: "Ocupado"},
-  {Descripcion: "almacen 9", Estado: "Disponible"},
+let ELEMENT_DATA: TablaElement[] = [
+
 ];
 
 @Component({
@@ -28,29 +20,15 @@ const ELEMENT_DATA: TablaElement[] = [
 export class AlmacenesComponent implements OnInit {
   
   displayedColumns = ['Descripcion', 'Estado'];
-  dataSource = ELEMENT_DATA;
-ejecutivo: any = [];
-proveedoress: any = [];
-clientes: any = [];
-rutas: any = [];
-almacenes = {
-        'monto': '',
-        'cantidad_cuotas': '',
-        'monto_cuotas': '',
-        'fecha_inicio': '',
-        'fecha_fin': '',
-        'tasa': '',
-        'cliente': 0,
-        'dia_gracias': '',
-        'tasa_mora': '',
-        'periodo_pago': '',
-        'tipo_saldo': '',
-        'tipo_almacenes': '',
-        'id_proveedores': 0,
-        'id_usuario': 0,
-        'id_ruta': 0
+  dataSource:TablaElement[] = [];
+  
+  almacen = {
+  "descripcion": "",
+  "estado": ""
 }
   constructor(private service: FactoryService) {
+    // console.log(this.dataSource);
+    this.obtenerAlmacenes();
         // this.service.getEjecutivo('ejecutivo').subscribe(resp => console.log(resp));
   //     this.service.getProveedores().subscribe( resp => {
   // this.proveedoress = resp.respuesta;
@@ -74,19 +52,21 @@ almacenes = {
 
   ngOnInit(): void {
   }
-guardar() {
-  // this.service.newPrestamos(this.almacenes).subscribe(resp => {
-  //   console.log(resp);
-  // });
-  console.log('entro');
-}
+  guardar() {
+    this.dataSource.push(this.almacen);
+    this.service.setAlmacen(this.almacen).subscribe(resp => {
+      console.log(resp);
+    });
+    this.obtenerAlmacenes();
+    console.log(this.dataSource);
+  }
+  obtenerAlmacenes():any {
+    this.service.getAlmacenes().subscribe((resp:any) => {
+     
+      this.dataSource = resp;
+    })
+  }
 
-calcularMontoCuota(inte: any) {
-  // let interes = inte/100;
-  // let monto_pagar = parseFloat(this.almacenes.monto) * interes + parseFloat(this.almacenes.monto);
-  
-  // this.almacenes.monto_cuotas = (monto_pagar / parseInt( this.almacenes.cantidad_cuotas)).toString();
-}
 
 
 

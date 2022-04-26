@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Elegir materia prima</h1>
+<div mat-dialog-content>
+    <!-- <p>What's your favorite animal?</p> -->
+    <mat-form-field appearance="fill">
+        <mat-label>Materia prima</mat-label>
+        <mat-select [(ngModel)]="data.id_materia">
+            <mat-option *ngFor="let item of materias" value="{{item.id}}">{{item.descripcion}}</mat-option>
+        </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Cantidad</mat-label>
+        <input matInput [(ngModel)]="data.cantidad">
+    </mat-form-field>
+
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button (click)="g()" [mat-dialog-close]="data" cdkFocusInitial>Cargar</button>
+</div>

@@ -1,13 +1,44 @@
 <main>
-    <h2>Registro de bancos</h2>
+    <h2>Produccion</h2>
     <section class="body">
         <div class="buscar">
-            <div class="id ocultar">
-                <label for="Nombre">Nombre</label>
-                <input type="text" name="Nombre" id="Nombre">
+            <div class="campo">
+                <label for="formaPago">Producto</label>
+                <select name="formaPago" id="formaPago">
+                    <option value="Soltero">Efectivo</option>
+                    <option value="Casado">Tarjeta</option>
+                    <option value="Viudo">Cheque</option>
+            </select>
             </div>
-            <button>Consultar</button>
+
+            <button>Guardar</button>
         </div>
+
+        <app-divider [title]="'Caracteristicas materia prima'"></app-divider>
+        <form action="" class="form">
+
+            <div class="Secction datos">
+                <div class="content_p">
+
+                    <div>
+                        <label for="formaPago">Materia prima</label>
+                        <select name="formaPago" id="formaPago">
+                                <option value="Soltero">Efectivo</option>
+                                <option value="Casado">Tarjeta</option>
+                                <option value="Viudo">Cheque</option>
+                            </select>
+                    </div>
+                    <div class="campo">
+                        <label for="buscar">Cantidad</label>
+                        <input type="text" name="buscar">
+                    </div>
+                    <button id="cargarM" (click)="cargar()">Cargar materia</button>
+
+                </div>
+
+            </div>
+
+        </form>
 
         <div class="example-container mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
@@ -19,17 +50,14 @@
                 </ng-container>
 
 
-                <ng-container matColumnDef="Descripcion">
-                    <th class="title" mat-header-cell *matHeaderCellDef>Descripcion</th>
-                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                <ng-container matColumnDef="Materia prima">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Materia prima </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Materia_prima}} </td>
                 </ng-container>
 
-
-                <ng-container matColumnDef="Acciones">
-                    <th class="title" mat-header-cell *matHeaderCellDef> Acciones</th>
-                    <td mat-cell *matCellDef="let element">
-                        <button class="eliminar">Eliminar</button><button class="editar">Editar</button>
-                    </td>
+                <ng-container matColumnDef="Cantidad">
+                    <th class="title" mat-header-cell *matHeaderCellDef> Cantidad </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Cantidad}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

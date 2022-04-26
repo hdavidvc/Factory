@@ -1,0 +1,18 @@
+mat-form-field {
+    font: var(--sidebar);
+}
+
+button {
+    background-color: #365EC2;
+    border-radius: 50px;
+    border: none;
+    inline-size: 100px;
+    block-size: 30px;
+    color: white;
+    cursor: pointer;
+    /* margin-inline: 5px; */
+}
+
+.mat-dialog-actions {
+    justify-content: space-between;
+}

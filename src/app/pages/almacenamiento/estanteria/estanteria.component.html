@@ -16,14 +16,13 @@
                 <div class="content_p">
                     <div>
                         <label for="nombre">Descripcion</label>
-                        <input type="text" name="nombre" id="nombre" [(ngModel)]='persona.nombre'>
+                        <input type="text" name="nombre" id="nombre" [(ngModel)]='estanteria.descripcion'>
                     </div>
                     <div>
                         <label for="estado">Estado</label>
-                        <select name="estado" id="estado" [(ngModel)]='persona.estado_civil'>
-                            <option value="Soltero">Soltero</option>
-                            <option value="Casado">Casado</option>
-                            <option value="Viudo">Viudo</option>
+                        <select name="estado" id="estado" [(ngModel)]='estanteria.estado'>
+                            <option value=Disponible>Disponible</option>
+                            <option value=Ocupado>Ocupado</option>
                         </select>
                     </div>
                     <!-- <div>
@@ -35,10 +34,8 @@
                 <div class="content_s">
                     <div>
                         <label for="estado">Almacen</label>
-                        <select name="estado" id="estado" [(ngModel)]='persona.estado_civil'>
-                            <option value="Soltero">Soltero</option>
-                            <option value="Casado">Casado</option>
-                            <option value="Viudo">Viudo</option>
+                        <select name="estado" id="estado" [(ngModel)]='estanteria.id_almacen'>
+                            <option *ngFor="let almacen of almacenes" value={{almacen.id}}>{{almacen.descripcion}}</option>                           
                         </select>
                     </div>
 
@@ -51,18 +48,18 @@
 
                 <ng-container matColumnDef="Descripcion">
                     <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
                 </ng-container>
 
 
                 <ng-container matColumnDef="Estado">
                     <th class="title" mat-header-cell *matHeaderCellDef> Estado </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="Almacen">
                     <th class="title" mat-header-cell *matHeaderCellDef> Almacen </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Almacen}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.id_almacen }} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

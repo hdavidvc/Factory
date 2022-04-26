@@ -11,7 +11,7 @@ import { DialogDireccionComponent } from 'src/app/components/dialog-direccion/di
 export class EmpleadoComponent implements OnInit {
 
   public criterio:string ='';
-
+  direccionFull: string = '';
   // cliente: ClienteElement = {
   //   "_id": "61148b577d4ea92288912b14",
   //   "lugar_trabajo": "Google.com",
@@ -32,32 +32,41 @@ export class EmpleadoComponent implements OnInit {
   //   },
   //   "__v": 0
   //   };
- cliente = {
-    "lugar_trabajo": "",
-    "direccion_trabajo": "",
-    "telefono_trabajo": 809,
-    "cargo": "",
-    "sueldo": 0,
-    "otros_ingresos": 0,
-    "persona": 0,
-    "correo": ""    
-  };
-  persona = {
-  "nombre": "",
-  "apellido": "",
-  "cedula": 0,
-  "telefono": 809,
-  "id_direccion": 0,
-  "estado_civil": ""   
-  }
+//  cliente = {
+//     "lugar_trabajo": "",
+//     "direccion_trabajo": "",
+//     "telefono_trabajo": 809,
+//     "cargo": "",
+//     "sueldo": 0,
+//     "otros_ingresos": 0,
+//     "persona": 0,
+//     "correo": ""    
+//   };
+//   persona = {
+//   "nombre": "",
+//   "apellido": "",
+//   "cedula": 0,
+//   "telefono": 809,
+//   "id_direccion": 0,
+//   "estado_civil": ""   
+//   }
   direccion = {
-    'ciudad': 'Bonao',
-    'municipio': 'Bonao',
-    'barrio': 'Isabela',
-    'calle': 50,
-    'casa': 5
+    'ciudad': '',
+    'municipio': '',
+    'barrio': '',
+    'calle': 0,
+    'casa': 0
   }
-  direccionFull: string = '';
+  empleado = {
+    "nombre": "",
+    "apellido": "",
+    "direccion": this.direccionFull,
+    "documento": "",
+    "telefono": "",
+    "correo": "",
+    "cargo": ""
+}
+  
   constructor(private service: FactoryService, public dialog: MatDialog) {
     
    }
@@ -65,49 +74,51 @@ export class EmpleadoComponent implements OnInit {
   ngOnInit(): void {
   }
   async guardar() {
-  console.log('Pulsado');
+      console.log('Pulsado');
+    this.service.setEmpleado(this.empleado).subscribe( resp => {
+      console.log(resp);
+    })
+  // this.service.newDireccion(this.direccion).subscribe( resp => {
+  //     this.persona.id_direccion = resp.id;
+  //     console.log(resp.id);
 
-  this.service.newDireccion(this.direccion).subscribe( resp => {
-      this.persona.id_direccion = resp.id;
-      console.log(resp.id);
-
-      this.service.newPersona(this.persona).subscribe(resp => {
-        this.cliente.persona = resp.id;
+  //     this.service.newPersona(this.persona).subscribe(resp => {
+  //       this.cliente.persona = resp.id;
           
-        this.service.newCliente(this.cliente).subscribe( resp => {
-          console.log(resp);
+  //       this.service.newCliente(this.cliente).subscribe( resp => {
+  //         console.log(resp);
 
-          this.persona  = {
-            "nombre": "",
-            "apellido": "",
-            "cedula": 0,
-            "telefono": 809,
-            "id_direccion": 0,
-            "estado_civil": ""   
-            }
-            this.direccionFull = '';
-            this.cliente = {
-              "lugar_trabajo": "",
-              "direccion_trabajo": "",
-              "telefono_trabajo": 809,
-              "cargo": "",
-              "sueldo": 0,
-              "otros_ingresos": 0,
-              "persona": 0,
-              "correo": ""    
-            };
-        })
+  //         this.persona  = {
+  //           "nombre": "",
+  //           "apellido": "",
+  //           "cedula": 0,
+  //           "telefono": 809,
+  //           "id_direccion": 0,
+  //           "estado_civil": ""   
+  //           }
+  //           this.direccionFull = '';
+  //           this.cliente = {
+  //             "lugar_trabajo": "",
+  //             "direccion_trabajo": "",
+  //             "telefono_trabajo": 809,
+  //             "cargo": "",
+  //             "sueldo": 0,
+  //             "otros_ingresos": 0,
+  //             "persona": 0,
+  //             "correo": ""    
+  //           };
+  //       })
         
-      })
-  })
+  //     })
+  // })
   
   }
 
   consultar(nombre:string) {
-    this.service.getCliente().subscribe(resp => {
-      // this.cliente = resp;
-      console.log(this.cliente );
-    })
+    // this.service.getCliente().subscribe(resp => {
+    //   // this.cliente = resp;
+    //   console.log(this.cliente );
+    // })
   }
 
   ciudad: string = '';
@@ -124,7 +135,7 @@ export class EmpleadoComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.direccion = result;
-      this.direccionFull = 'Casa '+this.direccion.casa + ', Calle ' + this.direccion.calle + ', ' + this.direccion.barrio + ', ' + this.direccion.municipio + ', ' + this.direccion.ciudad;
+      this.empleado.direccion = 'Casa '+this.direccion.casa + ', Calle ' + this.direccion.calle + ', ' + this.direccion.barrio + ', ' + this.direccion.municipio + ', ' + this.direccion.ciudad;
       // console.log(this.direccion);
     });
   }

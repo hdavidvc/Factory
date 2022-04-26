@@ -69,18 +69,32 @@ export class PrincipalComponent implements OnInit {
   }
   constructor( private service: FactoryService) { 
         
-    this.service.getPersona().subscribe( per => {
-      console.log(per);
-    })
+    // this.service.getPersona().subscribe( per => {
+    //   console.log(per);
+    // })
+    // this.service.getUsuarios().subscribe( usr => {
+    //   usr.forEach(user => {
+    //     const {nombre, email} = user;
+    //     console.log(`Nombre: ${nombre}`);
+    //     console.log(`Email: ${email}`);
+    //   })
+    // })
+
+    // this.getusr();
     
-          console.log(window.innerHeight, window.innerWidth);
+    //       console.log(window.innerHeight, window.innerWidth);
    }
 
-   enviar() {
-    this.service.newPersona(this.persona).subscribe( per => {
-      console.log(per);
-    })
-   }
+  //  async getusr () {
+  //     await this.service.getUsuario(2).subscribe( usr => {
+  //       console.log(usr);
+  //    })
+  //  }
+  //  enviar() {
+  //   this.service.newPersona(this.persona).subscribe( per => {
+  //     console.log(per);
+  //   })
+  //  }
 
   ngOnInit(): void {
   }

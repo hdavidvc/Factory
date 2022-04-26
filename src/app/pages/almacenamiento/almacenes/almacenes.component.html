@@ -17,7 +17,7 @@
                 <div class="content_s">
                     <div>
                         <label for="monto">Descripcion</label>
-                        <input type="text" name="monto" id="monto" [(ngModel)]='almacenes.monto'>
+                        <input type="text" name="monto" id="monto" [(ngModel)]='almacen.descripcion'>
                     </div>
                     <!-- <div>
                             <label for="montoCuota">Monto cuotas</label>
@@ -41,7 +41,7 @@
                     <div>
                         <label for="cliente">Estado</label>
                         <!-- <input type="text" name="cliente" id="cliente"> -->
-                        <select name="cliente" id="cliente">
+                        <select name="cliente" id="cliente" [(ngModel)]='almacen.estado'>
                                 <option value=Disponible>Disponible</option>
                                 <option value=Ocupado>Ocupado</option>
                             </select>
@@ -120,13 +120,13 @@
 
                 <ng-container matColumnDef="Descripcion">
                     <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
                 </ng-container>
 
 
                 <ng-container matColumnDef="Estado">
                     <th class="title" mat-header-cell *matHeaderCellDef> Estado </th>
-                    <td mat-cell *matCellDef="let element"> {{element.Estado}} </td>
+                    <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>

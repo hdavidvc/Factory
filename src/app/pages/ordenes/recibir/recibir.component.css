@@ -84,3 +84,8 @@ table {
 .title {
     text-align: center;
 }
+
+.editar {
+    inline-size: 158px;
+    block-size: 38px;
+}

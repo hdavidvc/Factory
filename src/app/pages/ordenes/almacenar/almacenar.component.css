@@ -1,5 +1,70 @@
-table {
-    width: 100%;
+select {
+    inline-size: 262px;
+}
+
+.form .Secction {
+    display: flex;
+    justify-content: space-between;
+    inline-size: 100%;
+    block-size: 90px;
+}
+
+.form .Secction .content_p,
+.form .Secction .content_s {
+    block-size: auto;
+    /* padding-block-end: 40px; */
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.form .Secction .content_s {
+    block-size: 141px;
+    inline-size: 30%;
+    justify-content: center;
+}
+
+.form .Secction .content_p {
+    inline-size: 60%;
+    /* padding-inline-end: 200px; */
+    justify-content: space-between;
+}
+
+.form .Secction .content_s div,
+.form .Secction .content_p div {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    padding-block-start: 11px;
+}
+
+#cargar {
+    background-color: #BB2222;
+    margin-block-start: 25px;
+}
+
+button {
+    /* margin-inline-start: 38.6%; */
+}
+
+#btncarga {
+    display: flex;
+    justify-content: center;
+}
+
+app-divider {
+    padding-inline-start: 20px;
+}
+
+.dirBtn {
+    margin-inline-start: 10px;
+    inline-size: 104px;
+    block-size: 24px;
+}
+
+.example-container {
+    block-size: 45%;
+    overflow: auto;
+    margin-block-start: 20px;
 }
 
 th {
@@ -12,84 +77,15 @@ td {
     font: var(--sidebar);
 }
 
+table {
+    width: 100%;
+}
+
 .title {
     text-align: center;
 }
 
-.example-container {
-    margin-block-start: 30px;
-    height: 400px;
-    overflow: auto;
-}
-
-.btnAnular {
-    display: flex;
-    justify-content: center;
-    padding-block: 5px;
-}
-
-.anular {
-    background-color: red;
-    color: white;
-    display: block;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-}
-
-#imprimir {
-    background-color: #DE6E1D;
-}
-
-.actions {
-    display: flex;
-    justify-content: space-evenly;
-    margin-block-start: 20px;
-}
-
-
-/* Graficas */
-
-.resumen {
-    /* block-size: 351px; */
-    inline-size: 450px;
-    margin-inline-start: 24%;
-    background: #FFF9F9;
-    /* box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25); */
-    border-radius: 20px;
-    display: flex;
-    /* flex-direction: ; */
-    align-items: center;
-    margin-block-start: 100px;
-}
-
-.leyendas {
-    font: var(--body);
-}
-
-.leyendas .a {
-    color: rgba(14, 156, 29, 1);
-}
-
-.leyendas .p {
-    color: rgba(219, 73, 73, 1);
-}
-
-.leyendas span {
-    color: black;
-}
-
-.chart {
-    inline-size: 300px;
-    block-size: 300px;
-}
-
-.body {
-    block-size: 450px;
-}
-
-.leyendas {
-    display: flex;
-    inline-size: 200px;
-    justify-content: space-between;
+.editar {
+    inline-size: 158px;
+    block-size: 38px;
 }
