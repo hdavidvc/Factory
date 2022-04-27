@@ -25,7 +25,7 @@ export class MateriaComponent implements OnInit {
   constructor(public dialog: MatDialog, private service: FactoryService) { 
     
     
-    this.service.getProveedor().subscribe(resp => {
+    this.service.getProveedores().subscribe(resp => {
       this.proveedores = resp;
     })
     this.obtenerMaterias();

@@ -94,8 +94,8 @@ setProveedor(provedor: any) {
 getProveedores() {
   return this.http.get<any>('http://localhost:8050/api/proveedor/');
 }
-getProveedor() {
-  return this.http.get('http://localhost:8050/api/proveedor/');
+getProveedor(id:number) {
+  return this.http.get(`http://localhost:8050/api/proveedor/${id}`);
 }
 
 //Almacen
@@ -124,6 +124,9 @@ getEstanteriaBy(id:number) {
   setUbicacion(ubicacion: any) {
     return this.http.post<any>('http://localhost:8050/api/ubicacion/',ubicacion)
   }
+  getUbicacion(idMa:any) {
+    return this.http.get<any>(`http://localhost:8050/api/ubicacion/${idMa}`);
+  }
 
   //Materia
   setMateria(materia: any) {
@@ -134,5 +137,24 @@ getEstanteriaBy(id:number) {
   }
   getMateria(id: any) {
     return this.http.get<any>(`http://localhost:8050/api/materiaprima/${id}`);
+  }
+
+  //ORDEN
+  setOrden(orden: any) {
+    return this.http.post<any>('http://localhost:8050/api/orden/',orden)
+  }
+  getOrden() {
+    return this.http.get<any>(`http://localhost:8050/api/orden/`);
+  }
+  updateOrden(newO:any) {
+    return this.http.put<any>(`http://localhost:8050/api/orden/${newO.id}`,newO);
+  }
+
+  //DETALLE
+  setDetelles(detalle: any) {
+    return this.http.post<any>('http://localhost:8050/api/delletaorden/',detalle)
+  }
+  getDetelle(id:any) {
+    return this.http.get<any>(`http://localhost:8050/api/delletaorden/${id}`);
   }
 }

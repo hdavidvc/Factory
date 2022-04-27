@@ -44,6 +44,32 @@ export class CrearComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  detalle =  {    
+        id_materia: 0,
+        cantidad: 0,
+        id_orden: 0
+  }
+  orden = {
+      id_proveedor: 0,
+      id_empleado: 0,
+      fecha: ""
+  }
+  
+  guardar() {
+    this.service.setOrden(this.orden).subscribe(resp => {
+      console.log(resp.id);
+      this.dataSource.forEach(ma => {
+        this.detalle.id_materia = ma.id_materia;
+        this.detalle.cantidad = ma.cantidad;
+        this.detalle.id_orden = resp.id;
+        this.service.setDetelles(this.detalle).subscribe(deta => {
+              console.log(this.detalle);
+              console.log(deta);
+        })
+      })
+      
+    })
+  }
   
   id_materia:number = 0;
   materia:string = '';

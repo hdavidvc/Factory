@@ -11,7 +11,7 @@
                 <label for="fin">Hasta</label>
                 <input type="date" name="fin">
             </div>
-            <button>Guardar</button>
+            <button (click)="guardar()">Guardar</button>
         </div>
         <app-divider [title]="'Datos Principales'"></app-divider>
         <form action="" class="form">
@@ -20,13 +20,13 @@
                 <div class="content_p">
                     <div>
                         <label for="estado">Proveedor</label>
-                        <select name="estado" id="estado">
+                        <select name="estado" id="estado" [(ngModel)]="orden.id_proveedor">
                             <option *ngFor="let item of proveedor" value="{{item.id}}" >{{item.nombre}}</option>
                         </select>
                     </div>
                     <div>
                         <label for="estado">Empleado</label>
-                        <select name="estado" id="estado">
+                        <select name="estado" id="estado" [(ngModel)]="orden.id_empleado">
                             <option *ngFor="let item of empleado" value="{{item.id}}">{{item.nombre}}</option>
                         </select>
                     </div>
@@ -39,7 +39,7 @@
                 <div class="content_s">
                     <div>
                         <label for="inicio">Fecha</label>
-                        <input type="date" name="inicio">
+                        <input type="date" name="inicio" [(ngModel)]="orden.fecha">
                         <!-- <input type="number" [(ngModel)]="lado.numero" > -->
                     </div>
                 </div>

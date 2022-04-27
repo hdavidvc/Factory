@@ -11,6 +11,8 @@ import { FilterPipe } from './pipes/filter.pipe';
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 // import { MatSelectModule } from '@angular/material/select';
 
 
@@ -46,6 +48,8 @@ import { ProveedoresComponent } from './pages/personas/proveedores/proveedores.c
 import { DialogUbicacionComponent } from './components/dialog-ubicacion/dialog-ubicacion.component';
 import { MatSelectModule } from '@angular/material/select';
 import { DialogMateriaComponent } from './components/dialog-materia/dialog-materia.component';
+import { DialogRecibirComponent } from './components/dialog-recibir/dialog-recibir.component';
+import { DialogAlmacenarComponent } from './components/dialog-almacenar/dialog-almacenar.component';
 
 
 @NgModule({
@@ -75,7 +79,9 @@ import { DialogMateriaComponent } from './components/dialog-materia/dialog-mater
     DialogDireccionComponent,
     ProveedoresComponent,
     DialogUbicacionComponent,
-    DialogMateriaComponent,  
+    DialogMateriaComponent,
+    DialogRecibirComponent,
+    DialogAlmacenarComponent,  
 
   ],
   imports: [
@@ -88,7 +94,8 @@ import { DialogMateriaComponent } from './components/dialog-materia/dialog-mater
     FormsModule,
     MatDialogModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule
     
   ],
   providers: [],

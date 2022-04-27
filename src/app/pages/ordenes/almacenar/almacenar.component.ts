@@ -1,26 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
+import { DialogAlmacenarComponent } from 'src/app/components/dialog-almacenar/dialog-almacenar.component';
+import { FactoryService } from 'src/app/services/factory.service';
 
 export interface TablaElement {
-  ID: number;
-  Proveedor: string;
-  Fecha: string;
-  Accion: string;
+  id: number;
+  proveedor: string;
+  fecha: string;
+  estado: string
+  // Accion: string;
 
 }
 
-const ELEMENT_DATA: TablaElement[] = [
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 1",Accion: ""},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 2",Accion: ""},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 3",Accion: ""},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 4",Accion: ""},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 5",Accion: ""},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 6",Accion: ""},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 7",Accion: ""},
-  {ID: 1, Proveedor: "Ocupado",Fecha: "Fecha 8",Accion: ""},
-  {ID: 1, Proveedor: "Disponible",Fecha: "Fecha 9",Accion: ""},
+let ELEMENT_DATA: TablaElement[] = [
+
 ];
+
 
 
 @Component({
@@ -30,46 +27,61 @@ const ELEMENT_DATA: TablaElement[] = [
 })
 export class AlmacenarComponent implements OnInit {
 
+  displayedColumns = ['ID', 'Proveedor', 'Fecha', 'Estado', 'Accion'];
+
   
-  displayedColumns = ['ID', 'Proveedor', 'Fecha', 'Accion'];
   dataSource = ELEMENT_DATA;
-  public pieChartOptions: ChartOptions = {
-    responsive: true,
-    legend: {
-      position: 'top',
-    },
-    plugins: {
-      datalabels: {
-        formatter: (value: any, ctx: any) => {
-          const label = ctx.chart.data.labels[ctx.dataIndex];
-          return label;
-        },
-      },
-    },
-    
-  };
-  public pieChartLabels: Label[] = ['Aprobados', 'Pendientes'];
-  public pieChartData: number[] = [300, 500];
-  public pieChartType: ChartType = 'pie';
-  public pieChartLegend = false;
-  public pieChartPlugins: any = [];
-  public pieChartColors = [
-    {
-      backgroundColor: ['rgba(14,156,29,1)', 'rgba(219,73,73,1)'],
-    },
-  ];
+   
+  constructor(private service:FactoryService, public dialog: MatDialog) {
+    ELEMENT_DATA = this.ObtenerOrdenes();
 
-  public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event: MouseEvent, active: {}[] }): void {
-    console.log(event, active);
-  }
-  
-  constructor() { }
+   }
+  progress: boolean = true;
 
   ngOnInit(): void {
-  }
 
+    setTimeout(() => {
+      this.dataSource = ELEMENT_DATA      
+      this.progress = false;
+    }, 300);
+  }
+  
+  ObtenerOrdenes() {
+    let provicional:any
+    let proA:any = []
+    this.service.getOrden().subscribe( orden => {
+      // console.log(orden);
+      orden.forEach((element:any,i:number) => {
+        const {id,id_proveedor,fecha,estado} = element;
+        // console.log(orden);
+        this.service.getProveedor(id_proveedor).subscribe ( (prove:any) => {
+        let proveedor = prove[0].nombre;
+          // console.log(prove);
+          provicional = {id,proveedor,fecha,estado}
+          proA.push(provicional);          
+        })
+      });
+      
+    })
+
+    return proA;
+  }
+  idOr:number = 0;
+   openDialog(event:any): void {
+    this.idOr = event;
+    const dialogRef = this.dialog.open(DialogAlmacenarComponent, {
+      width: '700px',
+      data: {id: this.idOr}
+    });
+
+    dialogRef.afterClosed().subscribe(async result => {     
+      this.service.updateOrden(result).subscribe(resp=> {
+      })
+       ELEMENT_DATA = await this.ObtenerOrdenes();
+       setTimeout(() => {
+        this.dataSource = ELEMENT_DATA      
+        this.progress = false;
+      }, 200);  
+    });
+  }
 }

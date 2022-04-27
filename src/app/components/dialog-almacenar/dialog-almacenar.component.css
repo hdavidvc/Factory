@@ -1,0 +1,47 @@
+mat-form-field {
+    font: var(--sidebar);
+}
+
+button {
+    background-color: #365EC2;
+    border-radius: 50px;
+    border: none;
+    inline-size: 100px;
+    block-size: 30px;
+    color: white;
+    cursor: pointer;
+    /* margin-inline: 5px; */
+}
+
+.mat-dialog-actions {
+    justify-content: space-evenly;
+}
+
+.example-container {
+    block-size: 45%;
+    overflow: auto;
+    margin-block-start: 20px;
+}
+
+th {
+    background-color: #343a40;
+    color: white;
+}
+
+td {
+    text-align: center;
+    font: var(--sidebar);
+}
+
+table {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.editar {
+    inline-size: 158px;
+    block-size: 38px;
+}
