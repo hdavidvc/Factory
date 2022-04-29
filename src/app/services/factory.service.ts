@@ -147,6 +147,7 @@ getEstanteriaBy(id:number) {
     return this.http.get<any>(`http://localhost:8050/api/orden/`);
   }
   updateOrden(newO:any) {
+    // const {estado} = newO;
     return this.http.put<any>(`http://localhost:8050/api/orden/${newO.id}`,newO);
   }
 

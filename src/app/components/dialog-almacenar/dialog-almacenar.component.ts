@@ -38,6 +38,9 @@ export class DialogAlmacenarComponent implements OnInit {
     this.dialogRef.close();
 
   }
+  almacenar() {
+    
+  }
 
   getUbicaciones() {
     this.dataSource.forEach((element:any,i:number) => {

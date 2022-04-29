@@ -75,13 +75,16 @@ export class AlmacenarComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(async result => {     
-      this.service.updateOrden(result).subscribe(resp=> {
-      })
-       ELEMENT_DATA = await this.ObtenerOrdenes();
+      this.service.updateOrden(result).subscribe(async resp=> {
+        ELEMENT_DATA = await this.ObtenerOrdenes();
        setTimeout(() => {
         this.dataSource = ELEMENT_DATA      
         this.progress = false;
       }, 200);  
+      })
+       
+      console.log(result);
+      
     });
   }
 }

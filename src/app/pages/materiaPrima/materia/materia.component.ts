@@ -27,8 +27,9 @@ export class MateriaComponent implements OnInit {
     
     this.service.getProveedores().subscribe(resp => {
       this.proveedores = resp;
+      console.log(this.proveedores);
+      this.obtenerMaterias();
     })
-    this.obtenerMaterias();
   }
 
   ngOnInit(): void {
@@ -77,11 +78,15 @@ export class MateriaComponent implements OnInit {
 
   obtenerMaterias() {
     this.service.getMaterias().subscribe(materia => {
+      console.log(materia);
       materia.forEach((element:any, i:number) => {
-        const find = this.proveedores.find((al:any) => element.proveedor === al.id);
+        console.log(element);
+        const find = this.proveedores.find((al:any) => element.proveedor == al.id);
+        console.log(find);
         materia[i].proveedor = find.nombre;
       });
       this.dataSource = materia;
+      console.log(this.dataSource);
     })
   }
 
