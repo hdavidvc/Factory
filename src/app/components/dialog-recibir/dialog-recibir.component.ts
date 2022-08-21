@@ -32,6 +32,8 @@ export class DialogRecibirComponent implements OnInit {
    
     this.dialogRef.close();
 
+    
+
   }
 
 }

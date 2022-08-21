@@ -5,6 +5,8 @@ import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { DialogRecibirComponent } from 'src/app/components/dialog-recibir/dialog-recibir.component';
 import { FactoryService } from '../../../services/factory.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 export interface TablaElement {
   id: number;
@@ -29,7 +31,7 @@ export class RecibirComponent implements OnInit {
   
   dataSource:TablaElement[] = [];
   
-  constructor(private service:FactoryService, public dialog: MatDialog) {
+  constructor(private service:FactoryService, public dialog: MatDialog, private route: Router) {
     ELEMENT_DATA = this.ObtenerOrdenes();
    }
 
@@ -75,13 +77,41 @@ export class RecibirComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(async result => {     
+      if(result.estado == 'Recibida') {
+
+        Swal.fire({
+          title: 'Recibida',
+          showDenyButton: true,
+          confirmButtonText: 'Si',
+          denyButtonText: `No`,
+          text: 'Quieres almacenarla?',
+          icon: 'question',
+        }).then((result) => {
+          /* Read more about isConfirmed, isDenied below */
+          if (result.isConfirmed) {
+            // Swal.fire('Saved!', '', 'success')
+
+            this.route.navigateByUrl('/ordenes/almacenar')
+          } else if (result.isDenied) {
+            Swal.fire('Orden actualizada', '', 'success')
+          }
+        })
+      
+      } else {
+        Swal.fire('Orden actualizada', '', 'success')
+      }
       this.service.updateOrden(result).subscribe(resp=> {
+        console.log(resp);
       })
        ELEMENT_DATA = await this.ObtenerOrdenes();
        setTimeout(() => {
         this.dataSource = ELEMENT_DATA      
         this.progress = false;
+        console.log(this.dataSource);
       }, 200);  
+
+     
+      ELEMENT_DATA = this.ObtenerOrdenes();
     });
   }
 }

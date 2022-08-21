@@ -6,7 +6,7 @@ import { ChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 // Angular Material
 import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -95,7 +95,8 @@ import { DialogAlmacenarComponent } from './components/dialog-almacenar/dialog-a
     MatDialogModule,
     MatInputModule,
     MatSelectModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    SweetAlert2Module
     
   ],
   providers: [],

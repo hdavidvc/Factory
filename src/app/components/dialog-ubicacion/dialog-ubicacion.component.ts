@@ -22,8 +22,17 @@ export class DialogUbicacionComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData, private service: FactoryService) {
 
       this.service.getAlmacenes().subscribe(resp => {
-      this.almacenes = resp;
+        
+        resp.forEach((element:any) => {         
+          if(element.estado == 'Disponible') {        
+            this.almacenes.push( element);
+          }
+        });
+   
     })
+    //   this.service.getAlmacenes().subscribe(resp => {
+    //   this.almacenes = resp;
+    // })
 
    
   }

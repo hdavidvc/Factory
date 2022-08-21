@@ -103,9 +103,20 @@ setAlmacen(almacen: any) {
   console.log(almacen);
   return this.http.post<any>('http://localhost:8050/api/almacen/',almacen)
 }
+updateAlmacen(almacen: any) {
+  console.log(almacen);
+  return this.http.put<any>(`http://localhost:8050/api/almacen/${almacen.id}`,almacen);
+}
+updateEstanteria(estanteria: any) {
+  console.log(estanteria);
+  return this.http.put<any>(`http://localhost:8050/api/estanteria/${estanteria.id}`,estanteria);
+}
 
 getAlmacenes() {
   return this.http.get<any>(`http://localhost:8050/api/almacen`);
+}
+getAlmacen(almacen: any) {
+  return this.http.get<any>(`http://localhost:8050/api/almacen/${almacen}`);
 }
 //Estanteria
 setEstanteria(estante: any) {
@@ -128,6 +139,10 @@ getEstanteriaBy(id:number) {
     return this.http.get<any>(`http://localhost:8050/api/ubicacion/${idMa}`);
   }
 
+  getUbicaciones() {
+    return this.http.get<any>(`http://localhost:8050/api/ubicacion/`);
+  }
+
   //Materia
   setMateria(materia: any) {
     return this.http.post<any>('http://localhost:8050/api/materiaprima/',materia)
@@ -146,8 +161,12 @@ getEstanteriaBy(id:number) {
   getOrden() {
     return this.http.get<any>(`http://localhost:8050/api/orden/`);
   }
+  getOrdenR() {
+    return this.http.get<any>(`http://localhost:8050/api/orden/recibidas/`);
+  }
   updateOrden(newO:any) {
     // const {estado} = newO;
+    console.log(newO);
     return this.http.put<any>(`http://localhost:8050/api/orden/${newO.id}`,newO);
   }
 

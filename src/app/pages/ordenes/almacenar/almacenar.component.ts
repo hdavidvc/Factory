@@ -49,8 +49,8 @@ export class AlmacenarComponent implements OnInit {
   ObtenerOrdenes() {
     let provicional:any
     let proA:any = []
-    this.service.getOrden().subscribe( orden => {
-      // console.log(orden);
+    this.service.getOrdenR().subscribe( orden => {
+      console.log(orden);
       orden.forEach((element:any,i:number) => {
         const {id,id_proveedor,fecha,estado} = element;
         // console.log(orden);

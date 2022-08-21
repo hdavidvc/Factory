@@ -8,6 +8,7 @@
             </div>
             <!-- <button id="consultar" routerLink='/almaceness/consultar'>Consultar</button> -->
             <button (click)="guardar()">Guardar</button>
+
         </div>
         <app-divider id="datoD" [title]="'Datos principales'"></app-divider>
         <form action="" class="form">
@@ -66,7 +67,7 @@
                             <input type="date" name="fechaVence" id="fechaVence" [(ngModel)]='almacenes.fecha_fin'>
                         </div> -->
                 </div>
-
+                <button style="background-color: green ;" (click)="editar()">Editar</button>
             </div>
 
             <!-- <hr> -->
@@ -120,7 +121,7 @@
 
                 <ng-container matColumnDef="Descripcion">
                     <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    <td mat-cell *matCellDef="let element" (click)="select(element)"> {{element.descripcion}} </td>
                 </ng-container>
 
 

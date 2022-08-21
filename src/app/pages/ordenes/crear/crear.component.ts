@@ -69,6 +69,12 @@ export class CrearComponent implements OnInit {
       })
       
     })
+    this.orden = {
+      id_proveedor: 0,
+      id_empleado: 0,
+      fecha: ""
+  }
+  this.dataSource = [];
   }
   
   id_materia:number = 0;

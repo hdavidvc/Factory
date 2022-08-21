@@ -7,6 +7,7 @@
                 <input type="text" name="buscar">
             </div>
             <button (click)="guardar()">Guardar</button>
+            <button style="background-color: green ;" (click)="editar()">Editar</button>
 
         </div>
         <app-divider [title]="'Datos del ejecutivo'"></app-divider>
@@ -48,7 +49,7 @@
 
                 <ng-container matColumnDef="Descripcion">
                     <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
-                    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                    <td mat-cell *matCellDef="let element" (click)="select(element)"> {{element.descripcion}} </td>
                 </ng-container>
 
 

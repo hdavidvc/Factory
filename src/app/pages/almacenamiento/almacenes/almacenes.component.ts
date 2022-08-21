@@ -66,6 +66,13 @@ export class AlmacenesComponent implements OnInit {
       this.dataSource = resp;
     })
   }
+  select(e:any) {
+    console.log(e);
+    this.almacen =e
+  }
+  editar () {
+    this.service.updateAlmacen(this.almacen).subscribe(resp => console.log(resp) );
+  }
 
 
 

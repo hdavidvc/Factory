@@ -27,12 +27,19 @@ export class EstanteriaComponent implements OnInit {
   dataSource:TablaElement[] = [];
 
   public  almacenes:Array<any>= [];
+  public  tempAl:Array<any>= [];
 
   constructor(private service: FactoryService, public dialog: MatDialog) { 
     this.service.getAlmacenes().subscribe(resp => {
-      this.almacenes = resp;
+      this.tempAl = resp;
+      resp.forEach((element:any) => {         
+        if(element.estado == 'Disponible') {        
+          this.almacenes.push( element);
+        }
+      });
+      this.obtenerEstanterias();
     })
-    this.obtenerEstanterias();
+    
   }
 
   ngOnInit(): void {
@@ -41,7 +48,7 @@ export class EstanteriaComponent implements OnInit {
   estanteria: any = {
     "descripcion": "",
     "estado": "",
-    "id_almacen": 0
+    "id_almacen": ''
 }
    async guardar() {
       this.dataSource.push(this.estanteria);
@@ -55,15 +62,26 @@ export class EstanteriaComponent implements OnInit {
       console.log(this.dataSource);
     }
     obtenerEstanterias():any {
+      var tempAl:[] = [];
       this.service.getEstanteria().subscribe((resp:any) => {
-        resp.forEach((element:any, i:number) => {
-
-          const find = this.almacenes.find(al => element.id_almacen === al.id);
+        
+        resp.forEach((element:any, i:number) => {         
+          
+          const find = this.tempAl.find(al => element.id_almacen === al.id);         
+         
           resp[i].id_almacen = find.descripcion;
         });
         this.dataSource = resp;
       })
     }
-
+    select(e:any) {
+      console.log(e);
+      this.estanteria =e
+      console.log(this.estanteria);
+    }
+    editar () {
+      this.service.updateEstanteria(this.estanteria).subscribe(resp => console.log(resp) );
+      this.obtenerEstanterias();
+    }
 
 }

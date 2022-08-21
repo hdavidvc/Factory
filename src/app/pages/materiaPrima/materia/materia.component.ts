@@ -17,19 +17,27 @@ export interface TablaElement {
 })
 export class MateriaComponent implements OnInit {
 
-  displayedColumns = ['ID', 'Materia prima', 'Proveedor'];
+  displayedColumns = ['ID', 'Materia prima', 'Proveedor', 'Cantidad', 'Ubicacion'];
   dataSource:TablaElement[] = [];
 
   public proveedores:any = [];
+  public ubicaciones:any = [];
 
   constructor(public dialog: MatDialog, private service: FactoryService) { 
     
+    this.service.getUbicaciones().subscribe(resp => {
+      this.ubicaciones = resp;
+      console.log(this.ubicaciones);
+      
+    })
     
     this.service.getProveedores().subscribe(resp => {
       this.proveedores = resp;
       console.log(this.proveedores);
       this.obtenerMaterias();
     })
+    
+   
   }
 
   ngOnInit(): void {
@@ -80,10 +88,18 @@ export class MateriaComponent implements OnInit {
     this.service.getMaterias().subscribe(materia => {
       console.log(materia);
       materia.forEach((element:any, i:number) => {
-        console.log(element);
-        const find = this.proveedores.find((al:any) => element.proveedor == al.id);
-        console.log(find);
-        materia[i].proveedor = find.nombre;
+        // console.log(element);
+
+        const findP = this.proveedores.find((al:any) => element.proveedor == al.id);
+        // console.log(findP);
+        materia[i].proveedor = findP.nombre;
+
+        const findU = this.ubicaciones.find((al:any) => element.id_ubicacion == al.id);
+        // console.log(findU);
+        this.service.getAlmacen(findU.id_almacen).subscribe(alc => {
+          // console.log(alc[0]);
+          materia[i].id_ubicacion = alc[0].descripcion;
+        })
       });
       this.dataSource = materia;
       console.log(this.dataSource);
