@@ -4,7 +4,8 @@ import { FactoryService } from 'src/app/services/factory.service';
 
 export interface DialogData {
   id: number,
-  estado: string
+  estado: string,
+  almacen: any[]
 }
 
 @Component({
@@ -18,6 +19,7 @@ export class DialogAlmacenarComponent implements OnInit {
     {},{}
   ];
   ubicaciones:any = [];
+  Almac:any = [];
   displayedColumns = ['ID', 'Materia prima', 'Cantidad', 'Ubicacion'];
   
   constructor(public dialogRef: MatDialogRef<DialogAlmacenarComponent>,
@@ -43,11 +45,20 @@ export class DialogAlmacenarComponent implements OnInit {
   }
 
   getUbicaciones() {
+    console.log(this.dataSource);
     this.dataSource.forEach((element:any,i:number) => {
       this.service.getUbicacion(element.id).subscribe(resp => {
-        this.ubicaciones.push({id:resp[i].id,descripcion:resp[i].descripcion})
+        console.log(resp);
+        
+        this.ubicaciones.push({id:resp[0].id,descripcion:resp[0].descripcion})
       })
     });
     
+  }
+  camSelect(e: any){
+    this.Almac.push(e);
+    this.data.almacen = this.Almac;
+    console.log(e);
+
   }
 }

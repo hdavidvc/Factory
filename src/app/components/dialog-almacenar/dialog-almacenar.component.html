@@ -23,8 +23,8 @@
             <th class="title" mat-header-cell *matHeaderCellDef> Ubicacion </th>
 
             <td mat-cell *matCellDef="let element">
-                <mat-select>
-                    <mat-option *ngFor="let item of ubicaciones" value="{{item.id}}">{{item.descripcion}}</mat-option>
+                <mat-select (selectionChange)="camSelect($event.value)">
+                    <mat-option *ngFor="let item of ubicaciones" value={{item.id}}>{{item.descripcion}}</mat-option>
                 </mat-select>
             </td>
         </ng-container>

@@ -50,6 +50,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { DialogMateriaComponent } from './components/dialog-materia/dialog-materia.component';
 import { DialogRecibirComponent } from './components/dialog-recibir/dialog-recibir.component';
 import { DialogAlmacenarComponent } from './components/dialog-almacenar/dialog-almacenar.component';
+import { DialogEstadoComponent } from './components/dialog-estado/dialog-estado.component';
 
 
 @NgModule({
@@ -81,7 +82,8 @@ import { DialogAlmacenarComponent } from './components/dialog-almacenar/dialog-a
     DialogUbicacionComponent,
     DialogMateriaComponent,
     DialogRecibirComponent,
-    DialogAlmacenarComponent,  
+    DialogAlmacenarComponent,   
+    DialogEstadoComponent,  
 
   ],
   imports: [

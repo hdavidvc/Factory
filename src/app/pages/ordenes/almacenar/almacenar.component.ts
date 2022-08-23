@@ -3,8 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Label } from 'ng2-charts';
 import { DialogAlmacenarComponent } from 'src/app/components/dialog-almacenar/dialog-almacenar.component';
+import { DialogEstadoComponent } from 'src/app/components/dialog-estado/dialog-estado.component';
 import { FactoryService } from 'src/app/services/factory.service';
-
+import Swal from 'sweetalert2';
 export interface TablaElement {
   id: number;
   proveedor: string;
@@ -74,17 +75,56 @@ export class AlmacenarComponent implements OnInit {
       data: {id: this.idOr}
     });
 
-    dialogRef.afterClosed().subscribe(async result => {     
+    dialogRef.afterClosed().subscribe(async result => {  
+      console.log(result);   
       this.service.updateOrden(result).subscribe(async resp=> {
         ELEMENT_DATA = await this.ObtenerOrdenes();
        setTimeout(() => {
         this.dataSource = ELEMENT_DATA      
         this.progress = false;
       }, 200);  
+
+      Swal.fire({
+        title: 'Almacenada',
+        showDenyButton: true,
+        confirmButtonText: 'Si',
+        denyButtonText: `No`,
+        text: 'Queda espacio?',
+        icon: 'question',
+      }).then((resultA) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (resultA.isConfirmed) {
+          Swal.fire('Orden actualizada', '', 'success')
+          // this.route.navigateByUrl('/ordenes/almacenar')
+        } else if (resultA.isDenied) {            
+         
+            console.log(result);
+            const dialogRef = this.dialog.open(DialogEstadoComponent, {
+              width: '700px',
+              data: {id: result}
+            });
+        
+            dialogRef.afterClosed().subscribe(async resultC => {     
+              console.log(resultC);
+              console.log(resultC.id);
+              console.log( resultC.id.almacen);
+              resultC.id.almacen.forEach((element:any) => {
+                console.log(element);
+                this.service.updateAlmacen2(element).subscribe(e => {});
+                  
+              });
+              let temp = {id:resultC.id.id}
+                             
+                         
+            });
+        }
+        })
+      })
+
+
       })
        
-      console.log(result);
+      // console.log(result);
       
-    });
+    };
   }
-}

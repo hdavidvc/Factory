@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Actualizar estado de almacenes</h1>
+<div mat-dialog-actions *ngFor="let item of almacenes">
+    <!-- <button mat-button (click)="onNoClick()">Cancelar</button> -->
+    <label for="estado">{{item.descripcion}}</label>
+    <select name="estado" id="estado" [(ngModel)]="data.estado">
+                <option value="Disponible">Disponible</option>
+                <option value="Ocupado">Ocupado</option>
+    </select>
+</div>
+<button mat-button [mat-dialog-close]="data" cdkFocusInitial>Actualizar</button>

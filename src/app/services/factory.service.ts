@@ -107,6 +107,10 @@ updateAlmacen(almacen: any) {
   console.log(almacen);
   return this.http.put<any>(`http://localhost:8050/api/almacen/${almacen.id}`,almacen);
 }
+updateAlmacen2(almacen: any) {
+  console.log(almacen);
+  return this.http.put<any>(`http://localhost:8050/api/almacen/estado/${almacen}`,{});
+}
 updateEstanteria(estanteria: any) {
   console.log(estanteria);
   return this.http.put<any>(`http://localhost:8050/api/estanteria/${estanteria.id}`,estanteria);
@@ -156,10 +160,14 @@ getEstanteriaBy(id:number) {
 
   //ORDEN
   setOrden(orden: any) {
+    console.log(orden);
     return this.http.post<any>('http://localhost:8050/api/orden/',orden)
   }
   getOrden() {
     return this.http.get<any>(`http://localhost:8050/api/orden/`);
+  }
+  getOrdenP() {
+    return this.http.get<any>(`http://localhost:8050/api/orden/pendientes/`);
   }
   getOrdenR() {
     return this.http.get<any>(`http://localhost:8050/api/orden/recibidas/`);
@@ -172,6 +180,7 @@ getEstanteriaBy(id:number) {
 
   //DETALLE
   setDetelles(detalle: any) {
+    console.log(detalle);
     return this.http.post<any>('http://localhost:8050/api/delletaorden/',detalle)
   }
   getDetelle(id:any) {

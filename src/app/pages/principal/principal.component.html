@@ -3,29 +3,29 @@
     <div class="badge badge-1">
         <!-- <div class="badge badge-1" (click)="enviar()"> -->
         <div class="detalle">
-            <span>10</span>
+            <span>{{Ototal}}</span>
             <p>Ordenes realizadas</p>
         </div>
         <img src="../../../assets/ordenes.png" alt="">
     </div>
     <div class="badge badge-2">
         <div class="detalle">
-            <span>3</span>
+            <span>{{OPProcesar}}</span>
             <p>Ordenes por procesar</p>
         </div>
         <span class="iconify" data-inline="false" data-icon="ic:baseline-price-check" style="color: #ffffff; font-size: 35px;"></span>
     </div>
     <div class="badge badge-3">
         <div class="detalle">
-            <span>30</span>
+            <span>{{OProcesadas}}</span>
             <p>Ordenes procesadas</p>
         </div>
         <span class="iconify" data-inline="false" data-icon="fa-regular:money-bill-alt" style="color: #ffffff; font-size: 35px;"></span>
     </div>
     <div class="badge badge-4">
         <div class="detalle">
-            <span>7</span>
-            <p>Ordenes canceladas</p>
+            <span>{{Oalmacenadas}}</span>
+            <p>Almacenadas</p>
         </div>
         <span class="iconify" data-inline="false" data-icon="bx:bx-trending-down" style="color: #ffffff; font-size: 35px;"></span>
     </div>
@@ -33,7 +33,7 @@
 
 <section class="body">
     <section class="resumen">
-        <h3>RESUMEN PRESTAMOS</h3>
+        <h3>RESUMEN ORDENES</h3>
         <!-- Grafico -->
         <div>
             <div>
@@ -50,16 +50,17 @@
         </div>
         <div class="leyenda-container">
             <ul class="leyendas">
-                <li class="a"><span>PROCESADAS</span></li>
-                <li class="p"><span>CANCELADAS</span></li>
-                <li class="d"><span>PENDIENTES</span></li>
+                <li class="a"><span>Total</span></li>
+                <li class="p"><span>Pendientes</span></li>
+                <li class="d"><span>Recibida</span></li>
+                <li class="c"><span>Almacenadas</span></li>
             </ul>
         </div>
     </section>
 
     <section class="ganancias">
         <div class="graficas">
-            <h3 id="cantidad">RD$ 580</h3>
+            <h3 id="cantidad">Total {{Ototal}}</h3>
             <h4>PROMEDIO DIARIO DE ORDENES</h4>
             <div>
                 <div>

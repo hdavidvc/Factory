@@ -22,6 +22,7 @@ export class DialogRecibirComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData, private service: FactoryService) { 
 
       this.service.getDetelle(data.id).subscribe( detalle => {
+        console.log(data.id);
         this.dataSource = detalle;
       })
     }

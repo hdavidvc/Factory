@@ -58,6 +58,7 @@ export class CrearComponent implements OnInit {
   guardar() {
     this.service.setOrden(this.orden).subscribe(resp => {
       console.log(resp.id);
+      console.log(this.dataSource);
       this.dataSource.forEach(ma => {
         this.detalle.id_materia = ma.id_materia;
         this.detalle.cantidad = ma.cantidad;
@@ -65,6 +66,7 @@ export class CrearComponent implements OnInit {
         this.service.setDetelles(this.detalle).subscribe(deta => {
               console.log(this.detalle);
               console.log(deta);
+              this.dataSource = [];
         })
       })
       
@@ -74,7 +76,6 @@ export class CrearComponent implements OnInit {
       id_empleado: 0,
       fecha: ""
   }
-  this.dataSource = [];
   }
   
   id_materia:number = 0;

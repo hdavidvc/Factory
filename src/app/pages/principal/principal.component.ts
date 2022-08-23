@@ -2,12 +2,31 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ChartType, ChartOptions, ChartDataSets } from 'chart.js';
 import {Label, BaseChartDirective, Color } from 'ng2-charts';
 import { FactoryService } from '../../services/factory.service';
+
+export interface daysOW  {
+  id:any,
+  day:any
+}
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
   styleUrls: ['./principal.component.css','../../components/badge/badge.component.css']
 })
 export class PrincipalComponent implements OnInit {
+  
+  
+  public Ototal = 0;
+  public OPProcesar = 0;
+  public OProcesadas = 0;
+  public Oalmacenadas = 0;
+
+  public l = 0;
+  public m = 0;
+  public mi = 0;
+  public j = 0;
+  public v = 0;
+  public s = 0;
+  public d = 0;
 
   public pieChartOptions: ChartOptions = {
     responsive: true,
@@ -24,14 +43,15 @@ export class PrincipalComponent implements OnInit {
     },
     
   };
-  public pieChartLabels: Label[] = ['Aprobados', 'Pendientes', 'Denegados'];
-  public pieChartData: number[] = [300, 500, 100];
+  public pieChartLabels: Label[] = ['Total', 'Pendientes', 'Recibidas', 'Almacenadas'];
+  public pieChartData: number[] = [this.Ototal, this.OPProcesar, this.OProcesadas, this.Oalmacenadas];
   public pieChartType: ChartType = 'pie';
   public pieChartLegend = false;
   public pieChartPlugins: any = [];
+  public daysO:daysOW[] = [];
   public pieChartColors = [
     {
-      backgroundColor: ['rgba(14,156,29,1)', 'rgba(219,73,73,1)', 'rgba(73,149,219,1)'],
+      backgroundColor: ['#39ACED', '#8554EF', '#4EA466','#d6890dbe'],
     },
   ];
   public barraChartOptions: ChartOptions = {
@@ -51,7 +71,7 @@ export class PrincipalComponent implements OnInit {
 
   };
   public barraChartLabels: Label[] = ['L', 'M', 'M','J', 'V', 'S','D'];
-  public barraChartData: number[] = [250, 400, 220,305, 390, 190, 335];
+  public barraChartData: number[] = [this.l, this.m, this.mi,this.j, this.v, this.s, this.d];
   public barraChartType: ChartType = 'bar';
   public barraChartLegend = false;
   public barraChartPlugins: any = [];
@@ -97,7 +117,71 @@ export class PrincipalComponent implements OnInit {
   //  }
 
   ngOnInit(): void {
-  }
+
+    var Xmas95 = new Date('2022-08-22 23:40:19');
+    var weekday = Xmas95.getDay();
+    console.log(typeof(weekday));
+
+    this.service.getOrden().subscribe(resp => {
+
+      resp.forEach((element:any) => {
+        let day = new Date(element.fecha).getDay()    
+        
+        switch(day) {
+          case 0 :
+            this.d+=1;
+            
+          break;
+
+          case 1: 
+            this.l+=1;
+            console.log(this.l);
+            break;
+          case 2 :
+            this.m+=1;
+            break;
+          case 3: 
+            this.mi+=1;
+            break;
+          case 4 :
+            this.j+=1;
+            break;
+          case 5: 
+            this.v+=1;
+            break;
+          case 6: 
+            this.s+=1;
+        }
+          var temp = {id:element.id,day:day}
+          this.daysO.push(temp)
+      });
+      
+      this.barraChartData = [this.l, this.m, this.mi,this.j, this.v, this.s, this.d];
+    console.log(resp);
+       this.Ototal = resp.length;
+       this.service.getOrdenP().subscribe((respo:any) => {
+          respo.forEach((element:any,i:any) => {           
+              this.OPProcesar += 1;           
+          })
+          this.service.getOrdenR().subscribe(respoo=> {
+            respoo.forEach((element:any,i:any) => {            
+                 this.OProcesadas += 1;                 
+                 this.Oalmacenadas = this.Ototal-this.OPProcesar-this.OProcesadas;
+                 this.pieChartData = [this.Ototal, this.OPProcesar, this.OProcesadas, this.Oalmacenadas];
+             })
+          })
+         
+        }) 
+        console.log(this.daysO);
+      })
+           
+      
+      
+      
+      }
+      //  if()
+      //  this.OPProcesar = resp.
+ 
 
   // events
   public chartClicked({ event, active }: { event: MouseEvent, active: {}[] }): void {

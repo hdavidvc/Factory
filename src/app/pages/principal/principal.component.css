@@ -32,15 +32,19 @@
     }
     
     .leyendas .a {
-        color: rgba(14, 156, 29, 1);
+        color: #39ACED;
     }
     
     .leyendas .p {
-        color: rgba(219, 73, 73, 1);
+        color: #8554EF;
     }
     
     .leyendas .d {
-        color: rgba(73, 149, 219, 1);
+        color: #4EA466;
+    }
+    
+    .leyendas .c {
+        color: #d6890dbe;
     }
     
     .leyendas span {
