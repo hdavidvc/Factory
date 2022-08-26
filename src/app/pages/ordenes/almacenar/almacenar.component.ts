@@ -77,49 +77,68 @@ export class AlmacenarComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(async result => {  
       console.log(result);   
-      this.service.updateOrden(result).subscribe(async resp=> {
-        ELEMENT_DATA = await this.ObtenerOrdenes();
-       setTimeout(() => {
-        this.dataSource = ELEMENT_DATA      
-        this.progress = false;
-      }, 200);  
 
-      Swal.fire({
-        title: 'Almacenada',
-        showDenyButton: true,
-        confirmButtonText: 'Si',
-        denyButtonText: `No`,
-        text: 'Queda espacio?',
-        icon: 'question',
-      }).then((resultA) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (resultA.isConfirmed) {
-          Swal.fire('Orden actualizada', '', 'success')
-          // this.route.navigateByUrl('/ordenes/almacenar')
-        } else if (resultA.isDenied) {            
-         
-            console.log(result);
-            const dialogRef = this.dialog.open(DialogEstadoComponent, {
-              width: '700px',
-              data: {id: result}
-            });
-        
-            dialogRef.afterClosed().subscribe(async resultC => {     
-              console.log(resultC);
-              console.log(resultC.id);
-              console.log( resultC.id.almacen);
-              resultC.id.almacen.forEach((element:any) => {
-                console.log(element);
-                this.service.updateAlmacen2(element).subscribe(e => {});
-                  
-              });
-              let temp = {id:resultC.id.id}
-                             
-                         
-            });
-        }
+
+      result.almacen.forEach((element:any,i:any) => {
+        console.log(element);
+        this.service.getAlmacen(parseInt(element)).subscribe( el => {
+          console.log(el);
+          if(el[i].disponible<result.detalle[i].cantidad) {
+            Swal.fire('No hay espacio', '', 'success')
+          } else {
+
+            this.service.updateOrden(result).subscribe(async resp=> {
+              ELEMENT_DATA = await this.ObtenerOrdenes();
+             setTimeout(() => {
+              this.dataSource = ELEMENT_DATA      
+              this.progress = false;
+            }, 200);  
+            Swal.fire('Orden actualizada', '', 'success')
+            // Swal.fire({
+            //   title: 'Almacenada',
+            //   showDenyButton: true,
+            //   confirmButtonText: 'Si',
+            //   denyButtonText: `No`,
+            //   text: 'Queda espacio?',
+            //   icon: 'question',
+            // }).then((resultA) => {
+            //   /* Read more about isConfirmed, isDenied below */
+            //   if (resultA.isConfirmed) {
+            //     Swal.fire('Orden actualizada', '', 'success')
+            //     // this.route.navigateByUrl('/ordenes/almacenar')
+            //   } else if (resultA.isDenied) {            
+               
+            //       console.log(result);
+            //       const dialogRef = this.dialog.open(DialogEstadoComponent, {
+            //         width: '700px',
+            //         data: {id: result}
+            //       });
+              
+            //       dialogRef.afterClosed().subscribe(async resultC => {     
+            //         console.log(resultC);
+            //         console.log(resultC.id);
+            //         console.log( resultC.id.almacen);
+            //         resultC.id.almacen.forEach((element:any) => {
+            //           console.log(element);
+            //           this.service.updateAlmacen2(element).subscribe(e => {});
+                        
+            //         });
+            //         let temp = {id:resultC.id.id}
+                                   
+                               
+            //       });
+            //   }
+            //   })
+            })
+          }
         })
-      })
+        
+          
+      });
+
+
+     
+      
 
 
       })

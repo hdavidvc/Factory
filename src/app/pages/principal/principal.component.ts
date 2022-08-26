@@ -166,9 +166,11 @@ export class PrincipalComponent implements OnInit {
           this.service.getOrdenR().subscribe(respoo=> {
             respoo.forEach((element:any,i:any) => {            
                  this.OProcesadas += 1;                 
+                //  this.Oalmacenadas = this.Ototal-this.OPProcesar-this.OProcesadas;
+                //  this.pieChartData = [this.Ototal, this.OPProcesar, this.OProcesadas, this.Oalmacenadas];
+             })
                  this.Oalmacenadas = this.Ototal-this.OPProcesar-this.OProcesadas;
                  this.pieChartData = [this.Ototal, this.OPProcesar, this.OProcesadas, this.Oalmacenadas];
-             })
           })
          
         }) 

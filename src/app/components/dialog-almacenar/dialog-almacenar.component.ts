@@ -5,7 +5,8 @@ import { FactoryService } from 'src/app/services/factory.service';
 export interface DialogData {
   id: number,
   estado: string,
-  almacen: any[]
+  almacen: any[],
+  detalle: any
 }
 
 @Component({
@@ -27,6 +28,7 @@ export class DialogAlmacenarComponent implements OnInit {
 
       this.service.getDetelle(data.id).subscribe( detalle => {
         console.log(detalle);
+        this.data.detalle = detalle;
         this.dataSource = detalle;
         this.getUbicaciones();
         console.log(this.ubicaciones);
@@ -50,7 +52,7 @@ export class DialogAlmacenarComponent implements OnInit {
       this.service.getUbicacion(element.id).subscribe(resp => {
         console.log(resp);
         
-        this.ubicaciones.push({id:resp[0].id,descripcion:resp[0].descripcion})
+        this.ubicaciones.push({id:resp[0].id,descripcion:resp[0].descripcion,estado:resp[0].capacidad,disponible:resp[0].disponible})
       })
     });
     
