@@ -4,6 +4,7 @@ import { Respuesta } from '../../../interfaces/usuario';
 
 export interface TablaElement {
   descripcion: string;
+  capacidad: string;
   estado: string;
 
 }
@@ -19,12 +20,14 @@ let ELEMENT_DATA: TablaElement[] = [
 })
 export class AlmacenesComponent implements OnInit {
   
-  displayedColumns = ['Descripcion', 'Estado'];
+  displayedColumns = ['Descripcion', 'Capacidad', 'Estado'];
   dataSource:TablaElement[] = [];
   
   almacen = {
   "descripcion": "",
-  "estado": ""
+  "capacidad": "",
+  "estado": "",
+  
 }
   constructor(private service: FactoryService) {
     // console.log(this.dataSource);
@@ -69,6 +72,7 @@ export class AlmacenesComponent implements OnInit {
   select(e:any) {
     console.log(e);
     this.almacen =e
+    console.log(this.almacen);
   }
   editar () {
     this.service.updateAlmacen(this.almacen).subscribe(resp => console.log(resp) );

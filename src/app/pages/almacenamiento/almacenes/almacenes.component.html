@@ -40,6 +40,33 @@
                 </div>
                 <div class="content_p">
                     <div>
+                        <label for="cliente">Capacidad</label>
+                        <!-- <input type="text" name="cliente" id="cliente"> -->
+                        <input type="text" name="capa" id="monto" [(ngModel)]='almacen.capacidad'>
+
+                    </div>
+                    <!-- <div>
+                            <label for="cuotas">Cant. cuotas</label>
+                            <input type="text" name="cuotas" id="cuotas" [(ngModel)]='almacenes.cantidad_cuotas'>
+                        </div>
+                        <div>
+                            <label for="fechaInicio">Fecha inicio</label>
+                            <input type="date" name="fechaInicio" id="fechaInicio" [(ngModel)]='almacenes.fecha_inicio'>
+                        </div>
+                        <div>
+                            <label for="ruta">Ruta</label>
+                            <select name="ruta" id="ruta" [(ngModel)]='almacenes.id_ruta'>
+                                <option *ngFor="let ruta of rutas" value={{ruta.id}}>{{ruta.descripcion}}</option>
+                               
+                            </select>
+                        </div>
+                        <div>
+                            <label for="fechaVence">Fecha vence</label>
+                            <input type="date" name="fechaVence" id="fechaVence" [(ngModel)]='almacenes.fecha_fin'>
+                        </div> -->
+                </div>
+                <div class="content_s">
+                    <div>
                         <label for="cliente">Estado</label>
                         <!-- <input type="text" name="cliente" id="cliente"> -->
                         <select name="cliente" id="cliente" [(ngModel)]='almacen.estado'>
@@ -122,6 +149,10 @@
                 <ng-container matColumnDef="Descripcion">
                     <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Descripcion </th>
                     <td mat-cell *matCellDef="let element" (click)="select(element)"> {{element.descripcion}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Capacidad">
+                    <th class="title" id="descripcion" mat-header-cell *matHeaderCellDef> Capacidad </th>
+                    <td mat-cell *matCellDef="let element" (click)="select(element)"> {{element.disponible}} </td>
                 </ng-container>
 
 

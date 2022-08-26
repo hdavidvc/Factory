@@ -9,7 +9,7 @@ select {
 }
 
 input {
-    inline-size: 100%;
+    /* inline-size: 100%; */
 }
 
 .form .datos {
